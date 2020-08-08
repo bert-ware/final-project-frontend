@@ -1,4 +1,4 @@
-# Escape Rooms App
+# App
 # Developers: 
 Robert Ledezma - Alberto Correia  
 # Link to App: 
