@@ -9,18 +9,14 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path='/'>
-          <Home/>
-        </Route>
-        <Route exact path='/products'>
-          <Products/>
-        </Route>
-        <Route exact path='/providers'>
-          <Providers/>
-        </Route>
+        <Route exact path='/'><Home/></Route>
+        <Route exact path='/products'><Products/></Route>
+        <Route path="/products/:id" render={(props) => <COMPONENTEDETALLEPRODUCTOS {...props} />} />
+        <Route exact path='/providers'> <Providers/></Route>
+        <Route path="/providers/:id" render={(props) => <COMPONENTEDETALLEPROVEEDORES {...props} />} />
       </Switch>
     </div>
-  );
+  );  
 }
 
 export default App;
