@@ -1,13 +1,11 @@
-//REFACTOR A FUNCTIONAL
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom'
 
 export class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      products: [],
     };
   }
   componentDidMount() {
@@ -22,7 +20,7 @@ export class Products extends Component {
   render() {
     const products = this.state.products.map((product) => (
       <div key={product._id}>
-        <h1><Link to={"/products/" + product._id}>{product.name}</Link></h1>
+        <h1>{product.name}</h1>
       </div>
     ));
     return (
