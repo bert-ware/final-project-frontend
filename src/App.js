@@ -11,6 +11,7 @@ import Products from './components/Products/Products';
 function App() {
   return (
     <div className="App">
+
       <Switch>
         <Route exact path='/'>
           <Home/>
@@ -22,6 +23,8 @@ function App() {
 
       </Switch>
       
+
+
     </div>
   );
 }
