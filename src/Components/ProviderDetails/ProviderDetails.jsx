@@ -13,6 +13,7 @@ export class ProviderDetails extends Component {
     componentDidMount() {
         axios.get("http://localhost:3000/api/providers/" + this.state.id)
         .then(response => {
+            console.log(response.data)
             this.setState({
                 provider: response.data
             })
@@ -20,11 +21,11 @@ export class ProviderDetails extends Component {
     }
 
     render() {
-        return (
+        return (    
             <div>
             <h1>{this.state.provider.name}</h1>
             <h2>{this.state.provider.telephone}</h2>
-            <h3>{this.state.provider.adress.street}{this.state.provider.adress.number}</h3>
+            <h3>La direccion da error no se porque</h3>
             <p>{this.state.provider.info}</p>
                 
             </div>
