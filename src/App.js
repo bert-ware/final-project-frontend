@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 import Home from './Components//Home/Home.jsx';
 import Products from './Components/Products/Products';
 import Providers from "./Components/Providers/Providers"
+import ProviderDetails from "./Components/ProviderDetails/ProviderDetails"
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Route exact path='/products'><Products/></Route>
         <Route path="/products/:id" render={(props) => <COMPONENTEDETALLEPRODUCTOS {...props} />} />
         <Route exact path='/providers'> <Providers/></Route>
-        <Route path="/providers/:id" render={(props) => <COMPONENTEDETALLEPROVEEDORES {...props} />} />
+        <Route path="/providers/:id" render={(props) => <ProviderDetails {...props} />} />
       </Switch>
     </div>
   );  
