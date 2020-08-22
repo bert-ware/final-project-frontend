@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom'
-import Home from './components/Home/Home';
-import Products from './components/Products/Products';
+import Home from './Components//Home/Home.jsx';
+import Products from './Components/Products/Products';
 
 
 

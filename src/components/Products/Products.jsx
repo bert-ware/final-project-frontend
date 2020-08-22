@@ -1,5 +1,3 @@
-
-
 import React, { Component } from "react";
 import axios from "axios";
 
@@ -10,7 +8,6 @@ export class Products extends Component {
       products: [],
     };
   }
-
   componentDidMount() {
     axios.get("http://localhost:3000/api/products/")
         .then((response) => {
@@ -20,14 +17,12 @@ export class Products extends Component {
         })
         .catch((err) => console.log(" ESTE ES EL ERROR", err));
   }
-
   render() {
     const products = this.state.products.map((product) => (
       <div key={product._id}>
         <h1>{product.name}</h1>
       </div>
     ));
-
     return (
       <div className="container">
         <div style={{ width: "60%", float: "left" }}>
