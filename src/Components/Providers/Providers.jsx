@@ -6,29 +6,29 @@ export class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      providers: []
     };
   }
   componentDidMount() {
-    axios.get("http://localhost:3000/api/products/")
+    axios.get("http://localhost:3000/api/providers/")
         .then((response) => {
           this.setState({
-            products: response.data
+            providers: response.data
           });
         })
-        .catch((err) => console.log(" ESTE ES EL ERROR", err));
+        .catch((error) => console.log(" ESTE ES EL ERROR", error));
   }
   render() {
-    const products = this.state.products.map((product) => (
-      <div key={product._id}>
-        <h1>{product.name}</h1>
+    const providers = this.state.providers.map((provider) => (
+      <div key={provider._id}>
+        <h1>{provider.name}</h1>
       </div>
     ));
     return (
       <div className="container">
         <div style={{ width: "60%", float: "left" }}>
           <h1>Products List</h1>
-          {products}
+          {providers}
         </div>
       </div>
     );
