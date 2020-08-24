@@ -7,22 +7,25 @@ export class ProviderDetails extends Component {
             id: props.match.params.id,
             provider: {}
         }
+        this.componentDidMount = this.componentDidMount.bind(this)
     }
     componentDidMount() {
         axios.get("http://localhost:3000/api/providers/" + this.state.id)
         .then(response => {
-            console.log(response.data)
+
             this.setState({
-                provider: response.data
+               provider: response.data
             })
+            console.log('Dirección DEL PROVEEDOR',this.state.provider.adress.street, this.state.provider.adress.number)
         })
     }
     render() {
+        
         return (    
             <div>
-            <h1>{this.state.provider.name}</h1>
-            <h2>{this.state.provider.telephone}</h2>
-            <h3>La direccion da error, no se porque</h3>
+            <h1>Nombre: {this.state.provider.name}</h1>
+            <h2>Telephone: {this.state.provider.telephone}</h2>
+        <h3>CALLE</h3>
             <p>{this.state.provider.info}</p>
             </div>
         )
