@@ -7,7 +7,6 @@ export class ProviderDetails extends Component {
             id: props.match.params.id,
             provider: {}
         }
-        this.componentDidMount = this.componentDidMount.bind(this)
     }
     componentDidMount() {
         axios.get("http://localhost:3000/api/providers/" + this.state.id)
