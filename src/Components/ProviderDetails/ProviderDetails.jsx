@@ -14,14 +14,14 @@ export class ProviderDetails extends Component {
       .then((response) => {
         this.setState({
           provider: response.data,
-        });
+        })
         console.log('Respuesta del proveedor',response.data)
         console.log(
           "Dirección DEL PROVEEDOR",
           this.state.provider.adress.street,
           this.state.provider.adress.number
-        );
-      });
+        )
+      })
   }
   render() {
       let street='';
