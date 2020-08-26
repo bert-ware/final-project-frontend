@@ -7,6 +7,7 @@ import Providers from "./components/Providers/Providers"
 import ProviderDetails from "./components/ProviderDetails/ProviderDetails"
 import Home from './components/Home/Home';
 import AddProduct from './components/AddProduct/AddProduct'
+import Recipes from './components/Recipes/Recipes';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route exact path='/'>
             <Home/>
+        </Route>
+        <Route exact path='/recipes'>
+          <Recipes/>
         </Route>
         <Route exact path='/products'>
           <Products/>
