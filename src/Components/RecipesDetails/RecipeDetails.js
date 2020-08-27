@@ -32,10 +32,10 @@ export class RecipeDetails extends Component {
 }
     render() {
         //Map ingredients
-        const ingredients = this.state.recipe.ingredients.map((ingredient) => (
-            <div key={this.state.recipe.ingredients.name}>
-              <h1> {ingredient} </h1>
-            </div>
+        const ingredients = this.state.recipe.ingredients.map((ingredient, index) => (
+            
+            <li key={index}>{ingredient.name}</li>
+           
           ))
           //Redirect a providers
       const { redirect } = this.state;
