@@ -15,13 +15,11 @@ export class Products extends Component {
     axios
       .get("http://localhost:3000/api/products/")
       .then((response) => {
-
         this.setState({
-          products: response.data,
-          
-        });
+          products: response.data,    
+        })
       })
-      .catch((err) => console.log(" ESTE ES EL ERROR", err));
+      .catch((err) => console.log(" ESTE ES EL ERROR", err))
   }
   render() {
     const products = this.state.products.map((product) => (
@@ -33,10 +31,10 @@ export class Products extends Component {
       </div>
     ));
 
-    let add = "";
+    let add = ""
     //Descomentar línea 34 & 37 para validación con usuario
     //if (this.props.user) {
-      add = <AddProduct updateData={() => this.componentDidMount()} />;
+      add = <AddProduct updateData={() => this.componentDidMount()} />  
     //}
     return (
       <div className="container">
