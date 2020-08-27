@@ -6,9 +6,13 @@ import { Link } from 'react-router-dom';
 class Login extends Component {
   constructor(props){
     super(props);
-    this.state = { email: '', password: '' };
+    this.state = { 
+    email: '',
+    password: '' 
+  }
     this.service = new AuthService();
   }
+  //Handle Submit
   handleFormSubmit = (event) => {
     event.preventDefault();
     const email = this.state.email;
@@ -16,10 +20,12 @@ class Login extends Component {
     this.service.login(email, password)
     .then( response => {
         this.setState({ email: "", password: "" });
-        this.props.getUser(response)
+        this.props.callback(response)
+        console.log(response)
     })
     .catch( error => console.log(error) )
   }
+  //Handle Change
   handleChange = (event) => {  
     const {name, value} = event.target;
     this.setState({[name]: value})
