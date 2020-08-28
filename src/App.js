@@ -14,15 +14,13 @@ import Logout from "./Auth/Logout"
 import Login from "./Auth/Login"
 
 
-function App() {
-  const [setDatos] = useState({
-    loggedInUser: null
+function App(props) {
+   
+  const [isLogged, setLogIn] = useState({ loggedInUser: null })
+  const getTheUser = (userObj) => setLogIn ({
+    ...isLogged,
+    [isLogged] : userObj
   })
-  const getTheUser = (userObj) => {
-    setDatos({
-      loggedInUser: userObj
-    })
-  }
   
   return (
     <div className="App">
@@ -40,6 +38,6 @@ function App() {
         <Route exact path="/logout" render={(props) => <Logout {...props} getUser={getTheUser} />}/>
       </Switch>
     </div>
-  );  
+  )  
 }
 export default App;
