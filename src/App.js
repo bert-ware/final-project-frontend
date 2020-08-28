@@ -13,8 +13,8 @@ import Signup from "./Auth/Signup"
 import Logout from "./Auth/Logout"
 import Login from "./Auth/Login"
 import UserProfile from "./components/UserProfile/UserProfile"
-import ProtectedRoute from "./Auth/ProtectedRoute"
-import BottomNavigation from'./components/BottomNavigation/BottomNavigation'
+import BottomNavigation from './components/BottomNavigation/BottomNavigation'
+
 
 
 function App(props) {
@@ -30,6 +30,7 @@ function App(props) {
       
       
       <Switch>
+      
         <Route exact path='/'><Home/></Route>
         <Route exact path='/recipes'><Recipes/></Route>
         <Route path="/recipes/:id" render={(props) => <RecipeDetails {...props} />} />
@@ -48,4 +49,4 @@ function App(props) {
     </div>
   )  
 }
-export default App;
+export default App

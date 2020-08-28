@@ -1,24 +1,22 @@
 .fondo{
-
     justify-content: center;
     width: 100%;
-
     display: flex;
     background-color: brown;
 }
 
-.navbar {
+.bottomNav {
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
-vertical-align: bottom !important;
-    background-color: white;
-    overflow: hidden;
-    position: fixed !important;
-    bottom: 0;
-    width: 100%;
+  vertical-align: bottom !important;
+  background-color: white;
+  overflow: hidden;
+  position: fixed !important;
+  bottom: 0;
+  width: 100%;
   }
   
   /*the navigation bar */
-  .navbar a {
+  .bottomNav a {
     float: left;
     display: block;
     color: #51C57F;
@@ -27,17 +25,14 @@ vertical-align: bottom !important;
     text-decoration: none;
     font-size: 17px;
   }
-  
   /*  hover */
-  .navbar a:hover {
+  .bottomNav a:hover {
     background-color: #51C57F;
     color: white;
     text-decoration: none;
-
   }
-  
   /* current link */
-  .navbar a.active {
+  .bottomNav a.active {
     background-color: #4CAF50;
     color: white;
   }

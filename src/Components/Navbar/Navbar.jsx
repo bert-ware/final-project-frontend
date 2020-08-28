@@ -7,7 +7,7 @@ export class Navbar extends Component {
     return (
       <div>
         <div className="navbar">
-          <label for="togglericon" className="toggler" checked></label>
+          <label htmlFor="togglericon" className="toggler" checked></label>
           <input type="checkbox" id="togglericon" className="toggler" />
 
           <div className="brand">
@@ -17,7 +17,7 @@ export class Navbar extends Component {
 
           <div className="nav">
             <Link to={"/signup/"}>Signup</Link>
-            <Link to={"/signup/"}>Login</Link>
+            <Link to={"/login/"}>Login</Link>
           </div>
         </div>
       </div>

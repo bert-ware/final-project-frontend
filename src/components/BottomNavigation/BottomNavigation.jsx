@@ -45,21 +45,18 @@ export class BottomNavigation extends Component {
   render() {
     return (
       <div className='fondo'>
-        <div className="navbar">
-        <Link to={"#"}> Profile</Link>
-        <Link to={"/products/"}> products</Link>
+        <div className="bottomNav">
+        <Link to={"/user-profile"}> Profile</Link>
+        <Link to={"/products/"}> Products</Link>
         <Link to={"/providers/"}> Providers</Link>
-        
-  
-</div>
+        </div>
         {/* <h1>
           <Link to={'#'}> Icon 1</Link>
           <Link to={'#'}> Icon 2</Link>
           <Link to={'#'}> Icon 3</Link>
         </h1> */}
       </div>
-    );
+    )
   }
 }
-
 export default BottomNavigation;
