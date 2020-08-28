@@ -14,6 +14,7 @@ import Logout from "./Auth/Logout"
 import Login from "./Auth/Login"
 import UserProfile from "./components/UserProfile/UserProfile"
 import ProtectedRoute from "./Auth/ProtectedRoute"
+import BottomNavigation from'./components/BottomNavigation/BottomNavigation'
 
 
 function App(props) {
@@ -26,7 +27,10 @@ function App(props) {
   
   return (
     <div className="App">
-      <Switch> <Route exact path='/'><Home/></Route>
+      
+      
+      <Switch>
+        <Route exact path='/'><Home/></Route>
         <Route exact path='/recipes'><Recipes/></Route>
         <Route path="/recipes/:id" render={(props) => <RecipeDetails {...props} />} />
         <Route exact path='/products'><Products/></Route>
@@ -40,6 +44,7 @@ function App(props) {
         <Route exact path="/logout" render={(props) => <Logout {...props} getUser={getTheUser} />}/>
         <Route exact path="/user-profile"><UserProfile/></Route>
       </Switch>
+      <BottomNavigation/>
     </div>
   )  
 }

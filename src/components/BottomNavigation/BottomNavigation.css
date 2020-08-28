@@ -1,9 +1,44 @@
-.MuiBottomNavigation-root{
-width: 100%;
-background-color: bisque;
+.fondo{
+
+    justify-content: center;
+    width: 100%;
+
+    display: flex;
+    background-color: brown;
 }
 
+.navbar {
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
+vertical-align: bottom !important;
+    background-color: white;
+    overflow: hidden;
+    position: fixed !important;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /*the navigation bar */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #51C57F;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /*  hover */
+  .navbar a:hover {
+    background-color: #51C57F;
+    color: white;
+    text-decoration: none;
 
-.testing{
-    width: 100px !important;
-}
+  }
+  
+  /* current link */
+  .navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
