@@ -19,20 +19,19 @@ const AddProvider = (props) => {
         console.log(event.target.name)
         console.log(event.target.value)
 
-        let adress = datos.adress;
-        let key = event.target.name;
-        let value = event.target.value;
-        adress[key] = value;
+        let adress = datos.adress
+        let key = event.target.name
+        let value = event.target.value
+        adress[key] = value
         datos.adress = adress;
-
     setDatos({
       ...datos,
       [event.target.name]: event.target.value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     const body = {
         ...datos
     }
