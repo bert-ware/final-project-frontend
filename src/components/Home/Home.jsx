@@ -6,6 +6,7 @@ import Header from "./Header.jsx";
 
 
 export class Home extends Component {
+<<<<<<< HEAD
   render() {
     return (
       <div>
@@ -53,6 +54,21 @@ export class Home extends Component {
       </div>
     );
   }
+=======
+    render() {
+        return (
+            <div>   
+                <h1>Este es el Home</h1>
+               <h2> <Link to={"/products/" }>Products</Link></h2>
+               <h2> <Link to={"/providers/" }>Providers</Link></h2>
+               <h2> <Link to={"/recipes/" }>Recipes</Link></h2>
+               <h2> <Link to={"/user-profile" }>user profile</Link></h2>
+                <SimpleBottomNavigation/>
+
+            </div>
+        )
+    }
+>>>>>>> 97959ac4c4b26608c21f84f6e029c3f5aaad158a
 }
 
 export default Home;

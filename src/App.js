@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react'
 import './App.css';
 import {Switch, Route} from 'react-router-dom'
 import ProductDetails from './components/ProductDetails/ProductDetails'
-import Products from './components/Products/Products';
+import Products from './components/Products/Products'
 import Providers from "./components/Providers/Providers"
 import ProviderDetails from "./components/ProviderDetails/ProviderDetails"
-import Home from './components/Home/Home';
+import Home from './components/Home/Home'
 import AddProduct from './components/AddProduct/AddProduct'
-import Recipes from './components/Recipes/Recipes';
+import Recipes from './components/Recipes/Recipes'
 import RecipeDetails from "./components/RecipesDetails/RecipeDetails"
-import BottomNavigation from './components/BottomNavigation/BottomNavigation';
+import Signup from "./Auth/Signup"
+import Logout from "./Auth/Logout"
+import Login from "./Auth/Login"
+import UserProfile from "./components/UserProfile/UserProfile"
+import ProtectedRoute from "./Auth/ProtectedRoute"
+import BottomNavigation from'./components/BottomNavigation/BottomNavigation'
 
 
-
-
-function App() {
+function App(props) {
+   //Hook log
+  const [isLogged, setLogIn] = useState({ loggedInUser: null })
+  const getTheUser = (userObj) => setLogIn ({
+    ...isLogged,
+    [isLogged] : userObj
+  })
+  
   return (
     <div className="App">
       
@@ -29,9 +39,13 @@ function App() {
         <Route path="/products/:id" render={(props) => <ProductDetails  {...props}/>} />
         <Route exact path='/providers'> <Providers/></Route>
         <Route path="/providers/:id" render={(props) => <ProviderDetails {...props} />} />
+        <Route path="/signup" render={props => <Signup {...props} callback={getTheUser}  />} />
+        <Route path="/login" render={props => <Login {...props} callback={getTheUser}  />} />
+        <Route exact path="/logout" render={(props) => <Logout {...props} getUser={getTheUser} />}/>
+        <Route exact path="/user-profile"><UserProfile/></Route>
       </Switch>
       <BottomNavigation/>
     </div>
-  );  
+  )  
 }
 export default App;
