@@ -9,7 +9,7 @@ class Signup extends Component {
     this.state = { name: "",email:"", password: "" };
     this.service = new AuthService();
   }
-  // handleChange() and handleSubmit() will be added here
+  //Handle Submit
   handleFormSubmit = (event) => {
     event.preventDefault();
     const name = this.state.name
@@ -23,9 +23,11 @@ class Signup extends Component {
             password: "",
         });
          this.props.callback(response)
+         console.log(response)
     })
     .catch( error => console.log(error) )
   }
+  //Handle Change
   handleChange = (event) => {  
     const {name, value} = event.target;
     this.setState({[name]: value});
