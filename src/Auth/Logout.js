@@ -10,6 +10,7 @@ export class Logout extends Component {
 		this.service
 			.logout()
 			.then((response) => {
+				console.log(response)
 				this.props.getUser(null);
 			})
 			.catch((error) => console.log(error));

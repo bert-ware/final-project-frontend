@@ -15,10 +15,6 @@ const AddProvider = (props) => {
   });
 
   const handleChange = (event) => {
-
-        console.log(event.target.name)
-        console.log(event.target.value)
-
         let adress = datos.adress
         let key = event.target.name
         let value = event.target.value

@@ -49,6 +49,8 @@ export class BottomNavigation extends Component {
         <Link to={"/user-profile"}> Profile</Link>
         <Link to={"/products/"}> Products</Link>
         <Link to={"/providers/"}> Providers</Link>
+        <Link to={"/recipes/"}> Recipes</Link>
+        <Link to={"/"}> Home</Link>
         </div>
         {/* <h1>
           <Link to={'#'}> Icon 1</Link>
