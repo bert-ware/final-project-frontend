@@ -34,12 +34,16 @@ export class ProviderDetails extends Component {
 }
 
   render() {
-      let street='';
+      let street=''
+      let number= ""
       if(this.state.provider.adress){
           street = this.state.provider.adress.street
       }
+      if(this.state.provider.adress){
+        number = this.state.provider.adress.number
+    }
     //Redirect a providers
-      const { redirect } = this.state;
+      const { redirect } = this.state
       if (redirect) {
         return <Redirect to='/providers'/>
       }
@@ -48,7 +52,7 @@ export class ProviderDetails extends Component {
       <div>
         <h1>Nombre: {this.state.provider.name}</h1>
         <h2>Telephone: {this.state.provider.telephone}</h2>
-        <h3>CALLE {street}</h3>
+        <h3>Adress: {street} {number}</h3>
         <p>{this.state.provider.info}</p>
         <button onClick={this.handleClick} className="delete">Delete</button>
       </div>
