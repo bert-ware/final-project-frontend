@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import AuthService from './AuthService'
-import { Link } from 'react-router-dom'
-import { Redirect } from 'react-router-dom'
-
+import { Link, Redirect } from 'react-router-dom'
 
 class Login extends Component {
   constructor(props){
@@ -21,9 +19,9 @@ class Login extends Component {
     const password = this.state.password;
     this.service.login(email, password)
     .then( response => {
-        this.setState({ email: "", password: "" });
-        this.props.callback(response)
         console.log(response)
+        this.setState({ email: "", password: "" });
+        this.props.callback(response) 
     })
     .then(() => this.setState({ redirect: true }))
     .catch( error => console.log(error) )
@@ -35,11 +33,11 @@ class Login extends Component {
    
   }
   render(){
-    //Redirect a providers
-    const { redirect } = this.state;
+    //Redirect a user-profile
+ /*    const { redirect } = this.state;
     if (redirect) {
       return <Redirect to='/user-profile'/>
-    }
+    } */
     return(
       <div>
         <form onSubmit={this.handleFormSubmit}>

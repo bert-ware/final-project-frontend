@@ -4,12 +4,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import AddProvider from "../AddProvider/AddProvider";
 
-export class Products extends Component {
+ class Providers extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       providers: [],
-    };
+    }
   }
   componentDidMount() {
     axios
@@ -19,7 +19,7 @@ export class Products extends Component {
           providers: response.data,
         });
       })
-      .catch((error) => console.log(" ESTE ES EL ERROR", error));
+      .catch((error) => console.log(" ESTE ES EL ERROR", error))
   }
   render() {
     const providers = this.state.providers.map((provider) => (
@@ -28,14 +28,14 @@ export class Products extends Component {
           <Link to={"/providers/" + provider._id}>{provider.name}</Link>
         </h1>
       </div>
-    ));
+    ))
 
-    let add = "";
+    let add = ""
     //Descomentar línea 34 & 37 para validación con usuario
-    //if (this.props.user) {
-    add = <AddProvider updateData={() => this.componentDidMount()} />;
-    //}
-
+   // if (this.req.session.currentUser._id) {
+    add = <AddProvider user={this.props.user.loggedInUser} updateData={() => this.componentDidMount()} />
+   // }
+     
     return (
       <div className="container">
         <div style={{ width: "60%", float: "left" }}>
@@ -44,8 +44,8 @@ export class Products extends Component {
         </div>
         <div style={{ width: "40%", float: "right" }}>{add}</div>
       </div>
-    );
+    )
   }
 }
 
-export default Products;
+export default Providers

@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import AuthService from './AuthService'
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 
 
 class Signup extends Component {
   constructor(props){
     super(props);
-    this.state = { name: "",email:"", password: "" };
+    this.state = {
+       name: "",
+       email:"", 
+       password: "", 
+       redirect:false
+       }
     this.service = new AuthService();
   }
   //Handle Submit
@@ -21,19 +26,26 @@ class Signup extends Component {
             name: "", 
             email: "",
             password: "",
-        });
+        })
          this.props.callback(response)
          console.log(response)
     })
-    .catch( error => console.log(error) )
+    .then(() => this.setState({ redirect: true }))
+    .catch( error => console.log(error))
+   
   }
   //Handle Change
   handleChange = (event) => {  
-    const {name, value} = event.target;
-    this.setState({[name]: value});
+    const {name, value} = event.target
+    this.setState({[name]: value})
   }
 
   render(){
+    //Redirect a user-profile
+    const { redirect } = this.state
+    if (redirect) {
+      return <Redirect to='/user-profile'/>
+    }
     return(
       <div>
         <form onSubmit={this.handleFormSubmit}>
