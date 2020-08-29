@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import axios from 'axios'
 
-
 const AddProvider = (props) => {
   const [datos, setDatos] = useState({
     name: "",
@@ -10,10 +9,8 @@ const AddProvider = (props) => {
         number: 0,
     },
     telephone: 0,
-    info: '',
-
-  });
-
+    info: ''
+  })
   const handleChange = (event) => {
         let adress = datos.adress
         let key = event.target.name
@@ -25,22 +22,17 @@ const AddProvider = (props) => {
       [event.target.name]: event.target.value,
     })
   }
-
   const handleSubmit = (event) => {
     event.preventDefault()
     const body = {
         ...datos
     }
     console.log('ESTOS SON LOS DATOS', body.name, body.telephone)
-
     event.target.reset();
 
-    axios.post("http://localhost:3000/api/providers/", body).then(
+    axios.post("http://localhost:3000/api/providers/", body, {withCredentials : true}).then(
         () => props.updateData());
-
-  };
-  
-
+  }
   return (
     <Fragment>
       <h1>Add Providers</h1>
@@ -53,7 +45,6 @@ const AddProvider = (props) => {
             name="name"
           />
         </div>
-
         <div>
           <h4>adress</h4>
           <input
@@ -63,7 +54,7 @@ const AddProvider = (props) => {
             onChange={handleChange}
             name="street"
             // value={datos.adress.street}
-          />
+        />
           <input
             type="number"
             placeholder="number"
@@ -88,14 +79,12 @@ const AddProvider = (props) => {
             type="text"
             placeholder="Info"
             onChange={handleChange}
-            name="info"
-          />
+            name="info"/>
         </div>
-
         <button type="submit">Add providers</button>
       </form>
     </Fragment>
-  );
-};
+  )
+}
 
-export default AddProvider;
+export default AddProvider

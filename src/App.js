@@ -6,7 +6,6 @@ import Products from './components/Products/Products'
 import Providers from "./components/Providers/Providers"
 import ProviderDetails from "./components/ProviderDetails/ProviderDetails"
 import Home from './components/Home/Home'
-import AddProduct from './components/AddProduct/AddProduct'
 import Recipes from './components/Recipes/Recipes'
 import RecipeDetails from "./components/RecipesDetails/RecipeDetails"
 import Signup from "./Auth/Signup"
@@ -16,34 +15,29 @@ import UserProfile from "./components/UserProfile/UserProfile"
 import BottomNavigation from './components/BottomNavigation/BottomNavigation'
 
 
-
 function App(props) {
    //Hook log
-  const [isLogged, setLogIn] = useState({ loggedInUser: null })
-  const getTheUser = (userObj) => setLogIn ({
-    ...isLogged,
-    [isLogged] : userObj
+  const [userState, setLogIn] = useState({ loggedInUser: null })
+  const setTheUser = (userObj) => setLogIn ({ 
+    loggedInUser: userObj
   })
   
   return (
     <div className="App">
-      
-      
-      <Switch>
-      
+    
+      <Switch>     
         <Route exact path='/'><Home/></Route>
-        <Route exact path='/recipes'><Recipes/></Route>
-        <Route path="/recipes/:id" render={(props) => <RecipeDetails {...props} />} />
-        <Route exact path='/products'><Products/></Route>
-        <Route path="/products/:id" render={(props) => <ProductDetails {...props} />} />
-        <Route exact path='/addproduct'><AddProduct /></Route>
-        <Route path="/products/:id" render={(props) => <ProductDetails  {...props}/>} />
-        <Route exact path='/providers'> <Providers/></Route>
-        <Route path="/providers/:id" render={(props) => <ProviderDetails {...props} />} />
-        <Route path="/signup" render={props => <Signup {...props} callback={getTheUser}  />} />
-        <Route path="/login" render={props => <Login {...props} callback={getTheUser}  />} />
-        <Route exact path="/logout" render={(props) => <Logout {...props} getUser={getTheUser} />}/>
-        <Route exact path="/user-profile"><UserProfile/></Route>
+        <Route exact path='/recipes'><Recipes user={userState}/></Route>
+        <Route path="/recipes/:id" render={(props) => <RecipeDetails user={userState} {...props} />} />
+        <Route exact path='/products'><Products user={userState}/></Route>
+        <Route path="/products/:id" render={(props) => <ProductDetails user={userState} {...props} />} />
+        <Route path="/products/:id" render={(props) => <ProductDetails user={userState}  {...props}/>} />
+        <Route exact path='/providers'> <Providers user={userState}/></Route>
+        <Route path="/providers/:id" render={(props) => <ProviderDetails user={userState} {...props} />} />
+        <Route path="/signup" render={props => <Signup {...props} callback={setTheUser}  />} />
+        <Route path="/login" render={props => <Login {...props} callback={setTheUser}  />} />
+        <Route exact path="/logout" render={(props) => <Logout {...props} getUser={setTheUser} />}/>
+        <Route exact path="/user-profile"><UserProfile user={userState}/></Route>
       </Switch>
       <BottomNavigation/>
     </div>
