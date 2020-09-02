@@ -13,7 +13,7 @@ export class RecipeDetails extends Component {
                 ingredients: [],
                 method: ""
             },
-            redirect: false
+            redirect: false,
         }
     }
     //Recogida datos API
@@ -21,10 +21,11 @@ export class RecipeDetails extends Component {
         axios.get("http://localhost:3000/api/recipes/" + this.state.id)
         .then(response => {
             this.setState({
-                recipe: response.data
+                recipe: response.data,
             })
-            console.log(response.data)
+            console.log("Esto es el response",response.data)
         })
+
     }
  //Handle borrar
   handleClick = () => {
@@ -33,25 +34,22 @@ export class RecipeDetails extends Component {
 }
     render() {
         //Map ingredients
-        const ingredients = this.state.recipe.ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient.name}</li>
-          ))
+       const ingredients = this.state.recipe.ingredients.map((ingredient) =>
+            <li key={ingredient._id}> {ingredient.product}</li>
+        )
+      
           //Redirect a providers
       const { redirect } = this.state;
       if (redirect) {
         return <Redirect to='/recipes'/>
       }
-      let costCl = this.state.recipe.ingredients.map((ingredient) =>(
-          <li>Price for 1 centilitre  {ingredient.price / ingredient.format}</li>
-      ))
+     
         return (
             <div>
             <h1>{this.state.recipe.name}</h1> 
             <img className="cocktailImg" src="https://static2.bigstockphoto.com/3/7/1/large2/173870551.jpg" alt="cocktail"></img>
-            <ul className="ingredients">Ingredients{ingredients}</ul>
-            <ul className="cost">Cost{costCl}</ul>
+            <ul className="ingredients">INGREDIENTS{ingredients}</ul>
             <h3>{this.state.recipe.method}</h3>
-            
             <button onClick={this.handleClick} className="delete">Delete</button>
             </div>
         )

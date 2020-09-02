@@ -20,7 +20,7 @@ class AuthService {
   }
 
   login = (email, password) => {
-    return this.service.post('/login', {email, password})
+    return this.service.post('/login', {username: email, password})
     .then(response => response.data)
   }
 
