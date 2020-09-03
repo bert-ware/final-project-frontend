@@ -5,12 +5,22 @@
     width: auto;
 }
 .ingredients {
-    width: 50%;
-    float: left;
+    width: 33%;
+   
     list-style: none;
 }
-.cost {
-    width: 50%;
-    float: right;
+.mesures {
+    width: 33%;
+    
     list-style: none;
+}
+.costMesures {
+    width: 33%;
+    
+    list-style: none;
+}
+.infoContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
 }
