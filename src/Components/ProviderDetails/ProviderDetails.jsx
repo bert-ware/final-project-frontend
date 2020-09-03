@@ -19,12 +19,6 @@ export class ProviderDetails extends Component {
         this.setState({
           provider: response.data,
         })
-        console.log('Respuesta del proveedor',response.data)
-        console.log(
-          "Dirección DEL PROVEEDOR",
-          this.state.provider.adress.street,
-          this.state.provider.adress.number
-        )
       })
   }
   //Handle borrar
@@ -50,6 +44,7 @@ export class ProviderDetails extends Component {
 
     return (
       <div>
+        <img src={this.state.provider.providerImgUrl} alt="Provider Img"></img>
         <h1>Nombre: {this.state.provider.name}</h1>
         <h2>Telephone: {this.state.provider.telephone}</h2>
         <h3>Adress: {street} {number}</h3>

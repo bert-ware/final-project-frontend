@@ -17,7 +17,7 @@ import AddProvider from "../AddProvider/AddProvider";
       .then((response) => {
         this.setState({
           providers: response.data,
-        });
+        })
       })
       .catch((error) => console.log(" ESTE ES EL ERROR", error))
   }
@@ -27,6 +27,7 @@ import AddProvider from "../AddProvider/AddProvider";
         <h1>
           <Link to={"/providers/" + provider._id}>{provider.name}</Link>
         </h1>
+        <hr></hr>
       </div>
     ))
 

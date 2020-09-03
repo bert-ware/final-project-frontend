@@ -1,7 +1,7 @@
 .cocktailImg {
     display: block;
     margin: auto;
-    max-height: 600px;
+    max-height: 500px;
     width: auto;
 }
 .ingredients {
@@ -23,4 +23,9 @@
     margin-top: 50px;
     display: flex;
     flex-direction: row;
+}
+.stats {
+    margin-top: 80px;
+    text-align: start;
+    padding-inline-start: 100px;
 }

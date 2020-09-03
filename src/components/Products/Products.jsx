@@ -28,6 +28,7 @@ export class Products extends Component {
         <h1>
           <Link to={"/products/" + product._id}>{product.name}</Link>
         </h1>
+        <hr></hr>
       </div>
     ));
 
