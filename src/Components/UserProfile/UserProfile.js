@@ -17,7 +17,7 @@ export class UserProfile extends Component {
         return (
             <div>
             <h1>Este es el perfil de usuario</h1>
-                <p>Welcome {this.props.user.loggedInUser.name}!!!</p>
+                <p>Welcome !!!</p>
             </div>
         )
     }
