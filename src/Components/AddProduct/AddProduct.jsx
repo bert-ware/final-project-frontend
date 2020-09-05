@@ -24,8 +24,7 @@ const AddProduct = (props) => {
     };
     console.log("ESTOS SON LOS DATOS", body.name, body.price);
 
-    axios.post("http://localhost:3000/api/products/", body,  {withCredentials : true}).then(
-        () => props.updateData());
+    axios.post("http://localhost:3000/api/products/", body,  {withCredentials : true})
 
     event.target.reset();
   };

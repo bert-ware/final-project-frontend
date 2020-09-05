@@ -3,7 +3,6 @@ import React, { Component } from "react"
 import axios from "axios";
 import { Link } from "react-router-dom"
 import AddProduct from "../AddProduct/AddProduct"
-
 export class Products extends Component {
   constructor(props) {
     super(props);
@@ -23,14 +22,13 @@ export class Products extends Component {
   }
   render() {
     const products = this.state.products.map((product) => (
-      
       <div key={product._id}>
         <h1>
           <Link to={"/products/" + product._id}>{product.name}</Link>
         </h1>
+        <hr></hr>
       </div>
     ));
-
     let add = ""
     //Descomentar línea 34 & 37 para validación con usuario
     //if (this.props.user) {
