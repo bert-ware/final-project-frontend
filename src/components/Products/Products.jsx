@@ -1,14 +1,14 @@
 //REFACTOR A FUNCTIONAL
 import React, { Component } from "react"
-import axios from "axios";
+import axios from "axios"
 import { Link } from "react-router-dom"
 import AddProduct from "../AddProduct/AddProduct"
 export class Products extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       products: [],
-    };
+    }
   }
   componentDidMount() {
     axios

@@ -16,6 +16,7 @@ import BottomNavigation from './components/BottomNavigation/BottomNavigation'
 import AddRecipes from './components/AddRecipes/AddRecipes'
 //import AddProduct from './components/AddProduct/AddProduct'
 import AlbertoAddRecipes from "./components/albertoAddRecipes/AlbertoAddRecipes"
+import 'bulma/css/bulma.css'
 
 
 function App(props) {
@@ -31,7 +32,7 @@ function App(props) {
       <Switch>     
         <Route exact path='/'><Home/></Route>
         <Route exact path='/recipes'><Recipes user={userState}/></Route>
-        
+        <Route exact path='/addrecipes'><AddRecipes user={userState}/></Route>
         <Route path="/recipes/:id" render={(props) => <RecipeDetails user={userState} {...props} />} />
         <Route exact path='/products'><Products user={userState}/></Route>
         <Route path="/products/:id" render={(props) => <ProductDetails user={userState} {...props} />} />

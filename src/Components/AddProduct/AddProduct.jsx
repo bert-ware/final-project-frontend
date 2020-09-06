@@ -5,7 +5,7 @@ const AddProduct = (props) => {
   const [datos, setDatos] = useState({
     name: "",
     graduation: 0,
-    price: 0,
+    price: 0.00,
     format: "",
     info: "",
   });
@@ -55,6 +55,7 @@ const AddProduct = (props) => {
           <input
             type="number"
             placeholder="Price"
+            step='0.01'
             onChange={handleChange}
             name="price"
           />

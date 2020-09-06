@@ -35,10 +35,11 @@ export class ProductDetails extends Component {
 
         return (
             <div>
-            <h1>{this.state.product.name}</h1>
-            <h2>{this.state.product.price}$</h2>
-            <h3>{this.state.product.graduation}{this.state.product.format}</h3>
-            <p>{this.state.product.info}</p>
+            <h1>Nombre: {this.state.product.name}</h1>
+            <h2>Price: {this.state.product.price}$</h2>
+            <h3>Graduation %: {this.state.product.graduation}</h3>
+            <h3> Product format {this.state.product.format}</h3>
+            <p>Info: {this.state.product.info}</p>
             <button onClick={this.handleClick} className="delete">Delete</button>
             </div>
         )
