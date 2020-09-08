@@ -4,6 +4,8 @@ import axios from "axios";
 const AddProduct = (props) => {
   const [datos, setDatos] = useState({
     name: "",
+
+
     typeFormat: "",
     price: 0,
     format: "",
@@ -24,8 +26,7 @@ const AddProduct = (props) => {
     };
     console.log("ESTOS SON LOS DATOS", body.name, body.price);
 
-    axios.post("http://localhost:3000/api/products/", body,  {withCredentials : true}).then(
-        () => props.updateData());
+    axios.post("http://localhost:3000/api/products/", body,  {withCredentials : true})
 
     event.target.reset();
   };
@@ -56,7 +57,10 @@ const AddProduct = (props) => {
         <div>
           <input
             type="number"
+
             placeholder="Unitary Cost"
+            step='0.01'
+
             onChange={handleChange}
             name="price"
           />
