@@ -30,7 +30,7 @@ function App(props) {
     <div className="App">
     
       <Switch>     
-        <Route exact path='/'><Home/></Route>
+        <Route exact path='/'><Home user={userState}/></Route>
         <Route exact path='/recipes'><Recipes user={userState}/></Route>
         <Route exact path='/addrecipes'><AddRecipes user={userState}/></Route>
         <Route path="/recipes/:id" render={(props) => <RecipeDetails user={userState} {...props} />} />

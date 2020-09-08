@@ -13,7 +13,7 @@ export class RecipeDetails extends Component {
                 ingredients: [],
                 method: ""
             },
-            redirect: false
+            redirect: false,
         }
     }
     //Recogida datos API
@@ -21,38 +21,62 @@ export class RecipeDetails extends Component {
         axios.get("http://localhost:3000/api/recipes/" + this.state.id)
         .then(response => {
             this.setState({
-                recipe: response.data
+                recipe: response.data, 
             })
-            console.log(response.data)
         })
     }
  //Handle borrar
   handleClick = () => {
     axios.delete("http://localhost:3000/api/recipes/" + this.state.id)
-    .then(() => this.setState({ redirect: true }))
-}
+    .then(() => this.setState({ redirect: true }))}
+
     render() {
         //Map ingredients
-        const ingredients = this.state.recipe.ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient.name}</li>
-          ))
+       const ingredients = this.state.recipe.ingredients.map((ingredient) =>
+            <li key={ingredient.product._id}> {ingredient.product.name} </li>
+        )
+      
+        //Map mesures
+        const mesures = this.state.recipe.ingredients.map((ingredient, index) =>
+            <li key={index}> {ingredient.quantity} Centiliters</li>
+        )
+       //Map Cost mesures
+       const mesureCostArr = this.state.recipe.ingredients.map((ingredient) => 
+          Number((ingredient.product.price / ingredient.product.format * ingredient.quantity).toFixed(2)))  
+       
+       const mesureCost = mesureCostArr.map((cost, index) =>
+            <li key={index}> {cost} </li>
+        )
+         //Total recipe Cost 
+        const totalCost = mesureCostArr.reduce((a, b) => a + b, 0)
+        //Suggested sell price
+        const suggestedPrice = Math.floor(totalCost *5 +1)
+        
+    
+
           //Redirect a providers
       const { redirect } = this.state;
       if (redirect) {
         return <Redirect to='/recipes'/>
       }
-      let costCl = this.state.recipe.ingredients.map((ingredient) =>(
-          <li>Price for 1 centilitre  {ingredient.price / ingredient.format}</li>
-      ))
+
         return (
             <div>
             <h1>{this.state.recipe.name}</h1> 
-            <img className="cocktailImg" src="https://static2.bigstockphoto.com/3/7/1/large2/173870551.jpg" alt="cocktail"></img>
-            <ul className="ingredients">Ingredients{ingredients}</ul>
-            <ul className="cost">Cost{costCl}</ul>
-            <h3>{this.state.recipe.method}</h3>
-            
+            <img className="cocktailImg" src={this.state.recipe.recipeImgUrl} alt="cocktail img"></img>
+            <h3>Method: {this.state.recipe.method}</h3>
             <button onClick={this.handleClick} className="delete">Delete</button>
+            <div className="infoContainer">
+            <ul className="ingredients">INGREDIENTS:{ingredients}</ul>
+            <ul className="mesures">MESURES:{mesures}</ul>
+            <ul className="costMesures">COST PER INGREDIENT:{mesureCost}</ul>
+            </div>
+            <div className="stats">
+            <h1>Info:</h1>
+            <p>Total cost: {totalCost.toFixed(2)}</p>
+            <p>Suggested sell price: {suggestedPrice}</p>
+            </div>
+            
             </div>
         )
     }
