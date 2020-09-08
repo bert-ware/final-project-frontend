@@ -3,6 +3,7 @@ import axios from "axios"
 import AlbertoSearch from "../SearchProduct/AlbertoSearch"
 import "./AlbertoAddRecipe.css"
 import RecipeForm from "./RecipeForm"
+import IngredientBox from "./IngredientBox"
 
 export class AlbertoAddRecipes extends Component {
     constructor (props) {
@@ -10,10 +11,7 @@ export class AlbertoAddRecipes extends Component {
         this.state = {
             products: [],
             filter:"",
-            recipeIngredients: [{
-                ingredient : "",
-                quantity : 0
-            }]
+            recipeIngredients: []
           }
         }
         componentDidMount() {
@@ -26,70 +24,29 @@ export class AlbertoAddRecipes extends Component {
               })
               .catch((err) => console.log(" ESTE ES EL ERROR", err))
             }
+            addProduct = product => { this.setState(state => 
+              ({...state,
+                 recipeIngredients: product }) 
+                 )}
 
+          
     render() {
+     
         const searchParam = this.state.filter  
-
+      //Handle buscador
         const handleSearchParam = (event) => {
             event.preventDefault()
           this.setState({
               filter: event.target.value    
             })
         }
-        const handleclick = (event) => {
-          this.setState({
-            recipeIngredients : {
-              ingredient: "",
-              quantity : this.state.recipeIngredients.quantity
-            }
-          })
-        }
-        const handleChange = (event) => {
-          event.preventDefault()
-          this.setState({
-            quantity : event.currentTarget.value
-          })
-        }
+     
         //Search filter
         const displayIngredients  = this.state.products.filter((product) => {
-            console.log(product)
             return product.name.toLowerCase().includes(searchParam.toLocaleLowerCase())
         })
         //Map to render al items passin the filter. With no input on the filter display all of them
-        .map((item , index) => 
-        
-          <div className="box" key={index}>
-          <article className="media">
-            <div className="media-left">
-              <figure className="image is-64x64">
-                <img className="productImg" src={item.productImgUrl} alt="img"/>
-              </figure>
-            </div>
-            <div className="media-content">
-              <div className="content">
-                <p>
-                  <strong>{item.name} {item.format}Cl</strong> <br />
-                  <small>Price: {item.price}€</small> <br/>
-                  <small>{item.info}</small>
-                </p>
-              </div>
-            </div>
-            <div className="media-right">
-              <div className="field has-addons">
-                <div className="control">
-                  <input onChange={handleChange} className="input" type="number" placeholder="Select amount" />
-                </div>
-                <div className="control">
-                  <button onClick={handleclick} className="button is-primary">
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-          ) 
-      
+        .map((item , index) => <IngredientBox  key={index} item={item} addProduct={this.addProduct}/> ) 
         return (
             <div> 
             <AlbertoSearch searchParam={this.searchParam}

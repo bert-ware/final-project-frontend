@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./RecipeForm.css"
 
 export class RecipeForm extends Component {
     constructor(props) {
@@ -9,9 +10,12 @@ export class RecipeForm extends Component {
     }
 
     render() {
-
+console.log("props form" , this.props.ingredients)
         return (
-            <div>
+            <div className="recipeForm">
+                <h1>{this.props.ingredients.product}</h1>
+                <h1>{this.props.ingredients.quantity}</h1>
+                
                 <button type="submit" className="button is-info">Submit</button>
             </div>
         )
