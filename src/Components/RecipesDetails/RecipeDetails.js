@@ -18,7 +18,7 @@ export class RecipeDetails extends Component {
     }
     //Recogida datos API
     componentDidMount() {
-        axios.get("http://localhost:3000/api/recipes/" + this.state.id)
+        axios.get("http://localhost:3000/api/recipes/" + this.state.id, {withCredentials: true})
         .then(response => {
             this.setState({
                 recipe: response.data, 
@@ -27,7 +27,7 @@ export class RecipeDetails extends Component {
     }
  //Handle borrar
   handleClick = () => {
-    axios.delete("http://localhost:3000/api/recipes/" + this.state.id)
+    axios.delete("http://localhost:3000/api/recipes/" + this.state.id, {withCredentials: true})
     .then(() => this.setState({ redirect: true }))}
 
     render() {

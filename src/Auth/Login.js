@@ -30,14 +30,13 @@ class Login extends Component {
   handleChange = (event) => {  
     const {name, value} = event.target;
     this.setState({[name]: value})
-   
   }
   render(){
     //Redirect a user-profile
-    const { redirect } = this.state
+ /*    const { redirect } = this.state;
     if (redirect) {
       return <Redirect to='/user-profile'/>
-    }
+    } */
     return(
       <div>
         <form onSubmit={this.handleFormSubmit}>

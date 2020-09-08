@@ -13,7 +13,7 @@ export class Products extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/products/")
+      .get("http://localhost:3000/api/products/", {withCredentials: true})
       .then((response) => {
         this.setState({
           products: response.data,    
@@ -30,7 +30,7 @@ export class Products extends Component {
         </h1>
         <hr></hr>
       </div>
-    ));
+    ))
 
     let add = ""
     //Descomentar línea 34 & 37 para validación con usuario

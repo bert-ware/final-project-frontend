@@ -13,7 +13,7 @@ import AddProvider from "../AddProvider/AddProvider";
   }
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/providers/")
+      .get("http://localhost:3000/api/providers/", {withCredentials: true})
       .then((response) => {
         this.setState({
           providers: response.data,
