@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
+import "./ProductDetails.css"
 
 export class ProductDetails extends Component {
     constructor(props) {
@@ -35,11 +36,11 @@ export class ProductDetails extends Component {
 
         return (
             <div>
-            <h1>Nombre: {this.state.product.name}</h1>
-            <h2>Price: {this.state.product.price}$</h2>
-            <h3>Graduation %: {this.state.product.graduation}</h3>
-            <h3> Product format {this.state.product.format}</h3>
-            <p>Info: {this.state.product.info}</p>
+            <img className="productImg" src={this.state.product.productImgUrl} alt="Product Img"></img>
+            <h1>{this.state.product.name}</h1>
+            <h2>Unitary cost: {this.state.product.price}$</h2>  
+            <h3>Format: {this.state.product.format}</h3>
+            <p>{this.state.product.info}</p>
             <button onClick={this.handleClick} className="delete">Delete</button>
             </div>
         )

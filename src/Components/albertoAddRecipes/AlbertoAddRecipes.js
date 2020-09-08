@@ -24,9 +24,11 @@ export class AlbertoAddRecipes extends Component {
               })
               .catch((err) => console.log(" ESTE ES EL ERROR", err))
             }
+
+            //ADD PRODUCT
             addProduct = product => { this.setState(state => 
               ({...state,
-                 recipeIngredients: product }) 
+                 recipeIngredients: [...state.recipeIngredients, product ]}) 
                  )}
 
           

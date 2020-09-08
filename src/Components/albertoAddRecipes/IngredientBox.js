@@ -7,13 +7,21 @@ import React, { Component } from 'react'
             quantity : 0
         }   
     }
-    
+    //
     handleChange = ({target}) => { this.setState({quantity: target.value } )}
+    //
     handleClick = () => {
-            console.log("ESTAS SON LAS PROPS" ,this.props)
-          this.props.addProduct({product: this.props.item.name, quantity: this.state.quantity})
-          this.setState({quantity: 0})
+          this.props.addProduct({
+            product: {
+             name: this.props.item.name, 
+             id : this.props.item._id
+            }, 
+            quantity: this.state.quantity})
+
+          this.setState(
+            {quantity: 0})
      }
+
     render() {
         return (
             <div>   
@@ -36,7 +44,7 @@ import React, { Component } from 'react'
       <div className="media-right">
         <div className="field has-addons">
           <div className="control">
-            <input onChange={this.handleChange} className="input" type="number" placeholder="Select amount" />
+            <input onChange={this.handleChange} value={this.state.quantity} name="quantity" className="input" type="number" placeholder="Select amount" />
           </div>
           <div className="control">
             <button onClick={this.handleClick} className="button is-primary">
