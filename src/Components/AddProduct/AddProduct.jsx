@@ -4,7 +4,7 @@ import axios from "axios";
 const AddProduct = (props) => {
   const [datos, setDatos] = useState({
     name: "",
-    graduation: 0,
+    typeFormat: "",
     price: 0,
     format: "",
     info: "",
@@ -44,23 +44,23 @@ const AddProduct = (props) => {
         </div>
 
         <div>
-          <input
-            type="number"
-            placeholder="Graduation"
-            onChange={handleChange}
-            name="graduation"
-          />
+        <label>
+          Product unit of mesure: 
+          <select value="typeFormat" onChange={handleChange} name='method'>
+            <option value={['Kilograms']}>Kilograms</option>
+            <option value={['Mililiters']}>Mililiters</option>
+          </select>
+          </label>
         </div>
-
+        
         <div>
           <input
             type="number"
-            placeholder="Price"
+            placeholder="Unitary Cost"
             onChange={handleChange}
             name="price"
           />
         </div>
-
         <div>
           <input
             type="text"

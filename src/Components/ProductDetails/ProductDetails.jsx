@@ -39,7 +39,6 @@ export class ProductDetails extends Component {
             <img className="productImg" src={this.state.product.productImgUrl} alt="Product Img"></img>
             <h1>{this.state.product.name}</h1>
             <h2>Unitary cost: {this.state.product.price}$</h2>
-            <h3>Graduation: {this.state.product.graduation}</h3>
             <h3>Format: {this.state.product.format}</h3>
             <p>{this.state.product.info}</p>
             <button onClick={this.handleClick} className="delete">Delete</button>
