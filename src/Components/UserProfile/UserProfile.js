@@ -14,6 +14,7 @@ export class UserProfile extends Component {
           } */
          
            if (this.state.loggedInUser) {
+             
              return   <div className="box">
       <article className="media">
         <div className="media-left">
@@ -24,7 +25,7 @@ export class UserProfile extends Component {
         <div className="media-content">
           <div className="content">
             <p>
-              <strong>Name: {this.props.user.loggedInUser.name}</strong> <br />
+              <strong>Bienvenido {this.props.user.loggedInUser.name}!</strong> <br />
               <small>Email: {this.props.user.loggedInUser.email}</small> <br/>
             </p>
           </div>  
