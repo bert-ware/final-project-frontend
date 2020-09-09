@@ -1,7 +1,7 @@
 //REFACTOR A FUNCTIONAL
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import AddProvider from "../AddProvider/AddProvider";
 
  class Providers extends Component {
@@ -9,6 +9,7 @@ import AddProvider from "../AddProvider/AddProvider";
     super(props)
     this.state = {
       providers: [],
+      isloggedin: this.props.user.loggedInUser._id
     }
   }
   componentDidMount() {
@@ -20,30 +21,53 @@ import AddProvider from "../AddProvider/AddProvider";
         })
       })
       .catch((error) => console.log(" ESTE ES EL ERROR", error))
+
+      
   }
   render() {
-    const providers = this.state.providers.map((provider) => (
-      <div key={provider._id}>
-        <h1>
-          <Link to={"/providers/" + provider._id}>{provider.name}</Link>
-        </h1>
-        <hr></hr>
+    
+    if (!this.state.isloggedin) {
+      return <Redirect to='/'/>
+    }
+
+
+    let providers 
+    if (!this.state.providers) {
+      providers = <div>
+        <p>No providers yet, lets add some!</p>
+        
+      </div>
+    } else {
+      providers =   this.state.providers.map((provider, index) => (
+      <div className="box" key={index}>
+      <article className="media">
+        <div className="media-left">
+          <figure className="image is-64x64">
+            <img className="productImg" src={provider.providerImgUrl} alt="img"/>
+          </figure>
+        </div>
+        <div className="media-content">
+          <div className="content">
+            <p>
+              <strong><Link to={"/providers/" + provider._id}>{provider.name}</Link></strong> <br />
+              <small>Adress: {provider.adress.street} Nº: {provider.adress.number}</small> <br/>
+              <small>{provider.info}</small>
+            </p>
+          </div>  
+        </div>
+      </article>
+      
       </div>
     ))
-
-    let add = ""
-    //Descomentar línea 34 & 37 para validación con usuario
-   // if (this.req.session.currentUser._id) {
-    add = <AddProvider user={this.props.user.loggedInUser} updateData={() => this.componentDidMount()} />
-   // }
-     
+ }
+      
     return (
       <div className="container">
-        <div style={{ width: "60%", float: "left" }}>
-          <h1>Provider List</h1>
-          {providers}
+      <h1>Provider List</h1>
+        <div>
+           {providers}
         </div>
-        <div style={{ width: "40%", float: "right" }}>{add}</div>
+        <AddProvider userID={this.props}/>
       </div>
     )
   }

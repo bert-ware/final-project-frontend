@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import AlbertoSearch from "../SearchProduct/AlbertoSearch"
-import "./AlbertoAddRecipe.css"
+import Search from "../SearchProduct/Search"
+import "./AddRecipe.css"
 import RecipeForm from "./RecipeForm"
 import IngredientBox from "./IngredientBox"
 
-export class AlbertoAddRecipes extends Component {
+export class AddRecipes extends Component {
     constructor (props) {
         super (props)
         this.state = {
@@ -30,7 +30,6 @@ export class AlbertoAddRecipes extends Component {
               ({...state,
                  recipeIngredients: [...state.recipeIngredients, product ]}) 
                  )}
-
           
     render() {
      
@@ -51,7 +50,7 @@ export class AlbertoAddRecipes extends Component {
         .map((item , index) => <IngredientBox  key={index} item={item} addProduct={this.addProduct}/> ) 
         return (
             <div> 
-            <AlbertoSearch searchParam={this.searchParam}
+            <Search searchParam={this.searchParam}
           handleSearchParam={handleSearchParam}/>
            <div className="ingredientDisplay"> {displayIngredients}</div>
            <RecipeForm ingredients={this.state.recipeIngredients}/>
@@ -60,4 +59,4 @@ export class AlbertoAddRecipes extends Component {
     }
 }
 
-export default AlbertoAddRecipes
+export default AddRecipes
