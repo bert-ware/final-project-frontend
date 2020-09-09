@@ -22,22 +22,45 @@ export class Recipes extends Component {
       }
     render() {
 
-        const recipes = this.state.recipes.map((recipes) => (
-      
-            <div key={recipes._id}>
-              <h1>
-                <Link to={"/recipes/" + recipes._id}>{recipes.name}</Link>
-              </h1>
+      const recipes = this.state.recipes.map((recipe , index) => (
+    <div>   
+          <div className="box" key={index}>
+            <article className="media">
+             <div className="media-left">
+               <figure className="image is-64x64">
+                <img className="productImg" src={recipe.recipeImgUrl} alt="img"/>
+               </figure>
+             </div>
+            <div className="media-content">
+             <div className="content">
+               <p>
+                <strong><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br />
+                <small>Method: {recipe.method}</small> <br/>
+                
+             </p>
+            </div>  
+           </div>
+           <div className="media-right">
+              <div className="field has-addons">
+                <div className="control">
+                <h1>Main ingredient:</h1>
+                 <small>{recipe.ingredients[0].product.name}</small>
+                </div>
             </div>
+          </div>
+          </article>
+        </div> 
+         <hr></hr>
+    </div>     
           ))
         
         return (
             <div className="container">
-            <div style={{ width: "60%", float: "left" }}>
+            <div >
               <h1>Recipes List</h1>
               {recipes}
             </div>
-            {/* <div style={{ width: "40%", float: "right" }}>{add}</div> */}
+            
           </div>
         )
     }

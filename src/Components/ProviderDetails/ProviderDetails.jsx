@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
+import "./ProviderDetails.css"
+import "../AddProduct/AddProduct"
+import AddProduct from "../AddProduct/AddProduct"
 
 export class ProviderDetails extends Component {
   constructor(props) {
@@ -44,14 +47,15 @@ export class ProviderDetails extends Component {
 
     return (
       <div>
-        <img src={this.state.provider.providerImgUrl} alt="Provider Img"></img>
+        <img className="providerImg" src={this.state.provider.providerImgUrl} alt="Provider Img"></img>
         <h1>Nombre: {this.state.provider.name}</h1>
         <h2>Telephone: {this.state.provider.telephone}</h2>
         <h3>Adress: {street} {number}</h3>
         <p>{this.state.provider.info}</p>
         <button onClick={this.handleClick} className="delete">Delete</button>
+        <AddProduct Provider={this.state.id}/>
       </div>
-    );
+    )
   }
 }
 export default ProviderDetails;
