@@ -4,26 +4,27 @@ import axios from "axios";
 const AddProduct = (props) => {
   const [datos, setDatos] = useState({
     name: "",
+
+
     typeFormat: "",
     price: 0,
     format: "",
     info: "",
-    Provider: props.Provider
-  })
+  });
 
   const handleChange = (event) => {
     setDatos({
       ...datos,
       [event.target.name]: event.target.value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const body = {
       ...datos,
     };
-    console.log("ESTOS SON LOS DATOS", body.name, body.price)
+    console.log("ESTOS SON LOS DATOS", body.name, body.price);
 
     axios.post("http://localhost:3000/api/products/", body,  {withCredentials : true})
 
@@ -46,7 +47,7 @@ const AddProduct = (props) => {
         <div>
         <label>
           Product unit of mesure: 
-          <select value={datos.typeFormat} onChange={handleChange} name='typeFormat'>
+          <select value="typeFormat" onChange={handleChange} name='method'>
             <option value={['Kilograms']}>Kilograms</option>
             <option value={['Mililiters']}>Mililiters</option>
           </select>
