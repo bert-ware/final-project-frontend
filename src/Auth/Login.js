@@ -33,10 +33,10 @@ class Login extends Component {
   }
   render(){
     //Redirect a user-profile
-    const { redirect } = this.state;
+ /*    const { redirect } = this.state;
     if (redirect) {
       return <Redirect to='/user-profile'/>
-    }
+    } */
     return(
       <div>
         <form onSubmit={this.handleFormSubmit}>
