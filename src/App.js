@@ -42,8 +42,12 @@ function App(props) {
         <Route path="/signup" render={props => <Signup {...props} callback={setTheUser}  />} />
         <Route path="/login" render={props => <Login {...props} callback={setTheUser}  />} />
         <Route exact path="/logout" render={(props) => <Logout {...props} getUser={setTheUser} />}/>
+<<<<<<< HEAD
         <Route exact path="/user-profile"><UserProfile user={userState}/></Route>
         <Route path="/addrecipe" render={props => <AlbertoAddRecipes {...props} callback={setTheUser}  />} />
+=======
+        <Route exact path="/user-profile"><UserProfile {...props} user={userState} getUser={setTheUser}/></Route>
+>>>>>>> profileSetUp
       </Switch>
       <BottomNavigation/>
     </div>

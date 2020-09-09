@@ -14,7 +14,7 @@ export class ProductDetails extends Component {
     }
      //Recogida datos API
     componentDidMount() {
-        axios.get("http://localhost:3000/api/products/" + this.state.id ,{withCredentials: true})
+        axios.get("http://localhost:3000/api/products/" + this.state.id ,/* {withCredentials: true} */)
         .then(response => {
             this.setState({
                 product: response.data
