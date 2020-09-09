@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 
  class IngredientBox extends Component {
     constructor(props) {
@@ -35,7 +36,7 @@ import React, { Component } from 'react'
       <div className="media-content">
         <div className="content">
           <p>
-            <strong>{this.props.item.name} {this.props.item.format}Cl</strong> <br />
+            <strong><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link> {this.props.item.format}Cl</strong> <br />
             <small>Price: {this.props.item.price}€</small> <br/>
             <small>{this.props.item.info}</small>
           </p>

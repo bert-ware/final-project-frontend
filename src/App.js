@@ -35,7 +35,7 @@ function App(props) {
         <Route path="/signup" render={props => <Signup {...props} callback={setTheUser}  />} />
         <Route path="/login" render={props => <Login {...props} callback={setTheUser}  />} />
         <Route exact path="/logout" render={(props) => <Logout {...props} getUser={setTheUser} />}/>
-        <Route exact path="/user-profile"><UserProfile user={userState}/></Route>
+        <Route exact path="/user-profile"><UserProfile {...props} user={userState} getUser={setTheUser}/></Route>
       </Switch>
       <BottomNavigation/>
     </div>
