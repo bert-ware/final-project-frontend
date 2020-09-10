@@ -28,12 +28,7 @@ export class Products extends Component {
         </h1>
         <hr></hr>
       </div>
-<<<<<<< HEAD
-    ))
-
-=======
     ));
->>>>>>> 0e9209f81449441a66a5622298f79d6d0556434e
     let add = ""
     //Descomentar línea 34 & 37 para validación con usuario
     //if (this.props.user) {
