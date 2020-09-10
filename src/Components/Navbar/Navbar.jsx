@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import { NavLink, Link } from "react-router-dom";
-import { Redirect } from 'react-router-dom'
+import { NavLink } from "react-router-dom"
+
 
 
 export class Navbar extends Component {
@@ -41,13 +41,11 @@ export class Navbar extends Component {
 
           <div className="brand">
             <span className="brand-icon"></span>
-            <span className="brand-name">DrinkApp</span>
+            <span className="brand-name"><NavLink to="/" className="nav-link"></NavLink> DrinkApp</span>
           </div>
 
           <div className="nav">
-            {/* <Link to={"/signup/"}>Signup</Link> */}
             {authLink}
-            {/* <Link to={"/login/"}>Login</Link> */}
           </div>
         </div>
       </div>

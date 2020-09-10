@@ -5,13 +5,13 @@ export class UserProfile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loggedInUser: this.props.user.loggedInUser
+            loggedInUser: this.props.loggedInUser
         }
     }
     render() {
-        /* if (!this.state.loggedInUser) {
+        if (!this.state.loggedInUser) {
             return <Redirect to='/login'/>
-          } */
+          }
          
            if (this.state.loggedInUser) {
              
@@ -19,14 +19,14 @@ export class UserProfile extends Component {
       <article className="media">
         <div className="media-left">
           <figure className="image is-128x128">
-            <img className="avatartImg" src={this.props.user.loggedInUser.userImgUrl} alt="User avatar"/>
+            <img className="avatartImg" src={this.state.loggedInUser.loggedInUser.userImgUrl} alt="User avatar"/>
           </figure>
         </div>
         <div className="media-content">
           <div className="content">
             <p>
-              <strong>Bienvenido {this.props.user.loggedInUser.name}!</strong> <br />
-              <small>Email: {this.props.user.loggedInUser.email}</small> <br/>
+              <strong>Bienvenido {this.state.loggedInUser.loggedInUser.name}!</strong> <br />
+              <small>Email: {this.state.loggedInUser.loggedInUser.email} </small> <br/>
             </p>
           </div>  
         </div>
