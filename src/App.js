@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './App.css'
 import {Switch, Route} from 'react-router-dom'
 import ProductDetails from './components/ProductDetails/ProductDetails'
-import Products from './components/Products/Products'
 import Providers from "./components/Providers/Providers"
 import ProviderDetails from "./components/ProviderDetails/ProviderDetails"
 import Home from './components/Home/Home'
@@ -31,9 +30,8 @@ function App(props) {
       <Switch>     
         <Route exact path='/'><Home user={userState}/></Route>
         <Route exact path='/recipes'><Recipes user={userState}/></Route>
-        <Route exact path='/addrecipes'><AddRecipes user={userState}/></Route>
         <Route path="/recipes/:id" render={(props) => <RecipeDetails user={userState} {...props} />} />
-        <Route exact path='/products'><Products user={userState}/></Route>
+        <Route exact path='/products'><AddRecipes user={userState} {...props}/></Route>
         <Route path="/products/:id" render={(props) => <ProductDetails user={userState} {...props} />} />
         <Route path="/products/:id" render={(props) => <ProductDetails user={userState}  {...props}/>} />
         <Route exact path='/providers'> <Providers user={userState}/></Route>
@@ -48,3 +46,4 @@ function App(props) {
   )  
 }
 export default App
+
