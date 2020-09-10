@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import "./RecipeForm.css"
 import axios from "axios"
 

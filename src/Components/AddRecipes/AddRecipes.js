@@ -3,7 +3,7 @@ import axios from "axios"
 import Search from "../SearchProduct/Search"
 import "./AddRecipe.css"
 import RecipeForm from "./RecipeForm"
-import IngredientBox from "./IngredientBox"
+import IngredientBox from "./IngredientBox";
 
 export class AddRecipes extends Component {
     constructor (props) {
