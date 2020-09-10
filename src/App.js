@@ -37,20 +37,11 @@ function App(props) {
         <Route path="/products/:id" render={(props) => <ProductDetails user={userState} {...props} />} />
         <Route path="/products/:id" render={(props) => <ProductDetails user={userState}  {...props}/>} />
         <Route exact path='/providers'> <Providers user={userState}/></Route>
-<<<<<<< HEAD
         <Route path="/providers/:id" render={(props) => <ProviderDetails user={userState} {...props} />} />
-=======
-        <Route path="/providers/:id" render={(props) => <ProviderDetails user={userState} {...props} />} />,
->>>>>>> profileSetUp
         <Route path="/signup" render={props => <Signup {...props} callback={setTheUser}  />} />
         <Route path="/login" render={props => <Login {...props} callback={setTheUser}  />} />
         <Route exact path="/logout" render={(props) => <Logout {...props} getUser={setTheUser} />}/>
-<<<<<<< HEAD
-        <Route exact path="/user-profile"><UserProfile user={userState}/></Route>
-        <Route path="/addrecipe" render={props => <AlbertoAddRecipes {...props} callback={setTheUser}  />} />
-=======
         <Route exact path="/user-profile"><UserProfile {...props} user={userState} getUser={setTheUser}/></Route>
->>>>>>> profileSetUp
       </Switch>
       <BottomNavigation/>
     </div>
