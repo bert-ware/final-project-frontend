@@ -5,13 +5,13 @@ export class UserProfile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loggedInUser: this.props.user
+            loggedInUser: this.props.user.loggedInUser
         }
     }
     render() {
-        if (!this.state.loggedInUser) {
+        /* if (!this.state.loggedInUser) {
             return <Redirect to='/login'/>
-          }
+          } */
          
            if (this.state.loggedInUser) {
              

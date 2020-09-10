@@ -13,8 +13,9 @@ import Login from "./Auth/Login"
 import UserProfile from "./components/UserProfile/UserProfile"
 import BottomNavigation from './components/BottomNavigation/BottomNavigation'
 import AddRecipes from './components/AddRecipes/AddRecipes'
-//import AddProduct from './components/AddProduct/AddProduct'
 import 'bulma/css/bulma.css'
+import ProtectedRoute from "./Auth/ProtectedRoute"
+
 
 
 function App(props) {
@@ -39,7 +40,8 @@ function App(props) {
         <Route path="/signup" render={props => <Signup {...props} callback={setTheUser}  />} />
         <Route path="/login" render={props => <Login {...props} callback={setTheUser}  />} />
         <Route exact path="/logout" render={(props) => <Logout {...props} getUser={setTheUser} />}/>
-        <Route exact path="/user-profile"><UserProfile {...props} user={userState} getUser={setTheUser}/></Route>
+        {/* <ProtectedRoute {...props} user={userState} getUser={setTheUser} exact path="/user-profile"><UserProfile {...props} user={userState} getUser={setTheUser}/></ProtectedRoute> */}
+        <ProtectedRoute {...props} user={userState} getUser={setTheUser} exact path="/user-profile" component={UserProfile}/>
       </Switch>
       <BottomNavigation/>
     </div>
