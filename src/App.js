@@ -15,7 +15,6 @@ import UserProfile from "./components/UserProfile/UserProfile"
 import BottomNavigation from './components/BottomNavigation/BottomNavigation'
 import AddRecipes from './components/AddRecipes/AddRecipes'
 //import AddProduct from './components/AddProduct/AddProduct'
-import AlbertoAddRecipes from "./components/albertoAddRecipes/AlbertoAddRecipes"
 import 'bulma/css/bulma.css'
 
 
@@ -38,7 +37,11 @@ function App(props) {
         <Route path="/products/:id" render={(props) => <ProductDetails user={userState} {...props} />} />
         <Route path="/products/:id" render={(props) => <ProductDetails user={userState}  {...props}/>} />
         <Route exact path='/providers'> <Providers user={userState}/></Route>
+<<<<<<< HEAD
         <Route path="/providers/:id" render={(props) => <ProviderDetails user={userState} {...props} />} />
+=======
+        <Route path="/providers/:id" render={(props) => <ProviderDetails user={userState} {...props} />} />,
+>>>>>>> profileSetUp
         <Route path="/signup" render={props => <Signup {...props} callback={setTheUser}  />} />
         <Route path="/login" render={props => <Login {...props} callback={setTheUser}  />} />
         <Route exact path="/logout" render={(props) => <Logout {...props} getUser={setTheUser} />}/>
