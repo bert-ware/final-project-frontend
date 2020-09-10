@@ -1,9 +1,38 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom'
+
 
 export class Navbar extends Component {
+  
   render() {
+
+
+    // USER COMO EJEMPLO
+
+    let authLink = (
+      <>
+          <li className="nav-item">
+              <NavLink to="/signup" >Signup</NavLink>
+          </li>
+          <li className="nav-item">
+              <NavLink to="/login" >Login</NavLink>
+          </li>
+      </>
+  )
+
+  if (this.props.user.loggedInUser) {
+      console.log("Hay usuario logueado!", this.props.user.loggedInUser.name)
+      authLink = (
+          <li className="nav-item">
+              <NavLink to="/logout" className="nav-link">Hola {this.props.user.loggedInUser.name}, Logout</NavLink>
+          </li>
+      )
+  } else{
+    console.log('USUARIO NO LOGEUADO')
+  }
+
     return (
       <div>
         <div className="navbar">
@@ -16,13 +45,15 @@ export class Navbar extends Component {
           </div>
 
           <div className="nav">
-            <Link to={"/signup/"}>Signup</Link>
-            <Link to={"/login/"}>Login</Link>
+            {/* <Link to={"/signup/"}>Signup</Link> */}
+            {authLink}
+            {/* <Link to={"/login/"}>Login</Link> */}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;
+
