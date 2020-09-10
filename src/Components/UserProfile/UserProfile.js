@@ -9,9 +9,9 @@ export class UserProfile extends Component {
         }
     }
     render() {
-       /*  if (!this.state.isloggedin) {
+        if (!this.state.loggedInUser) {
             return <Redirect to='/login'/>
-          } */
+          }
          
            if (this.state.loggedInUser) {
              
