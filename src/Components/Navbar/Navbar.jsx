@@ -7,17 +7,7 @@ import { Redirect } from 'react-router-dom'
 export class Navbar extends Component {
   
   render() {
-    // console.log('Este es el usuario', this.props.user)
-    // let userName;
-    //         //Redirect a login si no hay usuario logueado
-    //  if (!this.state.loggedInUser) {
-    //   console.log('ESTE ES EL USER',!this.state.loggedInUser)
-    //   return(
-    //     userName =<Link to={"/login/"}>Login</Link>
-        
-    //   )} else {
-    //     userName =<Link to={"/profile/"}>HOLA MUCHAHCO</Link>
-    //   }
+
 
     // USER COMO EJEMPLO
 
