@@ -1,0 +1,72 @@
+.info-form-right input[type="text"],
+.info-form-right input[type="email"],
+.info-form-right textarea {
+    color: #000;
+    background: #f7f7f7;
+    outline: none;
+    font-size: 14px;
+    padding: 9px;
+    letter-spacing: 1px;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.info-form-right textarea {
+    resize: none;
+    min-height: 6em;
+}
+
+button.submit-contact {
+    background: #ff3f34;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 8px 26px;
+    font-size: 14px;
+    display: inherit;
+    margin-top: 1em;
+    border-radius: 4px;
+}
+
+.testing-centered{
+    display: inline-block;
+}
+
+
+button.submit-contact-main {
+    background: #05c46b;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 12px 50px;
+    font-size: 16px;
+    /* display: inherit; */
+    border-radius: 30px;
+    margin-bottom: 2%;
+
+}
+
+button.submit-contact-main:hover {
+    opacity: .8;
+}
+
+.password{
+    margin-top: 10px;
+    color: gray !important;
+}
+
+.password:hover {
+    text-decoration: none;
+    color: #05c46b !important;
+    
+}
+
+
+.form-control {
+
+    border: 1px dotted #ced4da !important;
+
+}
+
+.account{
+    margin-top: 2%;
+    font-size: 15px;
+}

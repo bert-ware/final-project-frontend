@@ -11,7 +11,7 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
+        {/* <Navbar user={this.state.loggedInUser} key={this.state.loggedInUser}/> */}
         <Header/>
         <section id="intro">
           <h2>Lorem ipsum dolor</h2>
