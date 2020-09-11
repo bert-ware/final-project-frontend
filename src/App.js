@@ -19,7 +19,7 @@ import Navbar from "./components/Navbar/Navbar"
 
 function App(props) {
   //Hook log
-  const [userState, setLogIn] = useState({ loggedInUser: null });
+  const [userState, setLogIn] = useState({ loggedInUser: null })
   const setTheUser = (userObj) =>
     setLogIn({
       loggedInUser: userObj,
@@ -29,35 +29,39 @@ function App(props) {
     <div className="App">
       <Navbar user={userState} key={userState} />
       <Switch>
+
         <Route exact path="/">
           <Home user={userState} />
         </Route>
-        <Route exact path="/recipes">
-          <Recipes user={userState} />
-        </Route>
-        <Route
+
+        <ProtectedRoute 
+          exact path="/recipes"
+          component={Recipes} user={userState} />
+
+        <ProtectedRoute
           path="/recipes/:id"
-          render={(props) => <RecipeDetails user={userState} {...props} />}
-        />
-        <Route exact path="/products">
-          <AddRecipes user={userState} {...props} />
-        </Route>
-        <Route
+          component={RecipeDetails} user={userState} />
+          
+        <ProtectedRoute 
+          exact path="/products"
+          component={AddRecipes} user={userState} />
+         
+        <ProtectedRoute
           path="/products/:id"
-          render={(props) => <ProductDetails user={userState} {...props} />}
-        />
-        <Route
+          component={ProductDetails} user={userState} />
+         
+        <ProtectedRoute
           path="/products/:id"
-          render={(props) => <ProductDetails user={userState} {...props} />}
-        />
-        <Route exact path="/providers">
-          {" "}
-          <Providers user={userState} />
-        </Route>
-        <Route
+          component={ProductDetails} user={userState} />
+          
+        <ProtectedRoute 
+          exact path="/providers"
+          component={Providers} user={userState} />
+          
+        <ProtectedRoute
           path="/providers/:id"
-          render={(props) => <ProviderDetails user={userState} {...props} />}
-        />
+          component={ProviderDetails} user={userState} />
+          
         <Route
           path="/signup"
           render={(props) => <Signup {...props} callback={setTheUser} />}
@@ -67,14 +71,16 @@ function App(props) {
           render={(props) => <Login {...props} callback={setTheUser} />}
         />
         <Route
-          exact
-          path="/logout"
+          exact path="/logout"
           render={(props) => <Logout {...props} getUser={setTheUser} />}
         />
-        <ProtectedRoute {...props} user={userState} getUser={setTheUser} exact path="/user-profile" component={UserProfile}/>
+        <ProtectedRoute 
+          exact path="/user-profile" 
+          component={UserProfile} user={userState} />
+          
       </Switch>
       <BottomNavigation />
     </div>
-  );
+  )
 }
-export default App;
+export default App
