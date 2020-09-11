@@ -9,7 +9,7 @@ import AddProvider from "../AddProvider/AddProvider"
     super(props)
     this.state = {
       providers: [],
-      isloggedin: this.props.user.loggedInUser._id
+      isloggedin: this.props.loggedInUser._id
     }
   }
   componentDidMount() {
@@ -25,14 +25,10 @@ import AddProvider from "../AddProvider/AddProvider"
       
   }
   render() {
-    
-    if (!this.state.isloggedin) {
-      return <Redirect to='/'/>
-    }
 
 
     let providers 
-    if (!this.state.providers) {
+    if (!this.state.providers.length) {
       providers = <div>
         <p>No providers yet, lets add some!</p>
         

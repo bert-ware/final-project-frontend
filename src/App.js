@@ -29,37 +29,39 @@ function App(props) {
     <div className="App">
       <Navbar user={userState} key={userState} />
       <Switch>
+
         <Route exact path="/">
           <Home user={userState} />
         </Route>
+
         <ProtectedRoute 
           exact path="/recipes"
-          render={(props) => <Recipes user={userState} {...props} />}
-        />
+          component={Recipes} user={userState} />
+
         <ProtectedRoute
           path="/recipes/:id"
-          render={(props) => <RecipeDetails user={userState} {...props} />}
-        />
+          component={RecipeDetails} user={userState} />
+          
         <ProtectedRoute 
           exact path="/products"
-           render={(props) => <AddRecipes user={userState} {...props} />}
-        />
+          component={AddRecipes} user={userState} />
+         
         <ProtectedRoute
           path="/products/:id"
-          render={(props) => <ProductDetails user={userState} {...props} />}
-        />
+          component={ProductDetails} user={userState} />
+         
         <ProtectedRoute
           path="/products/:id"
-          render={(props) => <ProductDetails user={userState} {...props} />}
-        />
+          component={ProductDetails} user={userState} />
+          
         <ProtectedRoute 
           exact path="/providers"
-          render={(props) => <Providers user={userState} {...props} />}
-        />
+          component={Providers} user={userState} />
+          
         <ProtectedRoute
           path="/providers/:id"
-          render={(props) => <ProviderDetails user={userState} {...props} />}
-        />
+          component={ProviderDetails} user={userState} />
+          
         <Route
           path="/signup"
           render={(props) => <Signup {...props} callback={setTheUser} />}
@@ -75,6 +77,7 @@ function App(props) {
         <ProtectedRoute 
           exact path="/user-profile" 
           component={UserProfile} user={userState} />
+          
       </Switch>
       <BottomNavigation />
     </div>
