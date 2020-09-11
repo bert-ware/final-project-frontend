@@ -27,6 +27,7 @@ export class UserProfile extends Component {
             <p>
               <strong>Bienvenido {this.state.loggedInUser.loggedInUser.name}!</strong> <br />
               <small>Email: {this.state.loggedInUser.loggedInUser.email} </small> <br/>
+              <input type="file"/>
             </p>
           </div>  
         </div>
