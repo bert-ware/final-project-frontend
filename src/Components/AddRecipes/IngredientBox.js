@@ -38,7 +38,7 @@ import { Link } from "react-router-dom";
           <p>
             <strong><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link> {this.props.item.format}Cl</strong> <br />
             <small>Price: {this.props.item.price}€</small> <br/>
-            <small>{this.props.item.info}</small>
+            <small>Provider: {this.props.item.Provider.name}</small>
           </p>
         </div>  
       </div>
