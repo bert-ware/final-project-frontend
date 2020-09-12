@@ -76,7 +76,8 @@ function App(props) {
         />
         <ProtectedRoute 
           exact path="/user-profile" 
-          component={UserProfile} user={userState} />
+          key={userState.name}
+          component={UserProfile} user={userState} callback={setTheUser} />
           
       </Switch>
       <BottomNavigation />
