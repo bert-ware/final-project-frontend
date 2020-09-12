@@ -12,9 +12,10 @@ class Signup extends Component {
       name: "",
       email: "",
       password: "",
+      errorMessage : "",
       redirect: false,
-    };
-    this.service = new AuthService();
+    }
+    this.service = new AuthService()
   }
   //Handle Submit
   handleFormSubmit = (event) => {
@@ -29,24 +30,28 @@ class Signup extends Component {
           name: "",
           email: "",
           password: "",
-        });
-        this.props.callback(response);
+        })
+        this.props.callback(response)
         console.log(response);
       })
       .then(() => this.setState({ redirect: true }))
-      .catch((error) => console.log(error));
-  };
+      .catch( error => {
+        console.log("catch handle submit" ,error.response.data.message)
+      this.setState({
+        errorMessage: error.response.data.message
+      })})
+  }
   //Handle Change
   handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
+    const { name, value } = event.target
+    this.setState({ [name]: value })
+  }
 
   render() {
     //Redirect a user-profile
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to="/user-profile" />;
+      return <Redirect to="/user-profile" />
     }
     return (
       <div className="signUpContainer">
@@ -96,6 +101,8 @@ class Signup extends Component {
             >
               Submit
             </button>
+
+            <p className="errorMessage">{this.state.errorMessage}</p>
 
             {/* Login FB */}
             <div

@@ -11,7 +11,8 @@ class Login extends Component {
     this.state = { 
     email: '',
     password: '',
-    redirect: false 
+    errorMessage : "",
+    redirect: false
   }
     this.service = new AuthService();
   }
@@ -27,7 +28,11 @@ class Login extends Component {
         this.props.callback(response) 
     })
     .then(() => this.setState({ redirect: true }))
-    .catch( error => console.log(error) )
+    .catch( error => {
+      console.log("catch handle submit" ,error.response.data.message)
+    this.setState({
+      errorMessage: error.response.data.message
+    })})
   }
   //Handle Change
   handleChange = (event) => {  
@@ -41,20 +46,7 @@ class Login extends Component {
       return <Redirect to='/user-profile'/>
     }
     return(
-      // <div>
-      //   <form onSubmit={this.handleFormSubmit}>
-      //     <label>Email:</label>
-      //     <input type="email" name="email" value={this.state.email} onChange={ e => this.handleChange(e)}/>
-      //     <label>Password:</label>
-      //     <input name="password" type="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
-      //     <input type="submit" value="Login" />
-      //   </form>
-      //   <p>Don't have account? 
-      //       <Link to={"/signup"}> Signup</Link>
-      //   </p>
-      // </div>
-
-      //Return con clase
+    
 
       <div className='signUpContainer'>
       <div>
@@ -88,6 +80,8 @@ class Login extends Component {
           >
             Submit
           </button>
+
+          <p className="errorMessage">{this.state.errorMessage}</p>
 
           {/* Login FB */}
           <div
