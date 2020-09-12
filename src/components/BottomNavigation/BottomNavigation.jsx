@@ -1,26 +1,40 @@
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import './BottomNavigation.css'
+import "./BottomNavigation.css";
 
 export class BottomNavigation extends Component {
   render() {
     return (
-      <div className='fondo'>
-        <div className="bottomNav">
-        <Link to={"/user-profile"}> Profile</Link>
-        <Link to={"/products/"}> Products</Link>
-        <Link to={"/providers/"}> Providers</Link>
-        <Link to={"/recipes/"}> Recipes</Link>
-        <Link to={"/"}> Home</Link>
+      <div className="FooterNav">
+        <div>
+          <Link to={"/user-profile"}>
+            <div>
+              <img src="./img/Profile.svg" alt="profile icon" />
+            </div>
+            Profile
+          </Link>
         </div>
-        {/* <h1>
-          <Link to={'#'}> Icon 1</Link>
-          <Link to={'#'}> Icon 2</Link>
-          <Link to={'#'}> Icon 3</Link>
-        </h1> */}
+
+        <div>
+          <Link to={"/recipes/"}>
+            <div>
+              <img src="./img/Recipes.svg" alt="profile icon" />
+            </div>
+            Recipes
+          </Link>
+        </div>
+
+        <div>
+          <Link to={"/providers/"}>
+            <div>
+              <img src="./img/Provider.svg" alt="profile icon" />
+            </div>
+            Providers
+          </Link>
+        </div>
       </div>
-    )
+    );
   }
 }
+
 export default BottomNavigation;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AuthService from "./AuthService";
 import { Link, Redirect } from "react-router-dom";
-import Carrousel from '../components/Carrousel/Carrousel'
+import Carrousel from "../components/Carrousel/Carrousel";
 import "./AuthCSS/SignUp.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -49,9 +49,9 @@ class Signup extends Component {
       return <Redirect to="/user-profile" />;
     }
     return (
-      <div>
+      <div className="signUpContainer">
         <div>
-          <Carrousel />
+          <Carrousel title='We are DrinkApp'/>
         </div>
         <div className="col-lg-7 contact-right mt-lg-0 mt-5 testing-centered">
           <form onSubmit={this.handleFormSubmit}>
@@ -85,6 +85,8 @@ class Signup extends Component {
                 name="password"
                 placeholder="Password"
                 required=""
+                value={this.state.password}
+                onChange={(e) => this.handleChange(e)}
               />
             </div>
             <button

@@ -62,11 +62,15 @@ button.submit-contact-main:hover {
 
 .form-control {
 
-    border: 1px dotted #ced4da !important;
+    border: 1px solid #ced4da !important;
 
 }
 
 .account{
     margin-top: 2%;
     font-size: 15px;
+}
+
+.signUpContainer{
+    padding-bottom: 80px;
 }
