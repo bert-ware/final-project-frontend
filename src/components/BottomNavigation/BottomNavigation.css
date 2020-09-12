@@ -1,8 +1,8 @@
-.fondo{
-    justify-content: center;
-    width: 100%;
-    display: flex;
-    background-color: brown;
+.fondo {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  background-color: brown;
 }
 
 .bottomNav {
@@ -13,27 +13,97 @@
   position: fixed !important;
   bottom: 0;
   width: 100%;
-  }
-  
-  /*the navigation bar */
-  .bottomNav a {
-    float: left;
-    display: block;
-    color: #51C57F;
-    text-align: center;
-    padding: 14px 16px;
+}
+
+/*the navigation bar */
+.bottomNav a {
+  float: left;
+  display: block;
+  color: #51c57f;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+/*  hover */
+.bottomNav a:hover {
+  background-color: #51c57f;
+  color: white;
+  text-decoration: none;
+}
+/* current link */
+.bottomNav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* ESTILOS NEW BOTTOM BAR */
+
+/* .bodyBar {
+    bottom: 0 !important;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  } */
+
+/* main {
+  flex: 1 0 auto;
+} */
+
+/* .tabs .indicator {
+  height: 5px;
+  background-color: #fff;
+
+}  */
+
+/* .page-footer {
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #4caf50;
+  color: white !important;
+  height: 30px;
+}
+
+.white-text {
+  color: white !important;
+  width: 100% !important;
+
+  text-decoration: none;
+} */
+
+/* @media screen and (max-width: 992px) {
+  .white-text {
+    color: white !important;
+    width: 100% !important;
+
     text-decoration: none;
-    font-size: 17px;
+    font-size: xx-small;
   }
-  /*  hover */
-  .bottomNav a:hover {
-    background-color: #51C57F;
-    color: white;
-    text-decoration: none;
-  }
-  /* current link */
-  .bottomNav a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
+} */
+
+.FooterNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #51c57f;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
+  height: 55px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.FooterNav a {
+  font-size: x-small;
+  text-decoration: none;
+  color: white;
+}
+
+.FooterNav img{
+margin-bottom: -4px;
+width: 25px;
+}
