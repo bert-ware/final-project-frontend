@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AuthService from "./AuthService";
 import { Link, Redirect } from "react-router-dom";
+import Carrousel from '../components/Carrousel/Carrousel'
 import "./AuthCSS/SignUp.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -49,6 +50,9 @@ class Signup extends Component {
     }
     return (
       <div>
+        <div>
+          <Carrousel />
+        </div>
         <div className="col-lg-7 contact-right mt-lg-0 mt-5 testing-centered">
           <form onSubmit={this.handleFormSubmit}>
             <div className="row">
