@@ -1,64 +1,103 @@
-// import React from "react";
-// import { makeStyles } from "@material-ui/core/styles";
-// import BottomNavigation from "@material-ui/core/BottomNavigation";
-// import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-// //import RestoreIcon from "@material-ui/icons/Restore";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
-// import LocationOnIcon from "@material-ui/icons/LocationOn";
-// import FaceIcon from '@material-ui/icons/Face';
-// //import { sizing } from '@material-ui/system';
+// import React, { Component } from "react";
+// import { Link } from "react-router-dom";
+// import './BottomNavigation.css'
 
-// const useStyles = makeStyles({
-//   root: {
-//     //width: 414,
-//     boxShadow: '5px 3px 0px 2px rgba(255, 255, 135, .3)'
-//   },
-// });
-
-// export default function SimpleBottomNavigation() {
-//   const classes = useStyles();
-//   const [value, setValue] = React.useState(0);
-
-//   return (
-//     <div className="testing">
-//       <BottomNavigation  width="75%"
-//         value={value}
-//         onChange={(event, newValue) => {
-//           setValue(newValue);
-//         }}
-//         showLabels
-//         className={classes.root}
-//       >
-//         <BottomNavigationAction label="Recents" icon={<FaceIcon />} />
-//         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-//         <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-//       </BottomNavigation>
-//     </div>
-//   );
+// export class BottomNavigation extends Component {
+//   render() {
+//     return (
+//       <div className='fondo'>
+//         <div className="bottomNav">
+//         <Link to={"/user-profile"}> Profile</Link>
+//         <Link to={"/products/"}> Products</Link>
+//         <Link to={"/providers/"}> Providers</Link>
+//         <Link to={"/recipes/"}> Recipes</Link>
+//         <Link to={"/"}> Home</Link>
+//         </div>
+//         {/* <h1>
+//           <Link to={'#'}> Icon 1</Link>
+//           <Link to={'#'}> Icon 2</Link>
+//           <Link to={'#'}> Icon 3</Link>
+//         </h1> */}
+//       </div>
+//     )
+//   }
 // }
+// export default BottomNavigation;
 
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import './BottomNavigation.css'
+import "./BottomNavigation.css";
 
-export class BottomNavigation extends Component {
-  render() {
-    return (
-      <div className='fondo'>
-        <div className="bottomNav">
-        <Link to={"/user-profile"}> Profile</Link>
-        <Link to={"/products/"}> Products</Link>
-        <Link to={"/providers/"}> Providers</Link>
-        <Link to={"/recipes/"}> Recipes</Link>
-        <Link to={"/"}> Home</Link>
+function BottomNavigation() {
+  return (
+    // <div className="bodyBar">
+    //   <footer className="page-footer">
+    //     <div className="row" id="frow">
+    //       <div
+    //       id='paddingUse'
+    //         className="col s12"
+    //       >
+    //         <ul className="tabs tabs-fixed-width transparent white-text">
+              
+    //             <Link className="white-text" to={"/user-profile"}>
+    //             <li className="tab col s3 white-text">
+    //               PROFILE
+    //             </li>
+    //             </Link>
+              
+              
+    //             <Link to={"/products/"} className="white-text">                  
+    //             <li className="tab col s3">PRODUCTS</li>                  
+    //             </Link>  
+                
+                          
+    //           <li className="tab col s3">
+    //             <Link to={"/recipes/"} className="white-text">
+    //               RECIPES
+    //             </Link>
+    //           </li>
+    //           <li className="tab col s3">
+    //             <Link to={"/providers/"} className="white-text">
+    //               PROVIDERS
+    //             </Link>
+    //           </li>
+    //         </ul>
+    //       </div>
+    //     </div>
+    //   </footer>
+    // </div>
+    <div className='FooterNav'>
+      <div>
+      <Link to={"/user-profile"}>
+        <div>
+        <img src='./img/Profile.svg'  alt='profile icon'/>
         </div>
-        {/* <h1>
-          <Link to={'#'}> Icon 1</Link>
-          <Link to={'#'}> Icon 2</Link>
-          <Link to={'#'}> Icon 3</Link>
-        </h1> */}
+        
+        Profile
+        </Link>
       </div>
-    )
-  }
+      
+      <div>
+      <Link to={"/recipes/"}>
+        <div>
+        <img src='./img/Recipes.svg'  alt='profile icon'/>
+        </div>
+        Recipes
+        </Link>
+      </div>
+
+      <div>
+      <Link to={"/recipes/"}>
+        <div>
+        <img src='./img/Provider.svg'  alt='profile icon'/>
+        </div>
+        Providers
+        </Link>
+      </div>
+     
+
+    </div>
+  );
 }
+
 export default BottomNavigation;
