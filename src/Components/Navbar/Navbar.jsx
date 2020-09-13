@@ -2,15 +2,11 @@ import React, { Component } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom"
 
-
-
 export class Navbar extends Component {
   
   render() {
 
-
     // USER COMO EJEMPLO
-
     let authLink = (
       <>
           <li className="nav-item">
@@ -23,14 +19,13 @@ export class Navbar extends Component {
   )
 
   if (this.props.user.loggedInUser) {
-      console.log("Hay usuario logueado!", this.props.user.loggedInUser.name)
       authLink = (
           <li className="nav-item">
               <NavLink to="/logout" className="nav-link">Hola {this.props.user.loggedInUser.name}, Logout</NavLink>
           </li>
       )
   } else{
-    console.log('USUARIO NO LOGEUADO')
+
   }
 
     return (
