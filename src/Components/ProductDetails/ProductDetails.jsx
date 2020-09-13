@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
 import "./ProductDetails.css"
+import FileUploadProducts from "../Fileupload/FileUploadProduct"
 
 export class ProductDetails extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ export class ProductDetails extends Component {
     }
      //Recogida datos API
     componentDidMount() {
-        axios.get("http://localhost:3000/api/products/" + this.state.id ,/* {withCredentials: true} */)
+        axios.get("http://localhost:3000/api/products/" + this.state.id ,{withCredentials: true})
         .then(response => {
             this.setState({
                 product: response.data
@@ -44,6 +45,7 @@ export class ProductDetails extends Component {
             <h3>Format: {this.state.product.format}</h3>
             <p>{this.state.product.info}</p>
             <button onClick={this.handleClick} className="delete">Delete</button>
+            <FileUploadProducts {...this.props} product={this.state.product}/>
             </div>
         )
     }

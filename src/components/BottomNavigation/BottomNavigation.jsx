@@ -18,7 +18,7 @@ export class BottomNavigation extends Component {
     };
   }
   handleClick = (event) => {
-    console.log("CLICK!!", event.target.name);
+    
     if (event.target.name === "profile") {
       this.setState({
         profile: this.state.profileActive,
@@ -70,6 +70,22 @@ export class BottomNavigation extends Component {
               />
             </div>
             Recipes
+          </Link>
+        </div>
+
+        <div>
+          <Link to={"/products/"}>
+            <div>
+              <img
+                onClick={this.handleClick}
+                id="products"
+                name="products"
+                src={this.state.recipes}
+                key={'products'+this.state.recipes}
+                alt="profile icon"
+              />
+            </div>
+            Products
           </Link>
         </div>
 
