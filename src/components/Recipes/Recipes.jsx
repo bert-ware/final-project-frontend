@@ -23,8 +23,8 @@ export class Recipes extends Component {
     render() {
 
       const recipes = this.state.recipes.map((recipe , index) => (
-    <div>   
-          <div className="box" key={index}>
+    <div key={index}>   
+          <div className="box" >
             <article className="media">
              <div className="media-left">
                <figure className="image is-64x64">

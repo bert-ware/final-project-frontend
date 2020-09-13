@@ -49,10 +49,6 @@ function App(props) {
         <ProtectedRoute
           path="/products/:id"
           component={ProductDetails} user={userState} />
-         
-        <ProtectedRoute
-          path="/products/:id"
-          component={ProductDetails} user={userState} />
           
         <ProtectedRoute 
           exact path="/providers"

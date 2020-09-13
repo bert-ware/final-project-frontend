@@ -3,7 +3,6 @@ import React, { Component } from "react"
 import "./Home.css"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./Header.jsx"
-import Navbar from "../Navbar/Navbar"
 import BottomNavigation from "../BottomNavigation/BottomNavigation"
 
 
