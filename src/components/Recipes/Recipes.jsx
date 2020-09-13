@@ -22,9 +22,16 @@ export class Recipes extends Component {
       }
     render() {
 
-      const recipes = this.state.recipes.map((recipe , index) => (
-    <div>   
-          <div className="box" key={index}>
+      let recipes
+      if (!this.state.recipes.length) {
+       recipes = 
+        <div>
+          <p>No recipes yet, do your magic!</p>
+        </div>
+      } else {  
+       recipes = this.state.recipes.map((recipe , index) => (
+          <div key={index}>   
+          <div className="box" >
             <article className="media">
              <div className="media-left">
                <figure className="image is-64x64">
@@ -35,8 +42,7 @@ export class Recipes extends Component {
              <div className="content">
                <p>
                 <strong><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br />
-                <small>Method: {recipe.method}</small> <br/>
-                
+                <small>Method: {recipe.method}</small> <br/>     
              </p>
             </div>  
            </div>
@@ -51,8 +57,9 @@ export class Recipes extends Component {
           </article>
         </div> 
          <hr></hr>
-    </div>     
+         </div>
           ))
+     }
         
         return (
             <div className="container">

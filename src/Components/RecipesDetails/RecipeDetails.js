@@ -38,7 +38,7 @@ export class RecipeDetails extends Component {
       
         //Map mesures
         const mesures = this.state.recipe.ingredients.map((ingredient, index) =>
-            <li key={index}> {ingredient.quantity} Centiliters</li>
+            <li key={index}> {ingredient.quantity} {ingredient.product.typeFormat}</li>
         )
        //Map Cost mesures
        const mesureCostArr = this.state.recipe.ingredients.map((ingredient) => 
