@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-//import { Link } from "react-router-dom"
 import "./Home.css"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./Header.jsx"

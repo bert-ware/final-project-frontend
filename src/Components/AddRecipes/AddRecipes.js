@@ -3,7 +3,8 @@ import axios from "axios"
 import Search from "../Search/Search"
 /* import "./AddRecipes.css" */
 import RecipeForm from "./RecipeForm"
-import IngredientBox from "./IngredientBox";
+import IngredientBox from "./IngredientBox"
+import { Link } from "react-router-dom"
 
 export class AddRecipes extends Component {
     constructor (props) {
@@ -43,17 +44,25 @@ export class AddRecipes extends Component {
         }
      
         //Search filter
-        const displayIngredients  = this.state.products.filter((product) => {
+        let displayIngredients 
+        if (!this.state.products.length) {
+          displayIngredients = <div>
+            <p>No products yet, lets add some!</p>
+            <Link to="/providers">Go to your provider list and start adding ingredients</Link>
+          </div>
+          } else {
+        displayIngredients = this.state.products.filter((product) => {
             return product.name.toLowerCase().includes(searchParam.toLocaleLowerCase())
         })
         //Map to render al items passin the filter. With no input on the filter display all of them
         .map((item , index) => <IngredientBox  key={index} item={item} addProduct={this.addProduct}/> ) 
+      }
         return (
             <div> 
             <Search searchParam={this.searchParam}
           handleSearchParam={handleSearchParam}/>
            <div className="ingredientDisplay"> {displayIngredients}</div>
-           <RecipeForm ingredients={this.state.recipeIngredients}/>
+           <RecipeForm ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
             </div>
         )
     }

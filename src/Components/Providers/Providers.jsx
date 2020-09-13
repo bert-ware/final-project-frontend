@@ -63,7 +63,7 @@ import AddProvider from "../AddProvider/AddProvider"
         <div>
            {providers}
         </div>
-        <AddProvider userID={this.props}/>
+        <AddProvider userID={this.props} {...this.props}/>
       </div>
     )
   }

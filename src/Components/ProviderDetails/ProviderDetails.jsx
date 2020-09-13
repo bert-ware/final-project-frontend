@@ -2,8 +2,9 @@ import React, { Component } from "react"
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
 import "./ProviderDetails.css"
-import "../AddProduct/AddProduct"
 import AddProduct from "../AddProduct/AddProduct"
+import FileUploadProviders from "../Fileupload/FileUploadProvider"
+
 
 export class ProviderDetails extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export class ProviderDetails extends Component {
    //Recogida datos API
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/providers/" + this.state.id)
+      .get("http://localhost:3000/api/providers/" + this.state.id, {withCredentials: true})
       .then((response) => {
         this.setState({
           provider: response.data,
@@ -53,6 +54,8 @@ export class ProviderDetails extends Component {
         <h3>Adress: {street} {number}</h3>
         <p>{this.state.provider.info}</p>
         <button onClick={this.handleClick} className="delete">Delete</button>
+        
+        <FileUploadProviders {...this.props} Provider={this.state.provider}/>
         <AddProduct Provider={this.state.id}/>
       </div>
     )

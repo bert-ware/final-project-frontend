@@ -17,6 +17,12 @@ const AddProduct = (props) => {
       [event.target.name]: event.target.value,
     })
   }
+  const handleClick = (click) => {
+    setDatos({
+      ...datos,
+       [click.target.name] : click.target.value
+    })
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,8 +49,9 @@ const AddProduct = (props) => {
         <div>
         <label>
           Product unit of mesure: 
-          <select value="typeFormat" onChange={handleChange} name='typeFormat'>
-            <option value={['Kilograms']}>Kilograms</option>
+          <select value="typeFormat" onChange={handleClick} name='typeFormat'>
+            <option value="">Choose one </option>
+            <option value={['Grams']}>Grams</option>
             <option value={['Centiliters']}>Centiliters</option>
           </select>
           </label>
