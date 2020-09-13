@@ -60,7 +60,7 @@ function App(props) {
           
         <ProtectedRoute
           path="/providers/:id"
-          component={ProviderDetails} user={userState} />
+          component={ProviderDetails} {...props} user={userState} />
           
         <Route
           path="/signup"
