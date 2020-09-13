@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
 import "./RecipeDetails.css"
+import FileUploadRecipes from "../Fileupload/FileUploadRecipes"
 
 export class RecipeDetails extends Component {
     constructor(props) {
@@ -65,6 +66,7 @@ export class RecipeDetails extends Component {
             <h1>{this.state.recipe.name}</h1> 
             <img className="cocktailImg" src={this.state.recipe.recipeImgUrl} alt="cocktail img"></img>
             <h3>Method: {this.state.recipe.method}</h3>
+            <FileUploadRecipes {...this.props} recipe={this.state.recipe}/>
             <button onClick={this.handleClick} className="delete">Delete</button>
             <div className="infoContainer">
             <ul className="ingredients">INGREDIENTS:{ingredients}</ul>
