@@ -36,7 +36,7 @@ import { Link } from "react-router-dom";
       <div className="media-content">
         <div className="content">
           <p>
-            <strong><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link> {this.props.item.format}Cl</strong> <br />
+            <strong><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link> {this.props.item.format} {this.props.item.typeFormat}</strong> <br />
             <small>Price: {this.props.item.price}€</small> <br/>
             <small>Provider: {this.props.item.Provider.name}</small>
           </p>

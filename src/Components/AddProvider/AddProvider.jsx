@@ -9,7 +9,8 @@ const AddProvider = (props) => {
         number: 0,
     },
     telephone: 0,
-    info: ''
+    info: '',
+    
   })
   const handleChange = (event) => {
         let adress = datos.adress
@@ -27,11 +28,9 @@ const AddProvider = (props) => {
     const body = {
         ...datos
     }
-    console.log('ESTOS SON LOS DATOS', body.name, body.telephone)
-    event.target.reset();
-
-    axios.post("http://localhost:3000/api/providers/", body, {withCredentials : true}).then(
-        () => props.updateData());
+    axios.post("http://localhost:3000/api/providers/", body, {withCredentials : true})
+    /* .then(() => props.updateData()) */ 
+    event.target.reset()
   }
   return (
     <Fragment>
@@ -80,6 +79,8 @@ const AddProvider = (props) => {
             placeholder="Info"
             onChange={handleChange}
             name="info"/>
+        </div>
+        <div>
         </div>
         <button type="submit">Add providers</button>
       </form>

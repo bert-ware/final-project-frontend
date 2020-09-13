@@ -16,11 +16,12 @@ export class RecipeForm extends Component {
         const body = {
             name: this.state.name,
             method: this.state.method,
+            userID : this.props.user,
             ingredients: this.props.ingredients.map((ingredient) => 
                ({
                    quantity: ingredient.quantity,
                    product: ingredient.product.id
-               })
+               })          
             )
            
         }
