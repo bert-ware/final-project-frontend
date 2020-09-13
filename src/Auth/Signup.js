@@ -56,7 +56,7 @@ class Signup extends Component {
     return (
       <div className="signUpContainer">
         <div>
-          <Carrousel title='We are DrinkApp'/>
+          <Carrousel title='We are DrinkApp' image='./img/drinks/signupslider.png'/>
         </div>
         <div className="col-lg-7 contact-right mt-lg-0 mt-5 testing-centered">
           <form onSubmit={this.handleFormSubmit}>

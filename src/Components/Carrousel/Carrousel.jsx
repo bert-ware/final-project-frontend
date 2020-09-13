@@ -65,7 +65,7 @@ export class Carrousel extends Component {
                 
                 className="slider-content"
                 style={{
-                  background: `url('https://i.imgur.com/ZXBtVw7.jpg') no-repeat center center`,
+                  background: `url('${this.props.image}') no-repeat center center`,
                 }}
               >
                 <div className="inner">

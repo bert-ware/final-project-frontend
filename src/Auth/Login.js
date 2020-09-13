@@ -50,7 +50,7 @@ class Login extends Component {
 
       <div className='signUpContainer'>
       <div>
-        <Carrousel />
+      <Carrousel title='Welcome back!' image='./img/drinks/loginslider.png'/>
       </div>
 
       <div className="col-lg-7 contact-right mt-lg-0 mt-5 testing-centered">
