@@ -1,52 +1,62 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+
+
 
 export class Navbar extends Component {
+
+
+  handleClick =() =>(     
+    this.ReactDOM.render()
+  )
   
   render() {
+  
 
-    // USER COMO EJEMPLO
+
+    //USER COMO EJEMPLO
     let authLink = (
       <>
-          <li className="nav-item">
-              <NavLink to="/signup" >Signup</NavLink>
-          </li>
-          <li className="nav-item">
-              <NavLink to="/login" >Login</NavLink>
-          </li>
+        <li>
+          <NavLink className="linkInicial" to="/signup">
+            Signup
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink className="linkInicial" to="/login">
+            Login
+          </NavLink>
+        </li>
       </>
-  )
+    );
 
-  if (this.props.user.loggedInUser) {
+    if (this.props.user.loggedInUser) {
       authLink = (
-          <li className="nav-item">
-              <NavLink to="/logout" className="nav-link">Hola {this.props.user.loggedInUser.name}, Logout</NavLink>
-          </li>
-      )
-  } else{
-
-  }
+        <li className="nav-item">
+          <NavLink to="/logout" className="linkInicial">
+            Hola {this.props.user.loggedInUser.name}, Logout
+          </NavLink>
+        </li>
+      );
+    }
 
     return (
-      <div>
-        <div className="navbar">
-          <label htmlFor="togglericon" className="toggler" checked></label>
-          <input type="checkbox" id="togglericon" className="toggler" />
+      <div className="header">
 
-          <div className="brand">
-            <span className="brand-icon"></span>
-            <span className="brand-name"><NavLink to="/" className="nav-link"></NavLink> DrinkApp</span>
-          </div>
+        <NavLink to="/" className="logo">
+        <img className='img-logo' src="/img/logo-nav.svg" alt="DRINKAPP"/>
+        </NavLink>
 
-          <div className="nav">
-            {authLink}
-          </div>
-        </div>
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label className="menu-icon"  htmlFor="menu-btn">
+          <span className="navicon"></span>
+        </label>
+        <ul className="menu">{authLink}</ul>
       </div>
     );
   }
 }
 
 export default Navbar;
-
