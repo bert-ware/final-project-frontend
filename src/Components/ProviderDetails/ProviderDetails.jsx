@@ -47,7 +47,7 @@ export class ProviderDetails extends Component {
       }
 
     return (
-      <div>
+      <div className="providerDetailsPage">
         <img className="providerImg" src={this.state.provider.providerImgUrl} alt="Provider Img"></img>
         <h1>Nombre: {this.state.provider.name}</h1>
         <h2>Telephone: {this.state.provider.telephone}</h2>

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
 import AddProvider from "../AddProvider/AddProvider"
+import "./Providers.css"
 
  class Providers extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ import AddProvider from "../AddProvider/AddProvider"
     return (
       <div className="container">
       <h1>Provider List</h1>
-        <div>
+        <div  id="providersPage">
            {providers}
         </div>
         <AddProvider userID={this.props} {...this.props}/>
