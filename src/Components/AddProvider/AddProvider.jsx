@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import axios from 'axios'
+import "./AddProvider.css"
 
 const AddProvider = (props) => {
   const [datos, setDatos] = useState({
@@ -35,7 +36,7 @@ const AddProvider = (props) => {
   return (
     <Fragment>
       <h1>Add Providers</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="providerForm">
         <div>
           <input
             type="text"

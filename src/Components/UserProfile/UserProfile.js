@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom"
 import FileUploadUser from "../Fileupload/FileuploadUser"
+import "./UserProfile.css"
 
 
 export class UserProfile extends Component {
@@ -19,7 +20,7 @@ export class UserProfile extends Component {
           }
          
         if (this.state.loggedInUser) {
-             return   <div className="box">
+             return   <div className="box" id="profilePage">
       <article className="media">
         <div className="media-left">
           <figure className="image is-128x128">

@@ -36,7 +36,7 @@ export class ProductDetails extends Component {
         }
 
         return (
-            <div>
+            <div className="productDetailsPage">
             <img className="productImg" src={this.state.product.productImgUrl} alt="Product Img"></img>
             <h1>{this.state.product.name}</h1>
 

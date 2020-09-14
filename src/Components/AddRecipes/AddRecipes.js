@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import Search from "../Search/Search"
-/* import "./AddRecipes.css" */
+ import "./AddRecipes.css"
 import RecipeForm from "./RecipeForm"
 import IngredientBox from "./IngredientBox"
 import { Link } from "react-router-dom"

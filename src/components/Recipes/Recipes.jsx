@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom"
+import "./Recipes.css"
 
 export class Recipes extends Component {
     constructor(props) {
@@ -32,7 +33,7 @@ export class Recipes extends Component {
       } else {  
        recipes = this.state.recipes.map((recipe , index) => (
           <div key={index}>   
-          <div className="box" >
+          <div className="box" id="recipesPage" >
             <article className="media">
              <div className="media-left">
                <figure className="image is-64x64">
