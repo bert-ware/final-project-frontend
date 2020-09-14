@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import "./IngredientBox.css"
 
  class IngredientBox extends Component {
     constructor(props) {
@@ -42,7 +43,7 @@ import { Link } from "react-router-dom";
           </p>
         </div>  
       </div>
-      <div className="media-right">
+      <div className="media-right" id="inputQuantity">
         <div className="field has-addons">
           <div className="control">
             <input onChange={this.handleChange} value={this.state.quantity} name="quantity" className="input" type="number" placeholder="Select amount" />

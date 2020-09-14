@@ -114,21 +114,16 @@ class Signup extends Component {
               data-use-continue-as="false"
               data-width=""
             ></div>
-
             <br />
-            <Link className="password" to={"/login"}>
-              Forgot your password?
-            </Link>
 
             <p className="account">Already have account?</p>
             <Link className="password" to={"/login"}>
-              {" "}
               Login
             </Link>
           </form>
         </div>
       </div>
-    );
+    )
   }
 }
 export default Signup;
