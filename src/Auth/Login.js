@@ -93,11 +93,7 @@ class Login extends Component {
             data-use-continue-as="false"
             data-width=""
           ></div>
-
           <br />
-          <Link className="password" to={"/login"}>
-            Forgot your password?
-          </Link>
 
           <p className="account">Don't have account?</p>
           <Link className="password" to={"/signup"}> Signup</Link>

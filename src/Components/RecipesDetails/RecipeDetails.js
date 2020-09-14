@@ -63,7 +63,7 @@ export class RecipeDetails extends Component {
 
         return (
             <div className="recipeDetailsPage">
-            <h1>{this.state.recipe.name}</h1> 
+            <h1 id="recipeTitle">{this.state.recipe.name}</h1> 
             <img className="cocktailImg" src={this.state.recipe.recipeImgUrl} alt="cocktail img"></img>
             <h3>Method: {this.state.recipe.method}</h3>
             <FileUploadRecipes {...this.props} recipe={this.state.recipe}/>

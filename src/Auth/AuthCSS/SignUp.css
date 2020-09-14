@@ -74,3 +74,13 @@ button.submit-contact-main:hover {
 .signUpContainer{
     padding-bottom: 80px;
 }
+.errorMessage {
+    display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding: 2%;
+  text-align: center;
+  color: red;
+}
