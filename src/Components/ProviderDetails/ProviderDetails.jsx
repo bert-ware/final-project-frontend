@@ -47,17 +47,22 @@ export class ProviderDetails extends Component {
       }
 
     return (
-      <div className="providerDetailsPage">
+      <div >
+      <h1>Provider Details</h1>
+        <div className="providerDetailsPage">
         <img className="providerImg" src={this.state.provider.providerImgUrl} alt="Provider Img"></img>
         <h1>Nombre: {this.state.provider.name}</h1>
         <h2>Telephone: {this.state.provider.telephone}</h2>
         <h3>Adress: {street} {number}</h3>
         <p>{this.state.provider.info}</p>
-        <button onClick={this.handleClick} className="delete">Delete</button>
-        
+        <button className="button is-danger" onClick={this.handleClick}>Delete provider</button>
+        <div>
+        <p>Upload a Provider Image:</p>
         <FileUploadProviders {...this.props} Provider={this.state.provider}/>
+        </div>
         <AddProduct Provider={this.state.id}/>
       </div>
+    </div>
     )
   }
 }

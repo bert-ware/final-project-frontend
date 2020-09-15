@@ -31,6 +31,11 @@ export class AddRecipes extends Component {
               ({...state,
                  recipeIngredients: [...state.recipeIngredients, product ]}) 
                  )}
+            //DELETE PRODUCT
+            deleteProduct = ( product, index) => { this.setState(state =>
+              ({...state,
+                 recipeIngredients: [...state.recipeIngredients ].splice(index, product)}) 
+                 )}
           
     render() {
      
@@ -58,11 +63,14 @@ export class AddRecipes extends Component {
         .map((item , index) => <IngredientBox  key={index} item={item} addProduct={this.addProduct}/> ) 
       }
         return (
-            <div> 
+            <div>
+            <h1>Products</h1>
+            <div id="addRecipePage"> 
             <Search searchParam={this.searchParam}
           handleSearchParam={handleSearchParam}/>
            <div className="ingredientDisplay"> {displayIngredients}</div>
-           <RecipeForm ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
+           <RecipeForm deleteProduct={this.deleteProduct} ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
+            </div>
             </div>
         )
     }

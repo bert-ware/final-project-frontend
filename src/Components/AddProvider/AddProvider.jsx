@@ -83,7 +83,7 @@ const AddProvider = (props) => {
         </div>
         <div>
         </div>
-        <button type="submit">Add providers</button>
+        <button  className="button is-info" type="submit">Add providers</button>
       </form>
     </Fragment>
   )
