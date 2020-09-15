@@ -2,18 +2,13 @@ import React, { Component } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
-
-
 export class Navbar extends Component {
-
 
   handleClick =() =>(     
     this.ReactDOM.render()
   )
   
   render() {
-  
-
 
     //USER COMO EJEMPLO
     let authLink = (
@@ -30,7 +25,7 @@ export class Navbar extends Component {
           </NavLink>
         </li>
       </>
-    );
+    )
 
     if (this.props.user.loggedInUser) {
       authLink = (
@@ -55,7 +50,7 @@ export class Navbar extends Component {
         </label>
         <ul className="menu">{authLink}</ul>
       </div>
-    );
+    )
   }
 }
 
