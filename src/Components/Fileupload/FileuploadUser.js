@@ -48,7 +48,7 @@ export class Fileupload extends Component {
             </div>
             <div className="custom-file">
               <input type="file" className="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01"  onChange={this.fileSelectHandler}/>/>
+                aria-describedby="inputGroupFileAddon01"  onChange={this.fileSelectHandler}/>
               <label className="custom-file-label"  htmlFor="inputGroupFile01">Profile image</label>
             </div>
           </div>
