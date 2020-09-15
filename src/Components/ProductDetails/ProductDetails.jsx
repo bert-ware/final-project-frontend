@@ -15,7 +15,7 @@ export class ProductDetails extends Component {
     }
      //Recogida datos API
     componentDidMount() {
-        axios.get("http://localhost:3000/api/products/" + this.state.id ,{withCredentials: true})
+        axios.get(process.env.REACT_APP_API_URL +"/products/" + this.state.id ,{withCredentials: true})
         .then(response => {
             this.setState({
                 product: response.data
@@ -24,7 +24,7 @@ export class ProductDetails extends Component {
     }
     //Handle borrar
     handleClick = () => {
-        axios.delete("http://localhost:3000/api/products/" + this.state.id, {withCredentials: true})
+        axios.delete(process.env.REACT_APP_API_URL +"/products/" + this.state.id, {withCredentials: true})
         .then(() => this.setState({ redirect: true }))  
     }
 

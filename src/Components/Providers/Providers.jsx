@@ -15,7 +15,7 @@ import "./Providers.css"
   }
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/providers/", {withCredentials: true})
+      .get(process.env.REACT_APP_API_URL +"/providers/", {withCredentials: true})
       .then((response) => {
         this.setState({
           providers: response.data,

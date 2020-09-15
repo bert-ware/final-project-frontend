@@ -29,7 +29,7 @@ const AddProvider = (props) => {
     const body = {
         ...datos
     }
-    axios.post("http://localhost:3000/api/providers/", body, {withCredentials : true})
+    axios.post(process.env.REACT_APP_API_URL + "/providers/", body, {withCredentials : true})
     /* .then(() => props.updateData()) */ 
     event.target.reset()
   }

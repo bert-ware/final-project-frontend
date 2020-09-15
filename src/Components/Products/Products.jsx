@@ -12,7 +12,7 @@ export class Products extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/products/", {withCredentials: true})
+      .get(process.env.REACT_APP_API_URL +"/products/", {withCredentials: true})
       .then((response) => {
         this.setState({
           products: response.data,    
