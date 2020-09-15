@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import './FileUpload.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export class Fileupload extends Component {
     constructor(props) {
@@ -36,10 +38,20 @@ export class Fileupload extends Component {
       }
     render() {
         return (
-            <div>
-            <input type="file" onChange={this.fileSelectHandler}/>
-              <button onClick={this.fileUploadHandler}>Upload</button>
+            // <div className='col-lg-7 contact-right mt-lg-0 mt-5 testing-centered'>
+            // <input className="form-control" type="file" onChange={this.fileSelectHandler}/>
+            //   <button className="btn submit-contact-main ml-auto" onClick={this.fileUploadHandler}>Upload</button>
+            // </div>
+            <div className="input-group">
+            <div className="input-group-prepend">
+              <span onClick={this.fileUploadHandler} className="input-group-text" id="inputGroupFileAddon01">Upload</span>
             </div>
+            <div className="custom-file">
+              <input type="file" className="custom-file-input" id="inputGroupFile01"
+                aria-describedby="inputGroupFileAddon01"  onChange={this.fileSelectHandler}/>/>
+              <label className="custom-file-label"  htmlFor="inputGroupFile01">Profile image</label>
+            </div>
+          </div>
         )
     }
 }
