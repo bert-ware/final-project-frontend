@@ -1,0 +1,10 @@
+@media (max-width: 425px) {
+    #inputQuantity{
+        width: 25%;
+    }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+    #inputQuantity{
+        width: 25%;
+    }
+}

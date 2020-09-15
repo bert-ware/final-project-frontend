@@ -1,0 +1,40 @@
+.cocktailImg {
+    display: block;
+    margin: auto;
+    max-height: 500px;
+    width: auto;
+    margin-bottom: 20px;
+}
+.ingredients {
+    width: 33%;
+   
+    list-style: none;
+}
+.mesures {
+    width: 33%;
+    
+    list-style: none;
+}
+.costMesures {
+    width: 33%;
+    
+    list-style: none;
+}
+.infoContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.stats {
+    margin-top: 80px;
+    text-align: start;
+    padding-inline-start: 100px;
+}
+.recipeDetailsPage {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+#recipeTitle{
+    margin-bottom: 20px;
+    font-size: 5vw;
+}
