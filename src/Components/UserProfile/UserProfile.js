@@ -30,12 +30,16 @@ export class UserProfile extends Component {
             <p>
               <strong>Bienvenido {this.state.loggedInUser.loggedInUser.name}!</strong> <br />
               <small>Email: {this.state.loggedInUser.loggedInUser.email} </small> <br/>
-              <FileUploadUser {...this.props}/>
+              
             </p>
           </div>  
         </div>
       </article> 
-      </div>     
+      </div>
+        <div>
+          <p>Upload your profile Image!</p>
+          <FileUploadUser {...this.props}/> 
+        </div>     
             </div>
         )
     }

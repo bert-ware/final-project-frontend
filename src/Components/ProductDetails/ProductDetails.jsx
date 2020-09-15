@@ -44,7 +44,7 @@ export class ProductDetails extends Component {
 
             <h3>Format: {this.state.product.format}</h3>
             <p>{this.state.product.info}</p>
-            <button onClick={this.handleClick} className="delete">Delete</button>
+            <button onClick={this.handleClick} className="button is-danger">Delete product</button>
             <FileUploadProducts {...this.props} product={this.state.product}/>
             </div>
         )

@@ -36,8 +36,8 @@ export class Fileupload extends Component {
     render() {
         return (
             <div>
-            <input type="file" onChange={this.fileSelectHandler}/>
-              <button onClick={this.fileUploadHandler}>Upload</button>
+              <input type="file" onChange={this.fileSelectHandler}/>
+              <button onClick={this.fileUploadHandler} className="button is-success">Upload</button>
             </div>
         )
     }

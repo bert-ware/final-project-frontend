@@ -67,7 +67,7 @@ export class RecipeDetails extends Component {
             <img className="cocktailImg" src={this.state.recipe.recipeImgUrl} alt="cocktail img"></img>
             <h3>Method: {this.state.recipe.method}</h3>
             <FileUploadRecipes {...this.props} recipe={this.state.recipe}/>
-            <button onClick={this.handleClick} className="delete">Delete</button>
+            <button onClick={this.handleClick} className="button is-danger">Delete recipe</button>
             <div className="infoContainer">
             <ul className="ingredients">INGREDIENTS:{ingredients}</ul>
             <ul className="mesures">MESURES:{mesures}</ul>
