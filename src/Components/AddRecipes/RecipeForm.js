@@ -50,6 +50,7 @@ export class RecipeForm extends Component {
             </div>
         ))
         return (
+            <div>
             <div className="recipeForm">
             <form  onSubmit={this.handleSubmit}>
              <label>Cocktail name:</label>
@@ -69,6 +70,7 @@ export class RecipeForm extends Component {
                 <p className="errorMessage">{this.state.errorMessage}</p>
             </form>    
             </div>
+        </div>
         )
     }
 }

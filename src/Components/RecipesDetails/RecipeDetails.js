@@ -62,6 +62,8 @@ export class RecipeDetails extends Component {
       }
 
         return (
+<div>
+            <h1>Recipe details</h1>
             <div className="recipeDetailsPage">
             <h1 id="recipeTitle">{this.state.recipe.name}</h1> 
             <img className="cocktailImg" src={this.state.recipe.recipeImgUrl} alt="cocktail img"></img>
@@ -78,8 +80,8 @@ export class RecipeDetails extends Component {
             <p>Total cost: {totalCost.toFixed(2)}</p>
             <p>Suggested sell price: {suggestedPrice}</p>
             </div>
-            
             </div>
+</div>
         )
     }
 }
