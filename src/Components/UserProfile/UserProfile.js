@@ -60,7 +60,7 @@ export class UserProfile extends Component {
 
         <main className="container">
 		<div className="card">
-		  <img src={this.state.img} alt="User" className="card__image" />
+		  <img src={this.props.loggedInUser.loggedInUser.userImgUrl} alt="User" className="card__image" />
 		  <div className="card__text">
 			<h2>Welcome {this.state.loggedInUser.loggedInUser.name}!</h2>
 			<p>{this.state.loggedInUser.loggedInUser.email}{" "}</p>
