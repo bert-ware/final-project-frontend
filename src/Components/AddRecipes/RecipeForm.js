@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import "./RecipeForm.css"
 import axios from "axios"
+import '../../Auth/AuthCSS/SignUp.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export class RecipeForm extends Component {
     constructor(props) {
@@ -52,12 +55,15 @@ export class RecipeForm extends Component {
         return (
             <div>
             <div className="recipeForm">
+                <h1 className='titleAdd'>Add a new Recipes</h1>
             <form  onSubmit={this.handleSubmit}>
              <label>Cocktail name:</label>
-                <input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input>
+                <br />
+                <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className='form-control inputReducido' />
                 <br/>
                 <label>Cocktail technique:</label>
-                <select value={this.state.method} onChange={this.handleChange} name='method'>
+                <br/>
+                <select value={this.state.method} onChange={this.handleChange} name='method' className='form-control inputReducido'>
                   <option value="Shake">Shake</option>
                   <option value="Stir">Stir</option>
                  <option value="Throw">Throw</option>
@@ -65,8 +71,8 @@ export class RecipeForm extends Component {
                 </select>
 
                 <div>{ingredients}</div>
-                <button type="submit" className="button is-info">Submit</button>
-                <button onClick={this.props.deleteProduct} className="button is-danger">Delete</button>
+                <button type="submit"   className="btn submit-contact-main ml-auto">Submit</button>
+                <button onClick={this.props.deleteProduct} className="btn submit-contact-main ml-auto deleteBtn">Delete</button>
                 <p className="errorMessage">{this.state.errorMessage}</p>
             </form>    
             </div>

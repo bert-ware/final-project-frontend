@@ -3,14 +3,16 @@ import "./Home.css"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./Header.jsx"
 import BottomNavigation from "../BottomNavigation/BottomNavigation"
+import Carrousel from "../Carrousel/Carrousel"
 
 
 export class Home extends Component {
   render() {
     return (
       <div>
+        <Carrousel title='We are DrinkApp' image='./img/drinks/homeslider.png'/>
         {/* <Navbar user={this.state.loggedInUser} key={this.state.loggedInUser}/> */}
-        <Header/>
+        {/* <Header/> */}
         <section id="intro">
           <h2>Lorem ipsum dolor</h2>
           <p>
