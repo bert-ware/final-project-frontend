@@ -38,17 +38,17 @@ An app to calculate cost breakdown of cocktail recipes
 |Method|URL|Description|
 |---|---|---|
 
-Auth
+
 
 POST | /auth/signup |Create user
 POST | /auth/login | login, redirects to user-profile
 POST | /auth/logout | logout user 
 PUT | /auth/user/:id | Change user image endpoint
 
-Home
+
 GET | / | renders the homepage. if the user is logged in, render access. 
 
-Products
+
 GET | /products | renders full products list
 POST | /products | create a new product
 GET | /products/:id | return a render of a specific product
@@ -56,7 +56,7 @@ PUT | /products/:id | route to update a specific product
 DELETE | /products/:id | route to delete a specific product
 PUT | /products/image/:id |  Change product image endpoint
 
-Providers
+
 GET | /providers | renders full providers list
 POST | /providers | create a new provider
 GET | /providers/:id | return a render of a specific provider
@@ -64,7 +64,7 @@ PUT | /providers/:id | route to update a specific provider
 DELETE | /providers/:id | route to delete a specific provider
 PUT | /providers/image/:id |  Change provider image endpoint
 
-Recipes
+
 GET | /recipes | renders full recipe list
 POST | recipes | create a new recipe
 GET | /recipes/:id | return a render of a specific recipe
