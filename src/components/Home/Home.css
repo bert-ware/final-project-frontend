@@ -212,3 +212,80 @@
     }
   }
   
+
+
+  /* ICON SECTION */
+
+  .secondary-button-dark a {
+    padding: 13px 20px;
+    letter-spacing: 0.5px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .secondary-button-dark a:hover {
+    padding: 13px 20px;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  
+  #about .service-item {
+    text-align: center;
+    margin: 0px -15px;
+    padding: 90px 30px;
+  }
+  
+  #about .service-item h4 {
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  #about .service-item p {
+    margin-bottom: 50px;
+    color: #fff;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  #about .first-service {
+    background-color: #51c57f
+  }
+  
+  #about .second-service {
+    background-color: #228b48
+  }
+  
+  #about .third-service {
+    background-color: #51c57f
+  }
+  
+  #about .service-item .icon {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    background-color: transparent;
+  }
+
+  .bottomIcon{
+    width: 30%;
+  }
+
+  .textPetit{
+    font-size: 10px !important;
+    font-style: italic;
+  }
+
+  .buttonJoin{
+    color: #51C57F;
+    background-color: white;
+    border-radius: 30px;
+    margin-top: 30px;
+  }
