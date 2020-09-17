@@ -1,9 +1,11 @@
+
 import React, { Component } from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "./Header.jsx";
 import BottomNavigation from "../BottomNavigation/BottomNavigation";
 import Carrousel from "../Carrousel/Carrousel";
+
 
 export class Home extends Component {
   render() {

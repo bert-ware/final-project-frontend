@@ -23,13 +23,11 @@ class Login extends Component {
     const password = this.state.password;
     this.service.login(email, password)
     .then( response => {
-        console.log(response)
         this.setState({ email: "", password: "" });
         this.props.callback(response) 
     })
     .then(() => this.setState({ redirect: true }))
     .catch( error => {
-      console.log("catch handle submit" ,error.response.data.message)
     this.setState({
       errorMessage: error.response.data.message
     })})
@@ -59,8 +57,7 @@ class Login extends Component {
           <input
               placeholder="Email"
                 type="email" className="form-control" name="email" value={this.state.email} onChange={ e => this.handleChange(e)}
-              />
-            
+              />            
            
           </div>
           <div className="form-group">

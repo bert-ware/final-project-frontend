@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import "./RecipeDetails.css";
-import FileUploadRecipes from "../Fileupload/FileUploadRecipes";
+import FileUploadRecipes from "../Fileupload/FileUploadRecipes"
+import Carrousel from "../Carrousel/Carrousel"
 
 export class RecipeDetails extends Component {
   constructor(props) {
@@ -76,29 +77,26 @@ export class RecipeDetails extends Component {
     }
 
     return (
-      <div className="recipeDetailsPage">
-        <h1 id="recipeTitle">{this.state.recipe.name}</h1>
-        <img
-          className="cocktailImg"
-          src={this.state.recipe.recipeImgUrl}
-          alt="cocktail img"
-        ></img>
-        <h3>Method: {this.state.recipe.method}</h3>
-        <FileUploadRecipes {...this.props} recipe={this.state.recipe} />
-        <button onClick={this.handleClick} className="delete">
-          Delete
-        </button>
-        <div className="infoContainer">
+      <div>
+      <Carrousel image={this.state.recipe.recipeImgUrl} title={this.state.recipe.name}/>
+        <div className="recipeDetailsPage">
+          <h2 className="addRecipesTitle">Method: {this.state.recipe.method}</h2>
+          <FileUploadRecipes {...this.props} recipe={this.state.recipe} />
+          <button onClick={this.handleClick} id="recipeDetailsDeleteBtn" className="button is-danger">
+            Delete recipe
+          </button>
+          <div className="infoContainer">
           <ul className="ingredients">INGREDIENTS:{ingredients}</ul>
           <ul className="mesures">MESURES:{mesures}</ul>
-          <ul className="costMesures">COST PER INGREDIENT:{mesureCost}</ul>
+          <ul className="costMesures">COST:{mesureCost}</ul>
         </div>
-        <div className="stats">
-          <h1>Info:</h1>
-          <p>Total cost: {totalCost.toFixed(2)}</p>
-          <p>Suggested sell price: {suggestedPrice}</p>
+  <div className="stats">
+            <h1 className="addRecipesTitle">Info:</h1>
+            <p>Total cost: {totalCost.toFixed(2)}</p>
+            <p>Suggested sell price: {suggestedPrice}</p>
+          </div>
         </div>
-      </div>
+     </div>   
     );
   }
 }
