@@ -33,8 +33,6 @@ export class Fileupload extends Component {
        
       })
     }
-     
-
       
     render() {
         return (

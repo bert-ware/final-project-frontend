@@ -1,8 +1,6 @@
-
 import React, { Component } from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Header from "./Header.jsx";
 import BottomNavigation from "../BottomNavigation/BottomNavigation";
 import Carrousel from "../Carrousel/Carrousel";
 
@@ -15,8 +13,6 @@ export class Home extends Component {
           title="We are DrinkApp"
           image="./img/drinks/homeslider.png"
         />
-        {/* <Navbar user={this.state.loggedInUser} key={this.state.loggedInUser}/> */}
-        {/* <Header/> */}
 
         <section id="about" className="page-section">
           <div className="container-fluid">
@@ -53,7 +49,7 @@ export class Home extends Component {
                     <p>
                       <b>2.-</b> Introduce your <br /> providers{" "}
                     </p>
-                    {/* <span className='textPetit'>and have a track of them displayed on your Providers(imagen bottom bar?) page</span> */}
+                   
                   </div>
                   <div className="icon">
                     <img

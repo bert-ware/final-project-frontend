@@ -77,21 +77,7 @@ class Login extends Component {
           >
             Submit
           </button>
-
           <p className="errorMessage">{this.state.errorMessage}</p>
-
-          {/* Login FB */}
-          <div
-            className="fb-login-button"
-            data-size="medium"
-            data-button-type="login_with"
-            data-layout="rounded"
-            data-auto-logout-link="false"
-            data-use-continue-as="false"
-            data-width=""
-          ></div>
-          <br />
-
           <p className="account">Don't have account?</p>
           <Link className="password" to={"/signup"}> Signup</Link>
 
