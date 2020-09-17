@@ -55,7 +55,7 @@ export class RecipeForm extends Component {
         return (
             <div>
             <div className="recipeForm">
-                <h1 className='titleAdd'>Add a new Recipes</h1>
+                <h1 className='titleAdd'>Add a new Recipe</h1>
             <form  onSubmit={this.handleSubmit}>
              <label>Cocktail name:</label>
                 <br />
