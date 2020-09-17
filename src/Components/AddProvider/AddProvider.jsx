@@ -35,7 +35,7 @@ const AddProvider = (props) => {
   }
   return (
     <Fragment>
-      <h1>Add Providers</h1>
+      <h1 id="addProviderTitle">Add a new Provider</h1>
       <form onSubmit={handleSubmit} id="providerForm">
         <div>
           <input
@@ -45,25 +45,29 @@ const AddProvider = (props) => {
             name="name"
           />
         </div>
+        <br/>
         <div>
-          <h4>adress</h4>
           <input
             type="text"
-            placeholder="street"
+            placeholder="Street"
             //onChange={event => { handleChange(event, datos.address  ,'address'); }}
             onChange={handleChange}
             name="street"
             // value={datos.adress.street}
         />
+        </div>
+        <div>
+        <br/>
           <input
             type="number"
-            placeholder="number"
+            placeholder="Number"
             // onChange={handleChange}
             onChange={handleChange}
             name="number"
             // value={datos.adress.number}
           />
         </div>
+        <br/>
 
         <div>
           <input
@@ -73,6 +77,7 @@ const AddProvider = (props) => {
             name="telephone"
           />
         </div>
+        <br/>
 
         <div>
           <input
@@ -81,6 +86,7 @@ const AddProvider = (props) => {
             onChange={handleChange}
             name="info"/>
         </div>
+        <br/>
         <div>
         </div>
         <button  className="button is-info" type="submit">Add providers</button>

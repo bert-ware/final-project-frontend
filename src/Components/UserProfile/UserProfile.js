@@ -1,48 +1,98 @@
-import React, { Component } from 'react';
-import FileUploadUser from "../Fileupload/FileuploadUser"
-import "./UserProfile.css"
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import FileUploadUser from "../Fileupload/FileuploadUser";
+// import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
 
+
+import "./UserProfile.css";
 
 export class UserProfile extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            loggedInUser: this.props.loggedInUser,
-            img: this.props.loggedInUser.loggedInUser.userImgUrl
-        } 
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedInUser: this.props.loggedInUser,
+      img: this.props.loggedInUser.loggedInUser.userImgUrl,
+      recipes: 0,
+      providers: 0,
+      products: 0
+    };
   }
-        
-    render() {
-       
 
-        return (
-            <div>
-            <h1>Profile</h1>
-               <div className="box" id="profilePage">
-      <article className="media">
-        <div className="media-left">
-          <figure className="image is-128x128">
-            <img className="avatartImg" src={this.state.img} key={this.state.img} alt="User avatar"/>
-          </figure>
-        </div>
-        <div className="media-content">
-          <div className="content">
-            <p>
-              <strong>Bienvenido {this.state.loggedInUser.loggedInUser.name}!</strong> <br />
-              <small>Email: {this.state.loggedInUser.loggedInUser.email} </small> <br/>
-              
-            </p>
-          </div>  
-        </div>
-      </article> 
-      </div>
-        <div>
-          <p>Upload your profile Image!</p>
-          <FileUploadUser {...this.props}/> 
-        </div>     
-            </div>
-        )
+  componentDidMount() {
+    // Estado de recetas
+    axios
+      .get("http://localhost:3000/api/recipes/",{withCredentials: true})
+      .then((response) => {
+        this.setState({
+            recipes: response.data.length,             
+        })
+      })
+      .catch((err) => console.log( err))
+
+      // Estado de productos
+
+      axios
+      .get("http://localhost:3000/api/products/", {withCredentials: true})
+      .then((response) => {
+        this.setState({
+          products: response.data.length,    
+        })
+      })
+
+      // Estado de providers
+      axios
+      .get("http://localhost:3000/api/providers/", {withCredentials: true})
+      .then((response) => {
+        this.setState({
+          providers: response.data.length,    
+        })
+      })
+  }
+
+  render() {
+    if (!this.state.loggedInUser) {
+      return <Redirect to="/login" />;
     }
+
+    if (this.state.loggedInUser) {
+      return (
+
+        <main className="container">
+		<div className="card">
+		  <img src={this.props.loggedInUser.loggedInUser.userImgUrl} alt="User" className="card__image" />
+		  <div className="card__text">
+			<h2>Welcome {this.state.loggedInUser.loggedInUser.name}!</h2>
+			<p>{this.state.loggedInUser.loggedInUser.email}{" "}</p>
+		  </div>
+		  <ul className="card__info">
+			<li>
+			  <span className="card__info__stats">{this.state.recipes}</span>
+			  <span>Recipes</span>
+			</li>
+			<li>
+			  <span className="card__info__stats">{this.state.products}</span>
+			  <span>Products</span>
+			</li>
+			<li>
+			  <span className="card__info__stats">{this.state.providers}</span>
+			  <span>Providers</span>
+			</li>
+		  </ul>
+		  <div className="card__action">
+      <FileUploadUser {...this.props} />
+		  </div>
+		</div>
+	  </main>
+      );
+    }
+
+    return (
+      <div>
+        <h1>Profile</h1>
+      </div>
+    );
+  }
 }
 
-export default UserProfile
+export default UserProfile;

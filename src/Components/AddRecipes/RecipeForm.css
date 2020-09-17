@@ -2,3 +2,19 @@
     margin-bottom: 100px;
     margin-top: 20px;
 }
+
+.inputReducido{
+    width: 80%;
+    display: inline;
+    margin-bottom: 15px;
+}
+
+.deleteBtn{
+    margin-left: 10px !important;
+    background-color: red !important;
+}
+
+.titleAdd{
+    font-size: 30px;
+    color: green;
+}

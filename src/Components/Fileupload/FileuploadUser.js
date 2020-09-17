@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import './FileUpload.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export class Fileupload extends Component {
     constructor(props) {
@@ -21,8 +23,6 @@ export class Fileupload extends Component {
         formData.append("myFile", this.state.selectedFile, this.state.selectedFile.name)
         axios.put(process.env.REACT_APP_API_URL +"/user/" + this.state.loggedInUser.loggedInUser._id , formData, {withCredentials : true})
           .then(response => {
-          console.log(response.data)
-          console.log(response.data.userImgUrl)
          this.setState({
             img: response.data.userImgUrl
           })  
@@ -36,10 +36,16 @@ export class Fileupload extends Component {
       }
     render() {
         return (
-            <div>
-            <input type="file" onChange={this.fileSelectHandler}/>
-              <button className="button is-success" onClick={this.fileUploadHandler}>Upload</button>
+            <div className="input-group">
+            <div className="input-group-prepend">
+              <span onClick={this.fileUploadHandler} className="input-group-text" id="inputGroupFileAddon01">Upload</span>
             </div>
+            <div className="custom-file">
+              <input type="file" className="custom-file-input" id="inputGroupFile01"
+                aria-describedby="inputGroupFileAddon01"  onChange={this.fileSelectHandler}/>
+              <label className="custom-file-label"  htmlFor="inputGroupFile01">Profile image</label>
+            </div>
+          </div>
         )
     }
 }

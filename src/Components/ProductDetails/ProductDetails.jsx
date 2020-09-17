@@ -39,12 +39,12 @@ export class ProductDetails extends Component {
             <div>
             <h1>Product Details</h1>
              <div className="productDetailsPage">
-             <img className="productImg" src={this.state.product.productImgUrl} alt="Product Img"></img>
+             <img className="productImgDetails" src={this.state.product.productImgUrl} alt="Product Img"></img>
              <h1>{this.state.product.name}</h1>
              <h2>Unitary cost: {this.state.product.price}$</h2>  
               <h3>Format: {this.state.product.format}</h3>
               <p>{this.state.product.info}</p>
-             <button onClick={this.handleClick} className="button is-danger">Delete product</button>
+             <button onClick={this.handleClick} className="button is-danger" id="productDetailsDeleteBtn">Delete product</button>
              <FileUploadProducts {...this.props} product={this.state.product}/>
               </div>
             </div>
