@@ -23,8 +23,6 @@ export class Fileupload extends Component {
         formData.append("myFile", this.state.selectedFile, this.state.selectedFile.name)
         axios.put("http://localhost:3000/api/user/" + this.state.loggedInUser.loggedInUser._id , formData, {withCredentials : true})
           .then(response => {
-          console.log(response.data)
-          console.log(response.data.userImgUrl)
          this.setState({
             img: response.data.userImgUrl
           })  
@@ -38,10 +36,6 @@ export class Fileupload extends Component {
       }
     render() {
         return (
-            // <div className='col-lg-7 contact-right mt-lg-0 mt-5 testing-centered'>
-            // <input className="form-control" type="file" onChange={this.fileSelectHandler}/>
-            //   <button className="btn submit-contact-main ml-auto" onClick={this.fileUploadHandler}>Upload</button>
-            // </div>
             <div className="input-group">
             <div className="input-group-prepend">
               <span onClick={this.fileUploadHandler} className="input-group-text" id="inputGroupFileAddon01">Upload</span>
