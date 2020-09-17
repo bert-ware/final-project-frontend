@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
+import "./AddProduct.css"
 
 const AddProduct = (props) => {
   const [datos, setDatos] = useState({
@@ -35,7 +36,7 @@ const AddProduct = (props) => {
 
   return (
     <Fragment>
-      <h1>Add Product</h1>
+      <h1 className="addProductTitle">Add a new Product</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <input
@@ -84,7 +85,7 @@ const AddProduct = (props) => {
           />
         </div>
 
-        <button type="submit">Add product</button>
+        <button className="button is-success" type="submit">Add product</button>
       </form>
     </Fragment>
   );
