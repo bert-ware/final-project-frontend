@@ -18,7 +18,7 @@ export class ProviderDetails extends Component {
    //Recogida datos API
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/providers/" + this.state.id, {withCredentials: true})
+      .get(process.env.REACT_APP_API_URL +"/providers/" + this.state.id, {withCredentials: true})
       .then((response) => {
         this.setState({
           provider: response.data,
@@ -27,7 +27,7 @@ export class ProviderDetails extends Component {
   }
   //Handle borrar
   handleClick = () => {
-    axios.delete("http://localhost:3000/api/providers/" + this.state.id, {withCredentials: true})
+    axios.delete(process.env.REACT_APP_API_URL + "/providers/" + this.state.id, {withCredentials: true})
     .then(() => this.setState({ redirect: true }))
 }
 

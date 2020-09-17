@@ -20,7 +20,9 @@ export class Fileupload extends Component {
         
         const formData = new FormData()
         formData.append("myFile", this.state.selectedFile, this.state.selectedFile.name)
-        axios.put("http://localhost:3000/api/providers/image/" + this.props.Provider._id , formData, {withCredentials : true})
+
+        axios.put(process.env.REACT_APP_API_URL + "/providers/image/   " + this.props.Provider._id , formData, {withCredentials : true})
+
           .then(response => {
          this.setState({
             img: response.data.providerImgUrl

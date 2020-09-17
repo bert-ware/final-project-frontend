@@ -6,44 +6,33 @@ import FileUploadRecipes from "../Fileupload/FileUploadRecipes"
 import Carrousel from "../Carrousel/Carrousel"
 
 export class RecipeDetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: props.match.params.id,
-      recipe: {
-        name: "",
-        ingredients: [],
-        method: "",
-      },
-      redirect: false,
-    };
-  }
-  //Recogida datos API
-  componentDidMount() {
-    axios
-      .get("http://localhost:3000/api/recipes/" + this.state.id, {
-        withCredentials: true,
-      })
-      .then((response) => {
-        this.setState({
-          recipe: response.data,
-        });
-      });
-  }
-  //Handle borrar
-  handleClick = () => {
-    axios
-      .delete("http://localhost:3000/api/recipes/" + this.state.id, {
-        withCredentials: true,
-      })
-      .then(() => this.setState({ redirect: true }));
-  };
 
-  render() {
-    //Map ingredients
-    const ingredients = this.state.recipe.ingredients.map((ingredient) => (
-      <li key={ingredient.product._id}> {ingredient.product.name} </li>
-    ));
+    constructor(props) {
+        super(props)
+        this.state = {
+            id: props.match.params.id,
+            recipe: {
+                name: "",
+                ingredients: [],
+                method: ""
+            },
+            redirect: false,
+        }
+    }
+    //Recogida datos API
+    componentDidMount() {
+        axios.get(process.env.REACT_APP_API_URL +"/recipes/" + this.state.id, {withCredentials: true})
+        .then(response => {
+            this.setState({
+                recipe: response.data, 
+            })
+        })
+    }
+ //Handle borrar
+  handleClick = () => {
+    axios.delete(process.env.REACT_APP_API_URL +"/recipes/" + this.state.id, {withCredentials: true})
+    .then(() => this.setState({ redirect: true }))}
+
 
     //Map mesures
     const mesures = this.state.recipe.ingredients.map((ingredient, index) => (

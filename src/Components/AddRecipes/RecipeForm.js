@@ -28,7 +28,7 @@ export class RecipeForm extends Component {
             )              
         }
         event.target.reset();
-        axios.post("http://localhost:3000/api/recipes/", body, {withCredentials : true})
+        axios.post(process.env.REACT_APP_API_URL + "/recipes/", body, {withCredentials : true})
         .then( response => {
             console.log(response) 
         })

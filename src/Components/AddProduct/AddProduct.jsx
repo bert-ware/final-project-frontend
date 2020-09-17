@@ -30,7 +30,7 @@ const AddProduct = (props) => {
     const body = {
       ...datos,
     }
-    axios.post("http://localhost:3000/api/products/", body,  {withCredentials : true})
+    axios.post(process.env.REACT_APP_API_URL + "/products/", body,  {withCredentials : true})
     event.target.reset();
   }
 

@@ -17,7 +17,7 @@ export class AddRecipes extends Component {
         }
         componentDidMount() {
             axios
-              .get("http://localhost:3000/api/products/")
+              .get(process.env.REACT_APP_API_URL + "/products/")
               .then((response) => {
                 this.setState({
                   products: response.data,    
