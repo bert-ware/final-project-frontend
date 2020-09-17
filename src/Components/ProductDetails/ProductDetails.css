@@ -1,7 +1,13 @@
-.productImg {
-    max-height: 500px;
+.productImgDetails {
+    max-height: 200px;
     width: auto;
+    margin-bottom: 40px;
 }
 .productDetailsPage {
     margin-top: 100px;
+}
+
+#productDetailsDeleteBtn {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
