@@ -1,10 +1,8 @@
-
-import React, { Component } from "react";
-import "./Home.css";
-import "bootstrap/dist/css/bootstrap.css";
-import Header from "./Header.jsx";
-import BottomNavigation from "../BottomNavigation/BottomNavigation";
-import Carrousel from "../Carrousel/Carrousel";
+import React, { Component } from "react"
+import "./Home.css"
+import "bootstrap/dist/css/bootstrap.css"
+import BottomNavigation from "../BottomNavigation/BottomNavigation"
+import Carrousel from "../Carrousel/Carrousel"
 
 
 export class Home extends Component {
@@ -13,10 +11,7 @@ export class Home extends Component {
       <div>
         <Carrousel
           title="We are DrinkApp"
-          image="./img/drinks/homeslider.png"
-        />
-        {/* <Navbar user={this.state.loggedInUser} key={this.state.loggedInUser}/> */}
-        {/* <Header/> */}
+          image="./img/drinks/homeslider.png"/>
 
         <section id="about" className="page-section">
           <div className="container-fluid">
@@ -144,4 +139,4 @@ export class Home extends Component {
   }
 }
 
-export default Home;
+export default Home
