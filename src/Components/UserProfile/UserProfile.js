@@ -22,7 +22,7 @@ export class UserProfile extends Component {
   componentDidMount() {
     // Estado de recetas
     axios
-      .get("http://localhost:3000/api/recipes/",{withCredentials: true})
+      .get(process.env.REACT_APP_API_URL +"/recipes/",{withCredentials: true})
       .then((response) => {
         this.setState({
             recipes: response.data.length,             
@@ -33,7 +33,7 @@ export class UserProfile extends Component {
       // Estado de productos
 
       axios
-      .get("http://localhost:3000/api/products/", {withCredentials: true})
+      .get(process.env.REACT_APP_API_URL +"/products/", {withCredentials: true})
       .then((response) => {
         this.setState({
           products: response.data.length,    
@@ -42,7 +42,7 @@ export class UserProfile extends Component {
 
       // Estado de providers
       axios
-      .get("http://localhost:3000/api/providers/", {withCredentials: true})
+      .get(process.env.REACT_APP_API_URL +"/providers/", {withCredentials: true})
       .then((response) => {
         this.setState({
           providers: response.data.length,    
