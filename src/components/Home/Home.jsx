@@ -63,7 +63,7 @@ export class Home extends Component {
                        and create a new recipe
                     </p>
                   </div>
-                  <br/>
+               
                   <div className="icon">
                     <img className="bottomIcon" src="/img/Recipes.svg" alt="" />
                     <p>

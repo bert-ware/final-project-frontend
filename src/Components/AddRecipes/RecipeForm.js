@@ -19,7 +19,7 @@ export class RecipeForm extends Component {
         const body = {
             name: this.state.name,
             method: this.state.method,
-            userID : this.props.user,
+            user : this.props.user,
             ingredients: this.props.ingredients.map((ingredient) => 
                ({
                    quantity: ingredient.quantity,
@@ -43,6 +43,13 @@ export class RecipeForm extends Component {
         const {name, value} = event.target;
         this.setState({[name]: value})
       }
+    handleDeleteRecipe = (event) => {
+        this.setState({
+            name : "",
+            method: ""  
+        })
+        this.props.emptyForm()
+    }  
 
     render() {
         const ingredients = this.props.ingredients.map((ingredient, index) => (
@@ -73,7 +80,7 @@ export class RecipeForm extends Component {
 
                 <div>{ingredients}</div>
                 <button type="submit"   className="btn submit-contact-main ml-auto">Submit</button>
-                <button onClick={this.props.deleteProduct} className="btn submit-contact-main ml-auto deleteBtn">Delete</button>
+                <button type="reset" onClick={this.handleDeleteRecipe} className="btn submit-contact-main ml-auto deleteBtn">Delete</button>
                 <p className="errorMessage">{this.state.errorMessage}</p>
             </form>    
             </div>

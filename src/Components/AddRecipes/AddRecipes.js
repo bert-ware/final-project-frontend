@@ -36,6 +36,10 @@ export class AddRecipes extends Component {
               ({...state,
                  recipeIngredients: [...state.recipeIngredients ].splice(index, product)}) 
                  )}
+            //EMPTY FORM
+            emptyForm = () => { this.setState({
+              recipeIngredients: []
+            })}     
           
     render() {
      
@@ -69,7 +73,7 @@ export class AddRecipes extends Component {
             <Search searchParam={this.searchParam}
           handleSearchParam={handleSearchParam}/>
            <div className="ingredientDisplay"> {displayIngredients}</div>
-           <RecipeForm deleteProduct={this.deleteProduct} ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
+           <RecipeForm emptyForm={this.emptyForm} ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
             </div>
             </div>
         )
