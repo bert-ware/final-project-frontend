@@ -1,8 +1,10 @@
-import React, { Component } from "react";
-import "./Home.css";
-import "bootstrap/dist/css/bootstrap.css";
-import BottomNavigation from "../BottomNavigation/BottomNavigation";
-import Carrousel from "../Carrousel/Carrousel";
+
+import React, { Component } from "react"
+import "./Home.css"
+import "bootstrap/dist/css/bootstrap.css"
+import BottomNavigation from "../BottomNavigation/BottomNavigation"
+import Carrousel from "../Carrousel/Carrousel"
+
 
 
 export class Home extends Component {
@@ -11,21 +13,22 @@ export class Home extends Component {
       <div>
         <Carrousel
           title="We are DrinkApp"
-          image="./img/drinks/homeslider.png"
-        />
+
+          image="./img/drinks/homeslider.png"/>
+
 
         <section id="about" className="page-section">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-md-4">
-                <div className="service-item first-service">
-                  <div className="icon">
-                    <img src="/img/logo-white.svg" alt="" />
+              <div className="col-md-4" >
+                <div className="service-item first-service" id="column1">
+                  <div >
+                    <img id="logoDrink" src="/img/logo-white.svg" alt="" />
                   </div>
                   <h4>What is Drinkapp?</h4>
                   <p>
                     Drinkapp is a new tool to calculate cost breakdown of your
-                    drinks and have a track of your providers and recipes!{" "}
+                    drinks and have a track of your providers and recipes!
                     <br />
                     New cocktail menu? No time for excel? Want to know your cost
                     breakdown in a simple way? This is why Drinkapp is for you!
@@ -33,11 +36,11 @@ export class Home extends Component {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="service-item second-service">
+                <div className="service-item second-service" id="column2">
                   <div className="icon">
                     <img className="bottomIcon" src="/img/Profile.svg" alt="" />
                     <p>
-                      <b>1.-</b> Signup and create your profile
+                      <b>1.-</b> Signup and create your <b>PROFILE</b>
                     </p>
                   </div>
                   <div className="icon">
@@ -47,67 +50,41 @@ export class Home extends Component {
                       alt=""
                     />
                     <p>
-                      <b>2.-</b> Introduce your <br /> providers{" "}
-                    </p>
-                   
-                  </div>
-                  <div className="icon">
-                    <img
-                      className="bottomIcon"
-                      src="/img/Providers.svg"
-                      alt=""
-                    />
-                    <p>
-                      <b>3.-</b> In each Provider you can introduce their
-                      products and the playground will be set!
-                    </p>
-                  </div>
 
-                  <div className="icon">
-                    <img
-                      className="bottomIcon"
-                      src="/img/Products.svg"
-                      alt=""
-                    />
-                    <p>
-                      <b>4.-</b> Now we are ready <br />
-                      to go into <br />
-                      <b>Products page</b>
+                      <b>2.-</b> Introduce your <b>PROVIDERS</b> In 
+                      each of them you can introduce their
+
+                      products and the playground will be set!
                     </p>
                   </div>
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="service-item third-service">
+                <div className="service-item third-service" id="column3">
                   <div className="icon">
-                    <img className="bottomIcon" src="/img/Profile.svg" alt="" />
+                    <img className="bottomIcon" src="/img/Products.svg" alt="" />
                     <p>
-                      <b>5.-</b> In <b>Products page</b> you can search for
-                      ingredients, compare prices from different providers for
-                      same product and add ingredients to the recipe form
+                      <b>3.-</b> In <b>PRODUCTS</b> page you can search for
+                      ingredients, compare prices from different providers 
+                       and create a new recipe
                     </p>
                   </div>
+               
                   <div className="icon">
                     <img className="bottomIcon" src="/img/Recipes.svg" alt="" />
                     <p>
-                      <b>6.-</b> Recipes page <br /> select a <br /> recipe and
-                      access <br /> to a detail of ingredients <br /> and total{" "}
-                      <br /> cost break down!
+                      <b>4.-</b>In <b>RECIPES</b> page  select a  recipe and
+                      access  to a detail of ingredients  and total
+                       cost break down!
                     </p>
-                    {/* <span className='textPetit'>and have a track of them displayed on your Providers(imagen bottom bar?) page</span> */}
-                  </div>
-                  <div className="icon">
-                    <button className='buttonJoin'>Join Us</button>
-                    {/* <img className='buttonJoin' src="/img/logo-white.svg" alt="" /> */}
-                  </div>
-                  
+                  </div>                
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="gallerie">
+        {/* <section id="gallerie">
           <div className="grid_container">
             <div className="box grid_item">
               <img
@@ -133,11 +110,11 @@ export class Home extends Component {
               />
             </div>
           </div>
-        </section>
+        </section> */}
         <BottomNavigation />
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

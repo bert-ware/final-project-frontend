@@ -65,6 +65,7 @@ class Login extends Component {
               type="password"
               className="form-control"
               name="password"
+              autoComplete="on"
               placeholder="Password"
               required=""
               value={this.state.password} onChange={ e => this.handleChange(e)}
@@ -78,6 +79,7 @@ class Login extends Component {
             Submit
           </button>
           <p className="errorMessage">{this.state.errorMessage}</p>
+
           <p className="account">Don't have account?</p>
           <Link className="password" to={"/signup"}> Signup</Link>
 

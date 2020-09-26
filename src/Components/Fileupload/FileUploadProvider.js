@@ -6,8 +6,8 @@ export class Fileupload extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loggedInUser: this.props.loggedInUser.loggedInUser,  
-            img : this.props.Provider.providerImgUrl,
+            /* loggedInUser: this.props.loggedInUser.loggedInUser, */  
+            img : "",
             selectedFile: null,
         }
     }
@@ -35,9 +35,7 @@ export class Fileupload extends Component {
        
       })
     }
-     
 
-      
     render() {
         return (
             <div>

@@ -51,10 +51,13 @@ export class ProviderDetails extends Component {
       <h1>Provider Details</h1>
         <div className="providerDetailsPage">
         <img className="providerImg" src={this.state.provider.providerImgUrl} alt="Provider Img"></img>
-        <h1>Nombre: {this.state.provider.name}</h1>
-        <h2>Telephone: {this.state.provider.telephone}</h2>
-        <h3>Adress: {street} {number}</h3>
-        <p>{this.state.provider.info}</p>
+        <h1><b>Nombre:</b> {this.state.provider.name}</h1>
+        <br/>
+        <h2><b> Telephone:</b> {this.state.provider.telephone}</h2>
+        <br/>
+        <h3><b>Adress:</b> {street} {number}</h3>
+        <br/>
+        <p><b>Info:</b> {this.state.provider.info}</p>
         <button className="button is-danger" id="providersDetailsDeleteBtn" onClick={this.handleClick}>Delete provider</button>
         <div>
         <p className="uploadimageProvider">Upload a Provider Image:</p>
@@ -66,4 +69,4 @@ export class ProviderDetails extends Component {
     )
   }
 }
-export default ProviderDetails;
+export default ProviderDetails

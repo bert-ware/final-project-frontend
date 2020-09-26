@@ -27,7 +27,6 @@ import "./Providers.css"
   }
   render() {
 
-
     let providers 
     if (!this.state.providers.length) {
       providers = <div>

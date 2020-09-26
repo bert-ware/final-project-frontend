@@ -17,7 +17,7 @@ export class AddRecipes extends Component {
         }
         componentDidMount() {
             axios
-              .get(process.env.REACT_APP_API_URL + "/products/")
+              .get(process.env.REACT_APP_API_URL + "/products/", {withCredentials: true})
               .then((response) => {
                 this.setState({
                   products: response.data,    
@@ -36,6 +36,10 @@ export class AddRecipes extends Component {
               ({...state,
                  recipeIngredients: [...state.recipeIngredients ].splice(index, product)}) 
                  )}
+            //EMPTY FORM
+            emptyForm = () => { this.setState({
+              recipeIngredients: []
+            })}     
           
     render() {
      
@@ -52,7 +56,7 @@ export class AddRecipes extends Component {
         let displayIngredients 
         if (!this.state.products.length) {
           displayIngredients = <div>
-            <p>No products yet, lets add some!</p>
+            <p id="productFeedBack">No products yet, lets add some!</p>
             <Link to="/providers">Go to your provider list and start adding ingredients</Link>
           </div>
           } else {
@@ -69,7 +73,7 @@ export class AddRecipes extends Component {
             <Search searchParam={this.searchParam}
           handleSearchParam={handleSearchParam}/>
            <div className="ingredientDisplay"> {displayIngredients}</div>
-           <RecipeForm deleteProduct={this.deleteProduct} ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
+           <RecipeForm emptyForm={this.emptyForm} ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
             </div>
             </div>
         )
