@@ -1,3 +1,4 @@
+
 import React, { Component } from "react"
 import axios from "axios"
 import "./RecipeDetails.css"
@@ -6,8 +7,8 @@ import { Redirect } from 'react-router-dom'
 import Carrousel from "../Carrousel/Carrousel"
 
 
-export class RecipeDetails extends Component {
 
+export class RecipeDetails extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -33,6 +34,7 @@ export class RecipeDetails extends Component {
   handleClick = () => {
     axios.delete(process.env.REACT_APP_API_URL +"/recipes/" + this.state.id, {withCredentials: true})
     .then(() => this.setState({ redirect: true }))}
+
 
   render () {
     //Map ingredients
@@ -89,3 +91,4 @@ export class RecipeDetails extends Component {
   }
 }
 export default RecipeDetails
+

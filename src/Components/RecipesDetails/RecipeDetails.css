@@ -34,11 +34,13 @@
 #recipeTitle{
     margin-bottom: 20px;
     font-size: 5vw;
+    color: green;
 }
 #recipeDetailsDeleteBtn {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 .addRecipesTitle {
     font-size: 30px;
     color: green;
@@ -48,3 +50,10 @@
     margin-top: 100px;
     font-size: 10px;
 }
+
+#methodTitle {
+    font-size: 20px;
+    color: green;
+    margin-bottom: 20px;
+}
+

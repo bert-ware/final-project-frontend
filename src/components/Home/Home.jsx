@@ -1,8 +1,10 @@
+
 import React, { Component } from "react"
 import "./Home.css"
 import "bootstrap/dist/css/bootstrap.css"
 import BottomNavigation from "../BottomNavigation/BottomNavigation"
 import Carrousel from "../Carrousel/Carrousel"
+
 
 
 export class Home extends Component {
@@ -11,7 +13,9 @@ export class Home extends Component {
       <div>
         <Carrousel
           title="We are DrinkApp"
+
           image="./img/drinks/homeslider.png"/>
+
 
         <section id="about" className="page-section">
           <div className="container-fluid">
@@ -46,8 +50,10 @@ export class Home extends Component {
                       alt=""
                     />
                     <p>
+
                       <b>2.-</b> Introduce your <b>PROVIDERS</b> In 
                       each of them you can introduce their
+
                       products and the playground will be set!
                     </p>
                   </div>

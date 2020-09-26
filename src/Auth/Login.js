@@ -78,7 +78,6 @@ class Login extends Component {
           >
             Submit
           </button>
-
           <p className="errorMessage">{this.state.errorMessage}</p>
 
           <p className="account">Don't have account?</p>
