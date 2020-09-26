@@ -31,7 +31,7 @@ const AddProduct = (props) => {
       ...datos,
     }
     axios.post(process.env.REACT_APP_API_URL + "/products/", body,  {withCredentials : true})
-    event.target.reset();
+    event.target.reset()
   }
 
   return (
@@ -46,18 +46,20 @@ const AddProduct = (props) => {
             name="name"
           />
         </div>
-
+        <br/>
         <div>
         <label>
-          Product unit of mesure: 
+          Unit of mesure: 
+        </label>
+        <br/>
           <select value="typeFormat" onChange={handleClick} name='typeFormat'>
             <option value="">Choose one </option>
             <option value={['Grams']}>Grams</option>
             <option value={['Centiliters']}>Centiliters</option>
           </select>
-          </label>
+         
         </div>
-        
+        <br/>
         <div>
           <input
             type="number"
@@ -67,6 +69,7 @@ const AddProduct = (props) => {
             name="price"
           />
         </div>
+        <br/>
         <div>
           <input
             type="text"
@@ -75,7 +78,7 @@ const AddProduct = (props) => {
             name="format"
           />
         </div>
-
+        <br/>
         <div>
           <input
             type="text"
@@ -84,11 +87,11 @@ const AddProduct = (props) => {
             name="info"
           />
         </div>
-
+        <br/>
         <button className="button is-success" type="submit">Add product</button>
       </form>
     </Fragment>
-  );
-};
+  )
+}
 
-export default AddProduct;
+export default AddProduct

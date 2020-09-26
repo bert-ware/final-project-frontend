@@ -3,7 +3,7 @@
     margin: auto;
     max-height: 500px;
     width: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .ingredients {
     width: 33%;
@@ -43,7 +43,7 @@
     margin-bottom: 30px;
 }
 .addRecipesTitle {
-    font-size: 20px;
+    font-size: 30px;
     color: green;
     margin-bottom: 20px;
 }

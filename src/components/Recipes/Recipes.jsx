@@ -32,8 +32,7 @@ export class Recipes extends Component {
         </div>
       } else {  
        recipes = this.state.recipes.map((recipe , index) => (
-          <div key={index}>   
-          <div className="box" id="recipesPage" >
+          <div key={index} className="box" id="recipesPage" >
             <article className="media">
              <div className="media-left">
                <figure className="image is-64x64">
@@ -43,7 +42,7 @@ export class Recipes extends Component {
             <div className="media-content">
              <div className="content">
                <p>
-                <strong><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br />
+                <strong><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br/>
                 <small>Method: {recipe.method}</small> <br/>     
              </p>
             </div>  
@@ -58,10 +57,7 @@ export class Recipes extends Component {
           </div>
           </article>
         </div> 
-         <hr></hr>
-         </div>
-          ))
-     }
+          ))}
         
         return (
             <div className="container">

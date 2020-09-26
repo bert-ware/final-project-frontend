@@ -37,9 +37,11 @@ import "./IngredientBox.css"
       <div className="media-content">
         <div className="content">
           <p>
-            <strong><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link> {this.props.item.format} {this.props.item.typeFormat}</strong> <br />
-            <small>Price: {this.props.item.price}€</small> <br/>
-            <small>Provider: {this.props.item.Provider.name}</small>
+            <strong><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link></strong>
+            <br/>
+             {this.props.item.format} {this.props.item.typeFormat} <br />
+            <small><b>Price: </b>{this.props.item.price}€</small> <br/>
+            <small><b>Provider: </b> {this.props.item.Provider.name}</small>
           </p>
         </div>  
       </div>

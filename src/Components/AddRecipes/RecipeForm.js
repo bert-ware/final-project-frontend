@@ -27,7 +27,6 @@ export class RecipeForm extends Component {
                })          
             )              
         }
-        event.target.reset();
         axios.post(process.env.REACT_APP_API_URL + "/recipes/", body, {withCredentials : true})
         .then( response => {
             console.log(response) 
@@ -36,7 +35,8 @@ export class RecipeForm extends Component {
             console.log("catch handle submit" ,error.response.data.message)
           this.setState({
             errorMessage: error.response.data.message
-          })})   
+          })})
+          event.target.reset()   
       }
 
     handleChange = (event) => {  
@@ -47,8 +47,8 @@ export class RecipeForm extends Component {
     render() {
         const ingredients = this.props.ingredients.map((ingredient, index) => (
             <div key={index}>
-                <h1>Ingredient: {ingredient.product.name}</h1>
-                <h2>Recipe quantity: {ingredient.quantity}</h2>
+                <h1><b>Ingredient:</b> {ingredient.product.name}</h1>
+                <h2><b>Recipe quantity:</b> {ingredient.quantity}</h2>
                 <hr/>
             </div>
         ))
@@ -57,17 +57,18 @@ export class RecipeForm extends Component {
             <div className="recipeForm">
                 <h1 className='titleAdd'>Add a new Recipe</h1>
             <form  onSubmit={this.handleSubmit}>
-             <label>Cocktail name:</label>
+             <label><b>Cocktail name:</b></label>
                 <br />
                 <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className='form-control inputReducido' />
                 <br/>
-                <label>Cocktail technique:</label>
+                <label><b>Cocktail technique:</b></label>
                 <br/>
                 <select value={this.state.method} onChange={this.handleChange} name='method' className='form-control inputReducido'>
+                  <option value=""> </option>  
                   <option value="Shake">Shake</option>
                   <option value="Stir">Stir</option>
-                 <option value="Throw">Throw</option>
-                 <option value="Muddle">Muddle</option>
+                  <option value="Throw">Throw</option>
+                  <option value="Muddle">Muddle</option>
                 </select>
 
                 <div>{ingredients}</div>

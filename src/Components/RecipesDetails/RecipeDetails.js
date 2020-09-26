@@ -73,14 +73,14 @@ render () {
             Delete recipe
           </button>
           <div className="infoContainer">
-          <ul className="ingredients">INGREDIENTS:{ingredients}</ul>
-          <ul className="mesures">MESURES:{mesures}</ul>
-          <ul className="costMesures">COST:{mesureCost}</ul>
+          <ul className="ingredients"><b> INGREDIENTS:</b>{ingredients}</ul>
+          <ul className="mesures"><b>MESURES:</b>{mesures}</ul>
+          <ul className="costMesures"><b>COST:</b>{mesureCost}</ul>
         </div>
   <div className="stats">
             <h1 className="addRecipesTitle">Info:</h1>
-            <p>Total cost: {totalCost.toFixed(2)}</p>
-            <p>Suggested sell price: {suggestedPrice}</p>
+            <p><b>Total cost:</b> {totalCost.toFixed(2)}</p>
+            <p><b>Suggested sell price:</b> {suggestedPrice}</p>
           </div>
         </div>
      </div>   

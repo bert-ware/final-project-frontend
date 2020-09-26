@@ -1,3 +1,8 @@
 .searchBar {
     margin-top: 80px;
+    border: 20px
+   
+}
+#searchInput {
+    border: 10px !important
 }

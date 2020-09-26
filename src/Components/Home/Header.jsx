@@ -10,9 +10,7 @@ export class Header extends Component {
         <header id="home">
         <div className="header_text">
           <h1>We are DrinkApp!</h1>
-          
-          <Link id="header_button" to={"/signup/" }>JOIN US</Link>
-              
+          <Link id="header_button" to={"/signup/" }>JOIN US</Link>   
         </div>
       </header>
     );
