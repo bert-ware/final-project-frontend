@@ -16,6 +16,7 @@ export class RecipeForm extends Component {
     }
      handleSubmit = (event) => {
         event.preventDefault()
+        console.log(this.props.user)
         const body = {
             name: this.state.name,
             method: this.state.method,

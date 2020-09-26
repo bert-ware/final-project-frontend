@@ -13,7 +13,7 @@ export class Recipes extends Component {
 
       componentDidMount() {
         axios
-          .get(process.env.REACT_APP_API_URL +"/recipes/")
+          .get(process.env.REACT_APP_API_URL +"/recipes/", {withCredentials: true})
           .then((response) => {
             this.setState({
                 recipes: response.data,             

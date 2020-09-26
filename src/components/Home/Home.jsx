@@ -58,7 +58,7 @@ export class Home extends Component {
                   <div className="icon">
                     <img className="bottomIcon" src="/img/Products.svg" alt="" />
                     <p>
-                      <b>4.-</b> In <b>PRODUCTS</b> page you can search for
+                      <b>3.-</b> In <b>PRODUCTS</b> page you can search for
                       ingredients, compare prices from different providers 
                        and create a new recipe
                     </p>
@@ -67,7 +67,7 @@ export class Home extends Component {
                   <div className="icon">
                     <img className="bottomIcon" src="/img/Recipes.svg" alt="" />
                     <p>
-                      <b>5.-</b>In <b>RECIPES</b> page  select a  recipe and
+                      <b>4.-</b>In <b>RECIPES</b> page  select a  recipe and
                       access  to a detail of ingredients  and total
                        cost break down!
                     </p>

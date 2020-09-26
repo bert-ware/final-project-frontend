@@ -43,7 +43,7 @@ export class Products extends Component {
         </div>
         <div style={{ width: "40%", float: "right" }}>{add}</div>
       </div>
-    );
+    )
   }
 }
 export default Products;
