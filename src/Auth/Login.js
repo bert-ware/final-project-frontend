@@ -65,6 +65,7 @@ class Login extends Component {
               type="password"
               className="form-control"
               name="password"
+              autoComplete="on"
               placeholder="Password"
               required=""
               value={this.state.password} onChange={ e => this.handleChange(e)}
@@ -79,18 +80,6 @@ class Login extends Component {
           </button>
 
           <p className="errorMessage">{this.state.errorMessage}</p>
-
-          {/* Login FB */}
-          <div
-            className="fb-login-button"
-            data-size="medium"
-            data-button-type="login_with"
-            data-layout="rounded"
-            data-auto-logout-link="false"
-            data-use-continue-as="false"
-            data-width=""
-          ></div>
-          <br />
 
           <p className="account">Don't have account?</p>
           <Link className="password" to={"/signup"}> Signup</Link>

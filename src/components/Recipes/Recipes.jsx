@@ -13,7 +13,7 @@ export class Recipes extends Component {
 
       componentDidMount() {
         axios
-          .get(process.env.REACT_APP_API_URL +"/recipes/")
+          .get(process.env.REACT_APP_API_URL +"/recipes/", {withCredentials: true})
           .then((response) => {
             this.setState({
                 recipes: response.data,             
@@ -28,12 +28,11 @@ export class Recipes extends Component {
       if (!this.state.recipes.length) {
        recipes = 
         <div>
-          <p>No recipes yet, do your magic!</p>
+          <p>No recipes yet, go to <Link to={"/products/"}>Producst page </Link>and do your magic!</p>
         </div>
       } else {  
        recipes = this.state.recipes.map((recipe , index) => (
-          <div key={index}>   
-          <div className="box" id="recipesPage" >
+          <div key={index} className="box" id="recipesPage" >
             <article className="media">
              <div className="media-left">
                <figure className="image is-64x64">
@@ -43,7 +42,7 @@ export class Recipes extends Component {
             <div className="media-content">
              <div className="content">
                <p>
-                <strong><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br />
+                <strong><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br/>
                 <small>Method: {recipe.method}</small> <br/>     
              </p>
             </div>  
@@ -58,15 +57,12 @@ export class Recipes extends Component {
           </div>
           </article>
         </div> 
-         <hr></hr>
-         </div>
-          ))
-     }
+          ))}
         
         return (
             <div className="container">
             <div >
-              <h1>Recipes List</h1>
+              
               {recipes}
             </div>
             
