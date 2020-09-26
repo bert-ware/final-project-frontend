@@ -56,7 +56,7 @@ export class AddRecipes extends Component {
         let displayIngredients 
         if (!this.state.products.length) {
           displayIngredients = <div>
-            <p>No products yet, lets add some!</p>
+            <p id="productFeedBack">No products yet, lets add some!</p>
             <Link to="/providers">Go to your provider list and start adding ingredients</Link>
           </div>
           } else {

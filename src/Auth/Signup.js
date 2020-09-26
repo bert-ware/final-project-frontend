@@ -88,6 +88,7 @@ class Signup extends Component {
                 type="password"
                 className="form-control"
                 name="password"
+                autoComplete="on"
                 placeholder="Password"
                 required=""
                 value={this.state.password}
@@ -97,24 +98,11 @@ class Signup extends Component {
             <button
               type="submit"
               className="btn submit-contact-main ml-auto"
-              value="Signup"
-            >
+              value="Signup">
               Submit
             </button>
 
             <p className="errorMessage">{this.state.errorMessage}</p>
-
-            {/* Login FB */}
-            <div
-              className="fb-login-button"
-              data-size="medium"
-              data-button-type="login_with"
-              data-layout="rounded"
-              data-auto-logout-link="false"
-              data-use-continue-as="false"
-              data-width=""
-            ></div>
-            <br />
 
             <p className="account">Already have account?</p>
             <Link className="password" to={"/login"}>

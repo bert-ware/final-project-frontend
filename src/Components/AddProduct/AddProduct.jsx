@@ -53,7 +53,7 @@ const AddProduct = (props) => {
         </label>
         <br/>
           <select value="typeFormat" onChange={handleClick} name='typeFormat'>
-            <option value="">Choose one </option>
+            <option value="">  </option>
             <option value={['Grams']}>Grams</option>
             <option value={['Centiliters']}>Centiliters</option>
           </select>

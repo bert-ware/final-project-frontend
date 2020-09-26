@@ -28,7 +28,7 @@ export class Recipes extends Component {
       if (!this.state.recipes.length) {
        recipes = 
         <div>
-          <p>No recipes yet, do your magic!</p>
+          <p>No recipes yet, go to <Link to={"/products/"}>Producst page </Link>and do your magic!</p>
         </div>
       } else {  
        recipes = this.state.recipes.map((recipe , index) => (
@@ -62,7 +62,7 @@ export class Recipes extends Component {
         return (
             <div className="container">
             <div >
-              <h1>Recipes List</h1>
+              
               {recipes}
             </div>
             

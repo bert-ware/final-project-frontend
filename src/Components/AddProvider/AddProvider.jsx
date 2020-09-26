@@ -30,7 +30,6 @@ const AddProvider = (props) => {
         ...datos
     }
     axios.post(process.env.REACT_APP_API_URL + "/providers/", body, {withCredentials : true})
-    /* .then(() => props.updateData()) */ 
     event.target.reset()
   }
   return (
@@ -50,10 +49,8 @@ const AddProvider = (props) => {
           <input
             type="text"
             placeholder="Street"
-            //onChange={event => { handleChange(event, datos.address  ,'address'); }}
             onChange={handleChange}
-            name="street"
-            // value={datos.adress.street}
+            name="street" 
         />
         </div>
         <div>
@@ -61,10 +58,8 @@ const AddProvider = (props) => {
           <input
             type="number"
             placeholder="Number"
-            // onChange={handleChange}
             onChange={handleChange}
             name="number"
-            // value={datos.adress.number}
           />
         </div>
         <br/>

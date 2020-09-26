@@ -6,8 +6,8 @@ export class Fileupload extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loggedInUser: this.props.loggedInUser.loggedInUser,  
-            img : this.props.Provider.providerImgUrl,
+            /* loggedInUser: this.props.loggedInUser.loggedInUser, */  
+            img : "",
             selectedFile: null,
         }
     }
@@ -21,7 +21,7 @@ export class Fileupload extends Component {
         const formData = new FormData()
         formData.append("myFile", this.state.selectedFile, this.state.selectedFile.name)
 
-        axios.put(process.env.REACT_APP_API_URL + "/providers/image/   " + this.props.Provider._id , formData, {withCredentials : true})
+        axios.put(process.env.REACT_APP_API_URL + "/providers/image/" + this.props.Provider._id , formData, {withCredentials : true})
 
           .then(response => {
          this.setState({
@@ -35,9 +35,7 @@ export class Fileupload extends Component {
        
       })
     }
-     
 
-      
     render() {
         return (
             <div>

@@ -34,11 +34,11 @@ export class RecipeDetails extends Component {
     axios.delete(process.env.REACT_APP_API_URL +"/recipes/" + this.state.id, {withCredentials: true})
     .then(() => this.setState({ redirect: true }))}
 
-render () {
+  render () {
     //Map ingredients
     const ingredients = this.state.recipe.ingredients.map((ingredient) =>
     <li key={ingredient.product._id}> {ingredient.product.name} </li>
-)
+    )
     //Map mesures
     const mesures = this.state.recipe.ingredients.map((ingredient, index) => (
       <li key={index}>
@@ -80,11 +80,12 @@ render () {
   <div className="stats">
             <h1 className="addRecipesTitle">Info:</h1>
             <p><b>Total cost:</b> {totalCost.toFixed(2)}</p>
-            <p><b>Suggested sell price:</b> {suggestedPrice}</p>
+            <p><b>Suggested sell price*:</b> {suggestedPrice}</p>
           </div>
+          <p id="leyenda">* Orientative price ensuring cost price dont exceed 20% beverage cost</p>
         </div>
      </div>   
     )
   }
 }
-export default RecipeDetails;
+export default RecipeDetails

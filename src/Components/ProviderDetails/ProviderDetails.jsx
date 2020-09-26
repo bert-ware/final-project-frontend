@@ -57,7 +57,7 @@ export class ProviderDetails extends Component {
         <br/>
         <h3><b>Adress:</b> {street} {number}</h3>
         <br/>
-        <p>Info: {this.state.provider.info}</p>
+        <p><b>Info:</b> {this.state.provider.info}</p>
         <button className="button is-danger" id="providersDetailsDeleteBtn" onClick={this.handleClick}>Delete provider</button>
         <div>
         <p className="uploadimageProvider">Upload a Provider Image:</p>
