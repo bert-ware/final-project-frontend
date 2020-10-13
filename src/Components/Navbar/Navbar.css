@@ -52,7 +52,6 @@
 
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
   float: right;
   padding: 28px 20px;
   position: relative;
@@ -136,6 +135,6 @@
 .img-logo{
   position: absolute;
   width: 120px !important;
-  /* vertical-align: middle; */
   border-style: none;
 }
+
