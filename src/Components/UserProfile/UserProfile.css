@@ -15,12 +15,6 @@ html {
    --main-accent-color: #9b45e4;
    --secondary-accent-color: #e13a9d;
  }
-
- /*  body{
-    background-color: black;
- } */
-  
-
  
  button {
    font-family: inherit;
@@ -59,12 +53,8 @@ html {
      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
      0 100px 80px rgba(0, 0, 0, 0.07);
    position: relative;
- /*   margin-top: 50px;
-   margin-bottom: 50px; */
  }
- 
 
- 
  .card__image {
     margin: auto;
    width: 100px;
