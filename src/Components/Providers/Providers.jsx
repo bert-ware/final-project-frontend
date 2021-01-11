@@ -39,7 +39,7 @@ import "./Providers.css"
       <article className="media">
         <div className="media-left">
           <figure className="image is-64x64">
-            <img className="productImg" src={provider.providerImgUrl} alt="img"/>
+            <img className="productImg" src={provider.imgUrl} alt="img"/>
           </figure>
         </div>
         <div className="media-content">

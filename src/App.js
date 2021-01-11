@@ -1,6 +1,9 @@
 import React, { useState } from "react"
-import "./App.css";
 import { Switch, Route } from "react-router-dom"
+
+import "./App.css";
+import "bulma/css/bulma.css"
+
 import ProductDetails from "./components/ProductDetails/ProductDetails"
 import Providers from "./components/Providers/Providers"
 import ProviderDetails from "./components/ProviderDetails/ProviderDetails"
@@ -14,7 +17,6 @@ import UserProfile from "./components/UserProfile/UserProfile"
 import BottomNavigation from "./components/BottomNavigation/BottomNavigation"
 import AddRecipes from "./components/AddRecipes/AddRecipes"
 import ProtectedRoute from "./Auth/ProtectedRoute"
-import "bulma/css/bulma.css"
 import Navbar from "./components/Navbar/Navbar"
 
 function App(props) {

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import FileUploadUser from "../Fileupload/FileuploadUser";
-// import "bootstrap/dist/css/bootstrap.css";
-import axios from "axios";
+import React, { Component } from "react"
+import { Redirect } from "react-router-dom"
+import FileUploadNew from "../Fileupload/FileUploadNew"
+import axios from "axios"
 
+// import "bootstrap/dist/css/bootstrap.css"
 
-import "./UserProfile.css";
+import "./UserProfile.css"
 
 export class UserProfile extends Component {
   constructor(props) {
@@ -16,7 +16,8 @@ export class UserProfile extends Component {
       recipes: 0,
       providers: 0,
       products: 0
-    };
+    }
+    console.log(this.state.loggedInUser.loggedInUser._id)
   }
 
   componentDidMount() {
@@ -60,7 +61,7 @@ export class UserProfile extends Component {
 
         <main className="container">
 		<div className="card">
-		  <img src={this.props.loggedInUser.loggedInUser.userImgUrl} alt="User" className="card__image" />
+		  <img src={this.props.loggedInUser.loggedInUser.imgUrl} alt="User" className="card__image" />
 		  <div className="card__text">
 			<h2>Welcome {this.state.loggedInUser.loggedInUser.name}!</h2>
 			<p>{this.state.loggedInUser.loggedInUser.email}{" "}</p>
@@ -80,7 +81,8 @@ export class UserProfile extends Component {
 			</li>
 		  </ul>
 		  <div className="card__action">
-      <FileUploadUser {...this.props} />
+      {/* <FileUploadUser {...this.props} /> */}
+      <FileUploadNew {...this.props} item={this.state.loggedInUser.loggedInUser} section="user" />
 		  </div>
 		</div>
 	  </main>

@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
-import "./ProviderDetails.css"
 import AddProduct from "../AddProduct/AddProduct"
-import FileUploadProviders from "../Fileupload/FileUploadProvider"
+import FileUploadNew from "../Fileupload/FileUploadNew.js"
 
+import "./ProviderDetails.css"
 
 export class ProviderDetails extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ export class ProviderDetails extends Component {
       provider: {},
       redirect: false
     }
+    
   }
    //Recogida datos API
   componentDidMount() {
@@ -23,6 +24,7 @@ export class ProviderDetails extends Component {
         this.setState({
           provider: response.data,
         })
+        console.log(this.state.provider.imgUrl)
       })
   }
   //Handle borrar
@@ -48,24 +50,24 @@ export class ProviderDetails extends Component {
 
     return (
       <div >
-      <h1>Provider Details</h1>
+        <h1>Provider Details</h1>
         <div className="providerDetailsPage">
-        <img className="providerImg" src={this.state.provider.providerImgUrl} alt="Provider Img"></img>
-        <h1><b>Nombre:</b> {this.state.provider.name}</h1>
-        <br/>
-        <h2><b> Telephone:</b> {this.state.provider.telephone}</h2>
-        <br/>
-        <h3><b>Adress:</b> {street} {number}</h3>
-        <br/>
-        <p><b>Info:</b> {this.state.provider.info}</p>
-        <button className="button is-danger" id="providersDetailsDeleteBtn" onClick={this.handleClick}>Delete provider</button>
-        <div>
-        <p className="uploadimageProvider">Upload a Provider Image:</p>
-        <FileUploadProviders {...this.props} Provider={this.state.provider}/>
+          <img className="providerImg" src={this.state.provider.imgUrl} alt="Provider Img"></img>
+          <h1><b>Nombre:</b> {this.state.provider.name}</h1>
+          <br />
+          <h2><b> Telephone:</b> {this.state.provider.telephone}</h2>
+          <br />
+          <h3><b>Adress:</b> {street} {number}</h3>
+          <br />
+          <p><b>Info:</b> {this.state.provider.info}</p>
+          <button className="button is-danger" id="providersDetailsDeleteBtn" onClick={this.handleClick}>Delete provider</button>
+          <div>
+            <p className="uploadimageProvider">Upload a Provider Image:</p>
+            <FileUploadNew {...this.props} item={this.state.provider} section="providers" />
+          </div>
+          <AddProduct Provider={this.state.id} />
         </div>
-        <AddProduct Provider={this.state.id}/>
       </div>
-    </div>
     )
   }
 }

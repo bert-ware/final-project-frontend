@@ -1,11 +1,10 @@
-
 import React, { Component } from "react"
 import axios from "axios"
-import "./RecipeDetails.css"
-import FileUploadRecipes from "../Fileupload/FileUploadRecipes"
 import { Redirect } from 'react-router-dom'
 import Carrousel from "../Carrousel/Carrousel"
+import FileUploadNew from "../Fileupload/FileUploadNew"
 
+import "./RecipeDetails.css"
 
 
 export class RecipeDetails extends Component {
@@ -67,10 +66,10 @@ export class RecipeDetails extends Component {
 
     return (
       <div>
-      <Carrousel image={this.state.recipe.recipeImgUrl} title={this.state.recipe.name}/>
+      <Carrousel image={this.state.recipe.imgUrl} title={this.state.recipe.name}/>
         <div className="recipeDetailsPage">
           <h2 className="addRecipesTitle">Method: {this.state.recipe.method}</h2>
-          <FileUploadRecipes {...this.props} recipe={this.state.recipe} />
+          <FileUploadNew {...this.props} item={this.state.recipe} section="recipes" />
           <button onClick={this.handleClick} id="recipeDetailsDeleteBtn" className="button is-danger">
             Delete recipe
           </button>

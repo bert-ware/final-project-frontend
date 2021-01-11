@@ -36,7 +36,7 @@ export class Recipes extends Component {
             <article className="media">
              <div className="media-left">
                <figure className="image is-64x64">
-                <img className="productImg" src={recipe.recipeImgUrl} alt="img"/>
+                <img className="productImg" src={recipe.imgUrl} alt="img"/>
                </figure>
              </div>
             <div className="media-content">
@@ -50,7 +50,7 @@ export class Recipes extends Component {
            <div className="media-right">
               <div className="field has-addons">
                 <div className="control">
-                <h1>Main ingredient:</h1>
+                <p>Main ingredient:</p>
                  <small>{recipe.ingredients[0].product.name}</small>
                 </div>
             </div>

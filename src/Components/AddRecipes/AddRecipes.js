@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 import axios from "axios"
 import Search from "../Search/Search"
- import "./AddRecipes.css"
 import RecipeForm from "./RecipeForm"
 import IngredientBox from "./IngredientBox"
-import { Link } from "react-router-dom"
+
+import "./AddRecipes.css"
 
 export class AddRecipes extends Component {
     constructor (props) {
@@ -68,13 +69,14 @@ export class AddRecipes extends Component {
       }
         return (
             <div>
-            <h1>Products</h1>
-            <div id="addRecipePage"> 
-            <Search searchParam={this.searchParam}
-          handleSearchParam={handleSearchParam}/>
-           <div className="ingredientDisplay"> {displayIngredients}</div>
-           <RecipeForm emptyForm={this.emptyForm} ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
-            </div>
+              <h1>Products</h1>
+              <div id="addRecipePage"> 
+                <Search 
+                searchParam={this.searchParam}
+                handleSearchParam={handleSearchParam}/>
+                <div className="ingredientDisplay"> {displayIngredients}</div>
+                <RecipeForm emptyForm={this.emptyForm} ingredients={this.state.recipeIngredients} user={this.props.loggedInUser.loggedInUser._id}/>
+              </div>
             </div>
         )
     }

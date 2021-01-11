@@ -67,6 +67,7 @@ button:hover {
   position: relative;
   height: 70vh;
   overflow: hidden;
+  margin-bottom: 100px;
 }
 
 .slide {

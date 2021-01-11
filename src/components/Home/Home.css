@@ -14,28 +14,11 @@ section {
 section h2 {
   margin-bottom: 20px;
 }
-.header_text {
-  text-align: center;
-  color: white;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
-}
 
-.header_text p {
-  font-size: 1em;
-  margin-bottom: 50px;
-}
-
-.header_text h1 {
-  line-height: 1.5;
-}
 #logoDrink {
   height: 200px;
 }
+
 /* 3D BOX ANIMATION */
 .bottomIcon {
 width: 60%;

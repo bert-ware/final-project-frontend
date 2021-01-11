@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+
 import "./IngredientBox.css"
 
  class IngredientBox extends Component {
@@ -31,7 +32,7 @@ import "./IngredientBox.css"
     <article className="media">
       <div className="media-left">
         <figure className="image is-64x64">
-          <img className="productImg" src={this.props.item.productImgUrl} alt="img"/>
+          <img className="productImg" src={this.props.item.imgUrl} alt="img"/>
         </figure>
       </div>
       <div className="media-content">
