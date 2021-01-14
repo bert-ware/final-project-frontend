@@ -35,26 +35,16 @@ export class Recipes extends Component {
           <div key={index} className="box" id="recipesPage" >
             <article className="media">
              <div className="media-left">
-               <figure className="image is-64x64">
+               <figure className="image is-128x128">
                 <img className="productImg" src={recipe.imgUrl} alt="img"/>
                </figure>
              </div>
             <div className="media-content">
              <div className="content">
-               <p>
-                <strong><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br/>
-                <small>Method: {recipe.method}</small> <br/>     
-             </p>
+                <strong id="linkTitle"><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br/>   
+                <p><b>Main ingredient: </b>{recipe.ingredients[0].product.name}</p>
             </div>  
            </div>
-           <div className="media-right">
-              <div className="field has-addons">
-                <div className="control">
-                <p>Main ingredient:</p>
-                 <small>{recipe.ingredients[0].product.name}</small>
-                </div>
-            </div>
-          </div>
           </article>
         </div> 
           ))}

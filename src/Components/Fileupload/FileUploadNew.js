@@ -26,9 +26,7 @@ function FileUploadNew(props) {
         //PUT PARA CAMBIAR IMAGEN
         axios.put(process.env.REACT_APP_API_URL +`/${props.section}/image/` + props.item._id , formData, {withCredentials : true})
           .then(response => {
- 
             props.changeImg(response.data.imgUrl)
-        
       })
     }  
 
