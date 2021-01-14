@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./BottomNavigation.css";
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
+
+import "./BottomNavigation.css"
 
 export class BottomNavigation extends Component {
   constructor(props) {

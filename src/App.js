@@ -1,20 +1,22 @@
 import React, { useState } from "react"
-import "./App.css";
 import { Switch, Route } from "react-router-dom"
-import ProductDetails from "./components/ProductDetails/ProductDetails"
+
+import "./App.css"
+import "bulma/css/bulma.css"
+
+import ProductDetails from "./components/Products/ProductDetails/ProductDetails.jsx"
 import Providers from "./components/Providers/Providers"
-import ProviderDetails from "./components/ProviderDetails/ProviderDetails"
+import ProviderDetails from "./components/Providers/ProviderDetails/ProviderDetails"
 import Home from "./components/Home/Home"
 import Recipes from "./components/Recipes/Recipes"
-import RecipeDetails from "./components/RecipesDetails/RecipeDetails"
+import RecipeDetails from "./components/Recipes/RecipesDetails/RecipeDetails"
 import Signup from "./Auth/Signup"
 import Logout from "./Auth/Logout"
 import Login from "./Auth/Login"
 import UserProfile from "./components/UserProfile/UserProfile"
 import BottomNavigation from "./components/BottomNavigation/BottomNavigation"
-import AddRecipes from "./components/AddRecipes/AddRecipes"
+import AddRecipes from "./components/Products/AddRecipes/AddRecipes"
 import ProtectedRoute from "./Auth/ProtectedRoute"
-import "bulma/css/bulma.css"
 import Navbar from "./components/Navbar/Navbar"
 
 function App(props) {

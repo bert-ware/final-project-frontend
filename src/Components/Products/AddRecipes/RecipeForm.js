@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import "./RecipeForm.css"
+import React, { Component } from 'react'
 import axios from "axios"
-import '../../Auth/AuthCSS/SignUp.css'
-import "bootstrap/dist/css/bootstrap.min.css";
 
+import '../../../Auth/AuthCSS/SignUp.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./RecipeForm.css"
 
 export class RecipeForm extends Component {
     constructor(props) {
@@ -80,8 +80,10 @@ export class RecipeForm extends Component {
                 </select>
 
                 <div>{ingredients}</div>
-                <button type="submit"   className="btn submit-contact-main ml-auto">Submit</button>
-                <button type="reset" onClick={this.handleDeleteRecipe} className="btn submit-contact-main ml-auto deleteBtn">Delete</button>
+                <div className="btnGroup">
+                    <button type="submit"   className="btn submit-contact-main ml-auto">Submit</button>
+                    <button type="reset" onClick={this.handleDeleteRecipe} className="btn submit-contact-main ml-auto deleteBtn">Delete</button>
+                </div>    
                 <p className="errorMessage">{this.state.errorMessage}</p>
             </form>    
             </div>

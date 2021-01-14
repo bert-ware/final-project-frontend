@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import AuthService from './AuthService'
 import { Link, Redirect } from 'react-router-dom'
-import "./AuthCSS/SignUp.css";
 import Carrousel from '../components/Carrousel/Carrousel';
 
+import "./AuthCSS/SignUp.css";
 
 class Login extends Component {
   constructor(props){
@@ -80,7 +80,7 @@ class Login extends Component {
           </button>
           <p className="errorMessage">{this.state.errorMessage}</p>
 
-          <p className="account">Don't have account?</p>
+          <p className="account">Don't have an account?</p>
           <Link className="password" to={"/signup"}> Signup</Link>
 
         </form>

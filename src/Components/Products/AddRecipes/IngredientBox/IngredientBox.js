@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+
 import "./IngredientBox.css"
 
  class IngredientBox extends Component {
@@ -30,18 +31,18 @@ import "./IngredientBox.css"
                <div className="box" key={this.props.index}>
     <article className="media">
       <div className="media-left">
-        <figure className="image is-64x64">
-          <img className="productImg" src={this.props.item.productImgUrl} alt="img"/>
+        <figure className="image is-128x128">
+          <img className="productImg" src={this.props.item.imgUrl} alt="img"/>
         </figure>
       </div>
       <div className="media-content">
         <div className="content">
           <p>
-            <strong><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link></strong>
+            <strong id="linkTitle"><Link to={"/products/" + this.props.item._id}>{this.props.item.name}</Link></strong>
             <br/>
-             {this.props.item.format} {this.props.item.typeFormat} <br />
-            <small><b>Price: </b>{this.props.item.price}€</small> <br/>
-            <small><b>Provider: </b> {this.props.item.Provider.name}</small>
+            <b>Format:</b> {this.props.item.format} {this.props.item.typeFormat} <br />
+            <b>Price: </b>{this.props.item.price}€ <br/>
+            <b>Provider: </b> {this.props.item.Provider.name}
           </p>
         </div>  
       </div>

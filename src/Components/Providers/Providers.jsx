@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
-import AddProvider from "../AddProvider/AddProvider"
+import AddProvider from "./AddProvider/AddProvider"
 import "./Providers.css"
 
  class Providers extends Component {
@@ -38,14 +38,14 @@ import "./Providers.css"
       <div className="box" key={index}>
       <article className="media">
         <div className="media-left">
-          <figure className="image is-64x64">
-            <img className="productImg" src={provider.providerImgUrl} alt="img"/>
+          <figure className="image is-128x128">
+            <img className="productImg" src={provider.imgUrl} alt="productImg"/>
           </figure>
         </div>
         <div className="media-content">
           <div className="content">
             <p>
-              <strong><Link to={"/providers/" + provider._id}>{provider.name}</Link></strong> <br />
+              <strong id="linkTitle"><Link to={"/providers/" + provider._id}>{provider.name}</Link></strong> <br />
               <small>Adress: {provider.adress.street} Nº: {provider.adress.number}</small> <br/>
               <small>{provider.info}</small>
             </p>

@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState } from "react"
 import axios from 'axios'
+
 import "./AddProvider.css"
 
 const AddProvider = (props) => {
@@ -84,7 +85,7 @@ const AddProvider = (props) => {
         <br/>
         <div>
         </div>
-        <button  className="button is-info" type="submit">Add providers</button>
+        <button id="addProviderBtn" className="button is-info" type="submit">Add providers</button>
       </form>
     </Fragment>
   )
