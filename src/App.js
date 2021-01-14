@@ -23,7 +23,7 @@ function App(props) {
   const setTheUser = (userObj) =>
     setLogIn({
       loggedInUser: userObj,
-    });
+    })
 
   return (
     <div className="App">
