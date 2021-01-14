@@ -21,7 +21,7 @@ export class Home extends Component {
                 <div className="service-item first-service">
                   <img id="logoDrink" src="/img/logo-white.svg" alt="Logo" />
 
-                  <div>
+                  <div id="explanationHome">
                     <h4>What is Drinkapp?</h4>
                     <p>
                       Drinkapp is a new tool to calculate cost breakdown of your
@@ -61,7 +61,7 @@ export class Home extends Component {
                     </div>
                     <div className="box-back1">
                       <p>
-                        <b>2.-</b> Introduce your <b>PROVIDERS</b> In each of
+                        <b>2.-</b> Introduce your <b>PROVIDERS.</b> In each of
                         them you can introduce their products and the playground
                         will be set!
                       </p>
@@ -82,7 +82,7 @@ export class Home extends Component {
                     <div className="box-back2">
                       <p>
                         <b>3.-</b> In <b>PRODUCTS</b> page you can search for
-                        ingredients, compare prices from different providers and
+                        ingredients, compare prices and
                         create a new recipe
                       </p>
                     </div>
