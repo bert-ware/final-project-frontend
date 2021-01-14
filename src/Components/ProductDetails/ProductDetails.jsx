@@ -11,10 +11,16 @@ export class ProductDetails extends Component {
         this.state = {
             id: props.match.params.id,
             product: {},
+            img: "",
             redirect: false
         }
-    
+        this.handleImgState = this.handleImgState.bind(this)
     }
+
+    //Funcion lifting state up
+  handleImgState(input) {
+    this.setState({ img: input })
+  }
     
      //Recogida datos API
     componentDidMount() {
@@ -22,9 +28,9 @@ export class ProductDetails extends Component {
         .then(response => {
             
             this.setState({
-                product: response.data
+                product: response.data,
+                img: response.data.imgUrl
             })
-            console.log(this.state.product._id)
         })
     }
     //Handle borrar
@@ -44,13 +50,13 @@ export class ProductDetails extends Component {
             <div>
                 <h1>Product Details</h1>
                     <div className="productDetailsPage">
-                     <img className="productImgDetails" src={this.state.product.imgUrl} alt="Product Img"></img>
+                     <img className="productImgDetails" src={this.state.img} alt="Product Img"></img>
                      <h1>{this.state.product.name}</h1>
                      <h2>Unitary cost: {this.state.product.price}$</h2>  
                      <h3>Format: {this.state.product.format}</h3>
                      <p>{this.state.product.info}</p>
                      <button onClick={this.handleClick} className="button is-danger" id="productDetailsDeleteBtn">Delete product</button>
-                     <FileUploadNew {...this.props} item={this.state.product} section="products" />
+                     <FileUploadNew {...this.props} item={this.state.product} section="products" changeImg={this.handleImgState} />
                 </div>
             </div>
         )

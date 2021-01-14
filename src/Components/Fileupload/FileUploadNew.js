@@ -7,7 +7,6 @@ function FileUploadNew(props) {
 
     const [state, setState] = useState({
         loggedInUser: props.loggedInUser.loggedInUser,  
-        img : "",
         selectedFile: null,
         section : props.section,
     
@@ -15,6 +14,7 @@ function FileUploadNew(props) {
 
     const fileSelectHandler = event => {
         setState({
+          ...state,
           selectedFile : event.target.files[0],
         })
       }
@@ -26,16 +26,9 @@ function FileUploadNew(props) {
         //PUT PARA CAMBIAR IMAGEN
         axios.put(process.env.REACT_APP_API_URL +`/${props.section}/image/` + props.item._id , formData, {withCredentials : true})
           .then(response => {
-            setState({
-            img: response.data.imgUrl
-          })
-           
-        const updatedImg = {
-            ...props.item
-        }
-        updatedImg.imgUrl = response.data.imgUrl
+ 
+            props.changeImg(response.data.imgUrl)
         
-       console.log(props.item._id)
       })
     }  
 

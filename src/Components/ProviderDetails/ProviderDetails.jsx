@@ -11,10 +11,15 @@ export class ProviderDetails extends Component {
     super(props);
     this.state = {
       id: props.match.params.id,
+      img: "",
       provider: {},
       redirect: false
     }
-    
+    this.handleImgState = this.handleImgState.bind(this)
+  }
+   //Funcion lifting state up
+   handleImgState(input) {
+    this.setState({ img: input })
   }
    //Recogida datos API
   componentDidMount() {
@@ -23,8 +28,8 @@ export class ProviderDetails extends Component {
       .then((response) => {
         this.setState({
           provider: response.data,
+          img: response.data.imgUrl
         })
-        console.log(this.state.provider.imgUrl)
       })
   }
   //Handle borrar
@@ -52,7 +57,7 @@ export class ProviderDetails extends Component {
       <div >
         <h1>Provider Details</h1>
         <div className="providerDetailsPage">
-          <img className="providerImg" src={this.state.provider.imgUrl} alt="Provider Img"></img>
+          <img className="providerImg" src={this.state.img} alt="Provider Img"></img>
           <h1><b>Nombre:</b> {this.state.provider.name}</h1>
           <br />
           <h2><b> Telephone:</b> {this.state.provider.telephone}</h2>
@@ -63,7 +68,7 @@ export class ProviderDetails extends Component {
           <button className="button is-danger" id="providersDetailsDeleteBtn" onClick={this.handleClick}>Delete provider</button>
           <div>
             <p className="uploadimageProvider">Upload a Provider Image:</p>
-            <FileUploadNew {...this.props} item={this.state.provider} section="providers" />
+            <FileUploadNew {...this.props} item={this.state.provider} section="providers" changeImg={this.handleImgState}/>
           </div>
           <AddProduct Provider={this.state.id} />
         </div>

@@ -12,44 +12,49 @@ export class UserProfile extends Component {
     super(props);
     this.state = {
       loggedInUser: this.props.loggedInUser,
-      img: this.props.loggedInUser.loggedInUser.userImgUrl,
+      img: this.props.loggedInUser.loggedInUser.imgUrl,
       recipes: 0,
       providers: 0,
       products: 0
     }
-    console.log(this.state.loggedInUser.loggedInUser._id)
+    this.handleImgState = this.handleImgState.bind(this)
+  }
+  //Funcion lifting state up
+   handleImgState(input) {
+    this.setState({ img: input })
   }
 
   componentDidMount() {
     // Estado de recetas
     axios
-      .get(process.env.REACT_APP_API_URL +"/recipes/",{withCredentials: true})
+      .get(process.env.REACT_APP_API_URL + "/recipes/", { withCredentials: true })
       .then((response) => {
         this.setState({
-            recipes: response.data.length,             
+          recipes: response.data.length,
         })
       })
-      .catch((err) => console.log( err))
+      .catch((err) => console.log(err))
 
-      // Estado de productos
+    // Estado de productos
 
-      axios
-      .get(process.env.REACT_APP_API_URL +"/products/", {withCredentials: true})
+    axios
+      .get(process.env.REACT_APP_API_URL + "/products/", { withCredentials: true })
       .then((response) => {
         this.setState({
-          products: response.data.length,    
+          products: response.data.length,
         })
       })
 
-      // Estado de providers
-      axios
-      .get(process.env.REACT_APP_API_URL +"/providers/", {withCredentials: true})
+    // Estado de providers
+    axios
+      .get(process.env.REACT_APP_API_URL + "/providers/", { withCredentials: true })
       .then((response) => {
         this.setState({
-          providers: response.data.length,    
+          providers: response.data.length,
         })
       })
   }
+
 
   render() {
     if (!this.state.loggedInUser) {
@@ -60,32 +65,31 @@ export class UserProfile extends Component {
       return (
 
         <main className="container">
-		<div className="card">
-		  <img src={this.props.loggedInUser.loggedInUser.imgUrl} alt="User" className="card__image" />
-		  <div className="card__text">
-			<h2>Welcome {this.state.loggedInUser.loggedInUser.name}!</h2>
-			<p>{this.state.loggedInUser.loggedInUser.email}{" "}</p>
-		  </div>
-		  <ul className="card__info">
-			<li>
-			  <span className="card__info__stats">{this.state.recipes}</span>
-			  <span>Recipes</span>
-			</li>
-			<li>
-			  <span className="card__info__stats">{this.state.products}</span>
-			  <span>Products</span>
-			</li>
-			<li>
-			  <span className="card__info__stats">{this.state.providers}</span>
-			  <span>Providers</span>
-			</li>
-		  </ul>
-		  <div className="card__action">
-      {/* <FileUploadUser {...this.props} /> */}
-      <FileUploadNew {...this.props} item={this.state.loggedInUser.loggedInUser} section="user" />
-		  </div>
-		</div>
-	  </main>
+          <div className="card">
+            <img src={this.state.img} alt="User" className="card__image" />
+            <div className="card__text">
+              <h2>Welcome {this.state.loggedInUser.loggedInUser.name}!</h2>
+              <p>{this.state.loggedInUser.loggedInUser.email}{" "}</p>
+            </div>
+            <ul className="card__info">
+              <li>
+                <span className="card__info__stats">{this.state.recipes}</span>
+                <span>Recipes</span>
+              </li>
+              <li>
+                <span className="card__info__stats">{this.state.products}</span>
+                <span>Products</span>
+              </li>
+              <li>
+                <span className="card__info__stats">{this.state.providers}</span>
+                <span>Providers</span>
+              </li>
+            </ul>
+            <div className="card__action">
+              <FileUploadNew {...this.props} item={this.state.loggedInUser.loggedInUser} section="user" changeImg={this.handleImgState} />
+            </div>
+          </div>
+        </main>
       );
     }
 
