@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
-import Carrousel from "../Carrousel/Carrousel"
-import FileUploadNew from "../Fileupload/FileUploadNew"
+import Carrousel from "../../Carrousel/Carrousel"
+import FileUploadNew from "../../Fileupload/FileUploadNew"
 
 import "./RecipeDetails.css"
 

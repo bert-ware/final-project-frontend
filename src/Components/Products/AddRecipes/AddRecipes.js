@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import axios from "axios"
-import Search from "../Search/Search"
+import Search from "./Search/Search"
 import RecipeForm from "./RecipeForm"
-import IngredientBox from "./IngredientBox"
+import IngredientBox from "./IngredientBox/IngredientBox"
 
 import "./AddRecipes.css"
 

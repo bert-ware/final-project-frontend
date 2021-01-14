@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 
-import '../../Auth/AuthCSS/SignUp.css'
+import '../../../Auth/AuthCSS/SignUp.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./RecipeForm.css"
 

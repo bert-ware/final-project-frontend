@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
-import FileUploadNew from '../Fileupload/FileUploadNew'
+import FileUploadNew from '../../Fileupload/FileUploadNew'
 
 import "./ProductDetails.css"
 

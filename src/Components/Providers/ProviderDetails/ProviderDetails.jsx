@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
-import AddProduct from "../AddProduct/AddProduct"
-import FileUploadNew from "../Fileupload/FileUploadNew.js"
+import AddProduct from "../../Products/AddProduct/AddProduct"
+import FileUploadNew from "../../Fileupload/FileUploadNew"
 
 import "./ProviderDetails.css"
 
