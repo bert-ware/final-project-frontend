@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import Slider from 'react-animated-slider';
-import 'react-animated-slider/build/horizontal.css';
-import './Carrousel.css';
-import "bootstrap/dist/css/bootstrap.min.css";
+import Slider from 'react-animated-slider'
+
+import 'react-animated-slider/build/horizontal.css'
+import './Carrousel.css'
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export class Carrousel extends Component {
-    
+ 
     render() {
             
         return (
@@ -20,7 +21,6 @@ export class Carrousel extends Component {
               
                 <div className="inner">
                   <h1>{this.props.title}</h1>
-                  {/* <p>{item.description}</p> */}
                 </div>
               </div>
             </Slider>

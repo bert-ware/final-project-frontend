@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import React, { Component } from "react"
+import { NavLink } from "react-router-dom"
+
+import "./Navbar.css"
 
 export class Navbar extends Component {
 

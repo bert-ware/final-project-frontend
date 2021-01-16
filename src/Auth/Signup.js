@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import AuthService from "./AuthService";
-import { Link, Redirect } from "react-router-dom";
-import Carrousel from "../components/Carrousel/Carrousel";
-import "./AuthCSS/SignUp.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { Component } from "react"
+import AuthService from "./AuthService"
+import { Link, Redirect } from "react-router-dom"
+import Carrousel from "../components/Carrousel/Carrousel"
+
+import "./AuthCSS/SignUp.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 class Signup extends Component {
   constructor(props) {
@@ -56,8 +57,9 @@ class Signup extends Component {
     return (
       <div className="signUpContainer">
         <div>
-          <Carrousel title='We are DrinkApp' image='./img/drinks/signupslider.png'/>
+          <Carrousel title='We are DrinkApp' image="./img/drinks/cocktail3.jpg"/>
         </div>
+        
         <div className="col-lg-7 contact-right mt-lg-0 mt-5 testing-centered">
           <form onSubmit={this.handleFormSubmit}>
             <div className="row">
@@ -104,7 +106,7 @@ class Signup extends Component {
 
             <p className="errorMessage">{this.state.errorMessage}</p>
 
-            <p className="account">Already have account?</p>
+            <p className="account">Already have an account?</p>
             <Link className="password" to={"/login"}>
               Login
             </Link>

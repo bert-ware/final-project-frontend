@@ -1,11 +1,16 @@
 
 .App {
   text-align: center;
+  font-size: 1.1em;
 }
+
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+#linkTitle {
+  font-size: 1.2em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
