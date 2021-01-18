@@ -48,20 +48,24 @@ export class RecipeDetails extends Component {
   render() {
     //Map ingredients
     const ingredients = this.state.recipe.ingredients.map((ingredient) =>
-      <li key={ingredient.product._id}> {ingredient.product.name} </li>
+      <li key={ingredient.product._id}> <b>{ingredient.product.name}</b> 
+      <hr/>
+      </li>
     )
     //Map mesures
     const mesures = this.state.recipe.ingredients.map((ingredient, index) => (
       <li key={index}>
         {ingredient.quantity} {ingredient.product.typeFormat}
+        <hr/>
       </li>
+      
     ))
     //Map Cost mesures
     const mesureCostArr = this.state.recipe.ingredients.map((ingredient) =>
       Number(((ingredient.product.price / ingredient.product.format) * ingredient.quantity).toFixed(2)))
 
     const mesureCost = mesureCostArr.map((cost, index) => (
-      <li key={index}> {cost} </li>
+      <li key={index}> {cost} <hr/></li>
     ))
     //Total recipe Cost
     const totalCost = mesureCostArr.reduce((a, b) => a + b, 0)
@@ -84,10 +88,14 @@ export class RecipeDetails extends Component {
             Delete recipe
           </button>
           <div className="infoContainer">
-            <ul className="ingredients"><b> INGREDIENTS:</b>{ingredients}</ul>
-            <ul className="mesures"><b>MESURES:</b>{mesures}</ul>
-            <ul className="costMesures"><b>COST:</b>{mesureCost}</ul>
+            <ul className="ingredients"><b> INGREDIENTS:<hr/></b>{ingredients}</ul>
+            
+            <ul className="mesures"><b>MESURES:<hr/></b>{mesures}</ul>
+            
+            <ul className="costMesures"><b>COST:<hr/></b>{mesureCost}</ul>
+            
           </div>
+          
           <div className="stats">
             <h1 className="addRecipesTitle">Info:</h1>
             <p><b>Total cost:</b> {totalCost.toFixed(2)}</p>

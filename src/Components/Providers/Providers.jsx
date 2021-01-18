@@ -29,10 +29,10 @@ import "./Providers.css"
 
     let providers 
     if (!this.state.providers.length) {
-      providers = <div>
+      providers = 
+        <div>
         <p>No providers yet, lets add some!</p>
-        
-      </div>
+        </div>
     } else {
       providers =   this.state.providers.map((provider, index) => (
       <div className="box" key={index}>

@@ -57,17 +57,21 @@ export class ProviderDetails extends Component {
       <div >
         <h1>Provider Details</h1>
         <div className="providerDetailsPage">
+
+          <h3>{this.state.provider.name}</h3>
+          <br/>
           <img className="providerImg" src={this.state.img} alt="Provider Img"></img>
-          <h1><b>Nombre:</b> {this.state.provider.name}</h1>
-          <br />
-          <h2><b> Telephone:</b> {this.state.provider.telephone}</h2>
-          <br />
-          <h3><b>Adress:</b> {street} {number}</h3>
-          <br />
-          <p><b>Info:</b> {this.state.provider.info}</p>
           <button className="button is-danger" id="providersDetailsDeleteBtn" onClick={this.handleClick}>Delete provider</button>
+          <br />
+          <hr/>
+          <h4><b> Telephone:</b></h4> {this.state.provider.telephone}
+          <hr/>
+          <h4><b>Adress:</b></h4> {street} {number}
+          <hr/>
+          <h4><b>Info:</b></h4> {this.state.provider.info}
+          <hr/>
           <div>
-            <p className="uploadimageProvider">Upload a Provider Image:</p>
+            <h1 className="uploadimageProvider">Upload a Provider Image:</h1>
             <FileUploadNew {...this.props} item={this.state.provider} section="providers" changeImg={this.handleImgState}/>
           </div>
           <AddProduct Provider={this.state.id} />

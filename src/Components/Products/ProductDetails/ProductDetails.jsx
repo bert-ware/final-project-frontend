@@ -26,7 +26,6 @@ export class ProductDetails extends Component {
     componentDidMount() {
         axios.get(process.env.REACT_APP_API_URL +"/products/" + this.state.id ,{withCredentials: true})
         .then(response => {
-            
             this.setState({
                 product: response.data,
                 img: response.data.imgUrl
@@ -50,12 +49,18 @@ export class ProductDetails extends Component {
             <div>
                 <h1>Product Details</h1>
                     <div className="productDetailsPage">
+                     <h2>{this.state.product.name}</h2>
+                     <br/>
                      <img className="productImgDetails" src={this.state.img} alt="Product Img"></img>
-                     <h1>{this.state.product.name}</h1>
-                     <h2>Unitary cost: {this.state.product.price}$</h2>  
-                     <h3>Format: {this.state.product.format}</h3>
-                     <p>{this.state.product.info}</p>
+                     <br/>
                      <button onClick={this.handleClick} className="button is-danger" id="productDetailsDeleteBtn">Delete product</button>
+                     <hr/>
+                     <h4><b>Unitary cost:</b></h4>  {this.state.product.price}€
+                     <hr/>
+                     <h4><b>Format:</b></h4> {this.state.product.format} {this.state.product.typeFormat}
+                     <hr/>
+                     <h4><b>Info:</b></h4>{this.state.product.info}
+                     <hr/>
                      <FileUploadNew {...this.props} item={this.state.product} section="products" changeImg={this.handleImgState} />
                 </div>
             </div>

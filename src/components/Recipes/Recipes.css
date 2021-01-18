@@ -3,7 +3,7 @@
     margin-bottom: 15px;
 }
 
-/* .productImg {
-    width: 80% !important;
-    max-height: 500px;
-} */
+.productImg {
+    max-width: 128px;
+    max-height: 128px;
+}
