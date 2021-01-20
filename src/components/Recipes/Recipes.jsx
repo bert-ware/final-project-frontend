@@ -18,7 +18,6 @@ export class Recipes extends Component {
         this.setState({
           recipes: response.data,
         })
-        console.log(this.state.recipes)
       })
       .catch((err) => console.log(err))
   }

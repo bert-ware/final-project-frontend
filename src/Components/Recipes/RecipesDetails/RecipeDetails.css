@@ -23,37 +23,27 @@
     flex-direction: row;
 }
 .stats {
-    margin-top: 80px;
+    margin-top: 20px;
     text-align: start;
     padding-inline-start: 100px;
 }
 .recipeDetailsPage {
-    margin-top: 100px;
     margin-bottom: 100px;
 }
-#recipeTitle{
-    margin-bottom: 20px;
-    font-size: 5vw;
-    color: green;
-}
 #recipeDetailsDeleteBtn {
-    margin-top: 30px;
+    
     margin-bottom: 30px;
 }
 
 .addRecipesTitle {
-    font-size: 30px;
+    font-size: 2em;
     color: green;
     margin-bottom: 20px;
 }
 #leyenda{
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 0.7em;
 }
 
-#methodTitle {
-    font-size: 20px;
-    color: green;
-    margin-bottom: 20px;
-}
+
 

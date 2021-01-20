@@ -1,4 +1,13 @@
 #providersPage{
-    margin-top: 100px;
+    margin-top: 50px;
+}
+#providerListContainer {
+    font-size: 1.3em;
 }
 
+.btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}

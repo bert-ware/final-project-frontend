@@ -3,21 +3,23 @@ import { Switch, Route } from "react-router-dom"
 
 import "./App.css"
 import "bulma/css/bulma.css"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-import ProductDetails from "./components/Products/ProductDetails/ProductDetails.jsx"
-import Providers from "./components/Providers/Providers"
-import ProviderDetails from "./components/Providers/ProviderDetails/ProviderDetails"
+import Navbar from "./components/Navbar/Navbar"
 import Home from "./components/Home/Home"
-import Recipes from "./components/Recipes/Recipes"
-import RecipeDetails from "./components/Recipes/RecipesDetails/RecipeDetails"
+import Login from "./Auth/Login"
 import Signup from "./Auth/Signup"
 import Logout from "./Auth/Logout"
-import Login from "./Auth/Login"
 import UserProfile from "./components/UserProfile/UserProfile"
-import BottomNavigation from "./components/BottomNavigation/BottomNavigation"
+import ProductDetails from "./components/Products/ProductDetails/ProductDetails.jsx"
+import Recipes from "./components/Recipes/Recipes"
+import RecipeDetails from "./components/Recipes/RecipesDetails/RecipeDetails"
 import AddRecipes from "./components/Products/AddRecipes/AddRecipes"
+import Providers from "./components/Providers/Providers"
 import ProtectedRoute from "./Auth/ProtectedRoute"
-import Navbar from "./components/Navbar/Navbar"
+import ProviderDetails from "./components/Providers/ProviderDetails/ProviderDetails"
+import BottomNavigation from "./components/BottomNavigation/BottomNavigation"
+
 
 function App(props) {
   //Hook log
