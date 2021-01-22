@@ -1,95 +1,23 @@
-.redButton{
-    background-color: tomato !important;
-}
+ .fileUpload-container {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     
 
-.info-form-right input[type="text"],
-.info-form-right input[type="email"],
-.info-form-right textarea {
-    color: #000;
-    background: #f7f7f7;
-    outline: none;
-    font-size: 14px;
-    padding: 9px;
-    letter-spacing: 1px;
-    border: none;
-    -webkit-appearance: none;
-}
+  }
 
-.info-form-right textarea {
-    resize: none;
-    min-height: 6em;
-}
+  #fileLabel {
+    background-color:rgb(45, 101, 190);
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 
-button.submit-contact {
-    background: #ff3f34;
-    color: #fff;
-    letter-spacing: 1px;
-    padding: 8px 26px;
-    font-size: 14px;
-    display: inherit;
-    margin-top: 1em;
-    border-radius: 4px;
-}
-
-.testing-centered{
-    display: inline-block;
-}
-
-
-button.submit-contact-main {
-    background: #05c46b;
-    color: #fff;
-    letter-spacing: 1px;
-    padding: 12px 50px;
-    font-size: 16px;
-    /* display: inherit; */
-    border-radius: 30px;
-    margin-bottom: 2%;
-
-}
-
-button.submit-contact-main:hover {
-    opacity: .8;
-}
-
-.password{
-    margin-top: 10px;
-    color: gray !important;
-}
-
-.password:hover {
-    text-decoration: none;
-    color: #05c46b !important;
-    
-}
-
-
-.form-control {
-
-    border: 1px solid #ced4da !important;
-
-}
-
-.account{
-    margin-top: 2%;
-    font-size: 15px;
-}
-
-.signUpContainer{
-    padding-bottom: 80px;
-}
-.errorMessage {
-    display: block;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  padding: 2%;
-  text-align: center;
-  color: red;
-}
-
-
-
-
-
+  #fileBtn {
+      position: 
+  }
+ 
