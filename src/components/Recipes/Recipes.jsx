@@ -42,7 +42,7 @@ export class Recipes extends Component {
             <div className="media-content">
               <div className="content">
                 <strong id="linkTitle"><Link to={"/recipes/" + recipe._id}>{recipe.name}</Link></strong> <br />
-                {/* <p><b>Main ingredient:</b> {recipe.ingredients[0].product.name}</p> */}
+                <p id="mainIgredient"><b>Main ingredient:</b> {recipe.ingredients[0].product.name}</p>
               </div>
             </div>
           </article>
@@ -53,12 +53,8 @@ export class Recipes extends Component {
     }
 
     return (
-      <div className="container">
-        <div >
-
+      <div className="recipeContainer">
           {recipes}
-        </div>
-
       </div>
     )
   }

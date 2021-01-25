@@ -68,11 +68,11 @@ export class RecipeForm extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <label><b>Cocktail name:</b></label>
                         <br />
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className='form-control inputReducido' />
+                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className='form-control' id="inputReducido"/>
                         <br />
                         <label><b>Cocktail technique:</b></label>
                         <br />
-                        <select value={this.state.method} onChange={this.handleChange} name='method' className='form-control inputReducido'>
+                        <select value={this.state.method} onChange={this.handleChange} name='method' className='form-control' id="selectReducido">
                             <option value=""> </option>
                             <option value="Shake">Shake</option>
                             <option value="Stir">Stir</option>

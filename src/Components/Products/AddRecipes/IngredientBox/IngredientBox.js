@@ -61,6 +61,7 @@ class IngredientBox extends Component {
             </div>
           </article>
         </div>
+      <hr/>
       </div>
     )
   }

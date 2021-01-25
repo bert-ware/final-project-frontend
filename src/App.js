@@ -32,36 +32,36 @@ function App(props) {
   return (
     <div className="App">
       <Navbar user={userState} key={userState} />
-      <Switch>
 
+      <Switch>
         <Route exact path="/">
           <Home user={userState} />
         </Route>
 
-        <ProtectedRoute 
+        <ProtectedRoute
           exact path="/recipes"
           component={Recipes} user={userState} />
 
         <ProtectedRoute
           path="/recipes/:id"
           component={RecipeDetails} user={userState} />
-          
-        <ProtectedRoute 
+
+        <ProtectedRoute
           exact path="/products"
           component={AddRecipes} user={userState} />
-         
+
         <ProtectedRoute
           path="/products/:id"
           component={ProductDetails} user={userState} />
-          
-        <ProtectedRoute 
+
+        <ProtectedRoute
           exact path="/providers"
           component={Providers} user={userState} />
-          
+
         <ProtectedRoute
           path="/providers/:id"
           component={ProviderDetails} {...props} user={userState} />
-          
+
         <Route
           path="/signup"
           render={(props) => <Signup {...props} callback={setTheUser} />}
@@ -74,11 +74,11 @@ function App(props) {
           exact path="/logout"
           render={(props) => <Logout {...props} getUser={setTheUser} />}
         />
-        <ProtectedRoute 
-          exact path="/user-profile" 
+        <ProtectedRoute
+          exact path="/user-profile"
           key={userState.name}
           component={UserProfile} user={userState} callback={setTheUser} />
-          
+
       </Switch>
       <BottomNavigation />
     </div>

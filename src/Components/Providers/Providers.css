@@ -1,8 +1,6 @@
-#providersPage{
-    margin-top: 50px;
-}
-#providerListContainer {
-    font-size: 1.3em;
+.providerContainer {
+    padding-top: 80px;
+    font-size: 1.1em;
 }
 
 .btnContainer {
@@ -10,4 +8,23 @@
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 50px;
+}
+
+#providerBox{
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+@media (min-width : 860px) and (max-width : 1024px) {
+    #providerBox {
+        width: 80%;
+    }
+}
+
+@media (min-width : 1025px) {
+    #providerBox {
+        width: 70%;
+    }
 }

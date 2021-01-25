@@ -36,7 +36,7 @@ class Providers extends Component {
         </div>
     } else {
       providers = this.state.providers.map((provider, index) => (
-        <div className="box" key={index}>
+        <div id="providerBox" className="box" key={index}>
           <article className="media">
             <div className="media-left">
               <figure className="image is-128x128">
@@ -45,11 +45,9 @@ class Providers extends Component {
             </div>
             <div className="media-content">
               <div className="content">
-                <p>
-                  <strong id="linkTitle"><Link to={"/providers/" + provider._id}>{provider.name}</Link></strong> <br />
-                  <small><b>Adress:</b> {provider.adress.street}, {provider.adress.number} </small> <br />
-                  <small><b>Info: </b>{provider.info}</small>
-                </p>
+                <strong id="linkTitle"><Link to={"/providers/" + provider._id}>{provider.name}</Link></strong> <br />
+                <p><b>Adress:</b> {provider.adress.street}, {provider.adress.number} </p>
+                <p><b>Info: </b>{provider.info}</p>
               </div>
             </div>
           </article>
@@ -59,11 +57,8 @@ class Providers extends Component {
     }
 
     return (
-      <div className="container" id="providerListContainer">
-        <h2>Provider List</h2>
-        <div id="providersPage">
-          {providers}
-        </div>
+      <div className="providerContainer">
+        {providers}
         <AddProvider userID={this.props} {...this.props} />
       </div>
     )
