@@ -57,23 +57,23 @@ class Signup extends Component {
     return (
       <div className="signUpContainer">
         <div>
-          <Carrousel title='We are DrinkApp' image="./img/drinks/cocktail3.jpg"/>
+          <Carrousel title='Welcome to DrinkApp' image="./img/drinks/cocktail3.jpg"/>
         </div>
         
-        <div className="col-lg-7 contact-right mt-lg-0 mt-5 testing-centered">
-          <form onSubmit={this.handleFormSubmit}>
-            <div className="row">
-              <div className="col-lg-6 form-group pr-lg-2">
+        <div  className="col-lg-7 contact-right mt-lg-0 mt-5 testing-centered">
+          <form id="divForm" onSubmit={this.handleFormSubmit}>
+
+              <div className="form-group">
                 <input
                   type="text"
                   className="form-control"
                   name="name"
                   placeholder="Username"
                   value={this.state.name}
-                  onChange={(e) => this.handleChange(e)}
-                />
+                  onChange={(e) => this.handleChange(e)}/>
               </div>
-              <div className="col-lg-6 form-group pl-lg-2">
+            
+              <div className="form-group">
                 <input
                   type="email"
                   className="form-control"
@@ -84,7 +84,7 @@ class Signup extends Component {
                   onChange={(e) => this.handleChange(e)}
                 />
               </div>
-            </div>
+            
             <div className="form-group">
               <input
                 type="password"
@@ -98,6 +98,7 @@ class Signup extends Component {
               />
             </div>
             <button
+              id="authSubmit"
               type="submit"
               className="btn submit-contact-main ml-auto"
               value="Signup">

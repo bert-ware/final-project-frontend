@@ -32,9 +32,10 @@ function FileUploadNew(props) {
 
     return (
         <div>
-            <div>
-              <input type="file" onChange={fileSelectHandler}/>
-              <button onClick={fileUploadHandler} className="button is-success">Upload</button>
+            <div className="fileUpload-container">
+              <input type="file" id="actual-btn"  hidden onChange={fileSelectHandler}/>
+              <label id="fileLabel" htmlFor="actual-btn">Choose Image</label>
+              <button id="fileBtn" onClick={fileUploadHandler} className="button is-success">Upload</button>
             </div>
         </div>
     )
