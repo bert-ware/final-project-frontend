@@ -14,7 +14,7 @@ function ModalPrueba(props) {
     return (
         <>
             <Button className="modalBtn" variant="primary" onClick={handleShow}>
-                Upload new Image
+                Upload Image
             </Button>
 
             <div className="modal">

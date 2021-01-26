@@ -64,7 +64,6 @@ export class ProductDetails extends Component {
                     <hr />
                     <h4><b>Info:</b></h4>{this.state.product.info}
                     <hr />
-                    {/* <FileUploadNew {...this.props} item={this.state.product} section="products" changeImg={this.handleImgState} /> */}
                 </div>
             </div>
         )

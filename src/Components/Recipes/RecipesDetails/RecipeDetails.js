@@ -100,8 +100,6 @@ export class RecipeDetails extends Component {
           </div>
           <p id="leyenda">* Orientative price ensuring cost price dont exceed 20% beverage cost</p>
         </div>
-
-        {/* <FileUploadNew {...this.props} item={this.state.recipe} section="recipes" changeImg={this.handleImgState} /> */}
       </div>
     )
   }
