@@ -15,6 +15,9 @@
     resize: none;
     min-height: 6em;
 }
+#authSubmit {
+    margin-top: 40px;
+}
 
 button.submit-contact {
     background: #ff3f34;
@@ -31,6 +34,9 @@ button.submit-contact {
     display: inline-block;
 }
 
+#divForm {
+    margin-top: 0;
+}
 
 button.submit-contact-main {
     background: #05c46b;
@@ -38,7 +44,6 @@ button.submit-contact-main {
     letter-spacing: 1px;
     padding: 12px 50px;
     font-size: 16px;
-    /* display: inherit; */
     border-radius: 30px;
     margin-bottom: 2%;
 
@@ -58,12 +63,13 @@ button.submit-contact-main:hover {
     color: #05c46b !important;
     
 }
-
-
-.form-control {
-
-    border: 1px solid #ced4da !important;
-
+.form-group{
+    width:  90%;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
 }
 
 .account{
@@ -75,7 +81,7 @@ button.submit-contact-main:hover {
     padding-bottom: 80px;
 }
 .errorMessage {
-    display: block;
+  display: block;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -83,4 +89,21 @@ button.submit-contact-main:hover {
   padding: 2%;
   text-align: center;
   color: red;
+}
+
+@media (min-width : 600px) and (max-width : 800px) {
+    .form-group{
+        width: 70%;
+    }
+}
+
+@media (min-width : 801px)  {
+    .form-group{
+       width: 50%;
+    }
+}
+@media (min-width : 992px) {
+    #divForm {
+        margin-top : 48px
+    }
 }

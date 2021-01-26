@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import axios from "axios"
 import { Redirect } from 'react-router-dom'
 import Carrousel from "../../Carrousel/Carrousel"
-import FileUploadNew from "../../Fileupload/FileUploadNew"
+import ModalPrueba from "../../Modal/ModalPrueba"
 
 import "./RecipeDetails.css"
 
@@ -12,12 +12,12 @@ export class RecipeDetails extends Component {
     super(props)
     this.state = {
       id: props.match.params.id,
-      img:  "",
+      img: "",
       recipe: {
         name: "",
         ingredients: [],
         method: "",
-             },
+      },
       redirect: false,
     }
     this.handleImgState = this.handleImgState.bind(this)
@@ -31,7 +31,6 @@ export class RecipeDetails extends Component {
   componentDidMount() {
     axios.get(process.env.REACT_APP_API_URL + "/recipes/" + this.state.id, { withCredentials: true })
       .then(response => {
-        console.log(response.data)
         this.setState({
           recipe: response.data,
           img: response.data.imgUrl
@@ -48,24 +47,24 @@ export class RecipeDetails extends Component {
   render() {
     //Map ingredients
     const ingredients = this.state.recipe.ingredients.map((ingredient) =>
-      <li key={ingredient.product._id}> <b>{ingredient.product.name}</b> 
-      <hr/>
+      <li key={ingredient.product._id}> <b>{ingredient.product.name}</b>
+        <hr />
       </li>
     )
     //Map mesures
     const mesures = this.state.recipe.ingredients.map((ingredient, index) => (
       <li key={index}>
         {ingredient.quantity} {ingredient.product.typeFormat}
-        <hr/>
+        <hr />
       </li>
-      
+
     ))
     //Map Cost mesures
     const mesureCostArr = this.state.recipe.ingredients.map((ingredient) =>
       Number(((ingredient.product.price / ingredient.product.format) * ingredient.quantity).toFixed(2)))
 
     const mesureCost = mesureCostArr.map((cost, index) => (
-      <li key={index}> {cost} <hr/></li>
+      <li key={index}> {cost} <hr /></li>
     ))
     //Total recipe Cost
     const totalCost = mesureCostArr.reduce((a, b) => a + b, 0)
@@ -81,21 +80,19 @@ export class RecipeDetails extends Component {
     return (
       <div>
         <Carrousel image={this.state.img} title={this.state.recipe.name} />
-        <div className="recipeDetailsPage">
-          <h2 className="addRecipesTitle">Method: {this.state.recipe.method}</h2>
-          <FileUploadNew {...this.props} item={this.state.recipe} section="recipes" changeImg={this.handleImgState} />
+        <div className="btnContainer">
           <button onClick={this.handleClick} id="recipeDetailsDeleteBtn" className="button is-danger">
             Delete recipe
           </button>
+          <ModalPrueba {...this.props} item={this.state.recipe} section="recipes" changeImg={this.handleImgState} />
+        </div>
+        <div className="recipeDetailsPage">
+          <h2 className="addRecipesTitle">Method: {this.state.recipe.method}</h2>
           <div className="infoContainer">
-            <ul className="ingredients"><b> INGREDIENTS:<hr/></b>{ingredients}</ul>
-            
-            <ul className="mesures"><b>MESURES:<hr/></b>{mesures}</ul>
-            
-            <ul className="costMesures"><b>COST:<hr/></b>{mesureCost}</ul>
-            
+            <ul className="ingredients"><b> INGREDIENTS:<hr /></b>{ingredients}</ul>
+            <ul className="mesures"><b>MESURES:<hr /></b>{mesures}</ul>
+            <ul className="costMesures"><b>COST:<hr /></b>{mesureCost}</ul>
           </div>
-          
           <div className="stats">
             <h1 className="addRecipesTitle">Info:</h1>
             <p><b>Total cost:</b> {totalCost.toFixed(2)}</p>

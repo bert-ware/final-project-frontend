@@ -1,9 +1,30 @@
+.recipeContainer {
+    padding-top: 80px;
+    font-size: 1.1em;    
+}
 #recipesPage{
+    margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
+    width: 90%;
 }
 
 .productImg {
     max-width: 128px;
     max-height: 128px;
+}
+#mainIgredient {
+    margin-top: 20px;
+}
+
+@media (min-width : 860px) and (max-width : 1024px) {
+    #recipesPage {
+        width: 80%;
+    }
+}
+
+@media (min-width : 1025px) {
+    #recipesPage {
+        width: 70%;
+    }
 }

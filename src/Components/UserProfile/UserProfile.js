@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
-import FileUploadNew from "../Fileupload/FileUploadNew"
+import ModalPrueba from "../Modal/ModalPrueba"
 import axios from "axios"
 
 // import "bootstrap/dist/css/bootstrap.css"
@@ -20,7 +20,7 @@ export class UserProfile extends Component {
     this.handleImgState = this.handleImgState.bind(this)
   }
   //Funcion lifting state up
-   handleImgState(input) {
+  handleImgState(input) {
     this.setState({ img: input })
   }
 
@@ -86,11 +86,11 @@ export class UserProfile extends Component {
               </li>
             </ul>
             <div className="card__action">
-              <FileUploadNew {...this.props} item={this.state.loggedInUser.loggedInUser} section="user" changeImg={this.handleImgState} />
+              <ModalPrueba {...this.props} item={this.state.loggedInUser.loggedInUser} section="user" changeImg={this.handleImgState} />
             </div>
           </div>
         </main>
-      );
+      )
     }
 
     return (

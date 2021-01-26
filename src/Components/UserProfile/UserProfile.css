@@ -52,10 +52,13 @@ html {
      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
      0 100px 80px rgba(0, 0, 0, 0.07);
    position: relative;
+   
  }
 
  .card__image {
-    margin: auto;
+   margin: auto;
+   margin-top: 40px;
+   margin-bottom: 40px;
    width: 150px;
    height: 150px;
    border-radius: 50%;
@@ -145,7 +148,7 @@ html {
    border: 4px solid var(--secondary-accent-color);
  }
  
- @media (min-width: 425px) {
+ @media (min-width: 425px ) and (max-width: 599) {
    .card {
      padding: 3em;
    }
@@ -163,7 +166,34 @@ html {
    }
  }
 
+ @media (min-width: 520px) and (max-width: 767px)  {
+   .card {
+     padding: 4.5em;
+     padding-left: 5.5em;
+     padding-right: 5.5em;
+     margin-top: 100px;
+   }
+   .card__image{
+     width: 200px;
+     height: 200px;
+     margin-top: 0px;
+   }
+   
+ }
 
-
+ @media (min-width : 768px) {
+   .card {
+     padding: 5em;
+     padding-left: 7em;
+     padding-right: 7em;
+     margin-top: 100px;
+   }
+   .card__image{
+    width: 250px;
+    height: 250px;
+    margin-top: 0px;
+  }
+ }
+ 
 
 

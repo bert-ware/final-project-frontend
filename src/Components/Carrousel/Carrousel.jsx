@@ -6,27 +6,26 @@ import './Carrousel.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 
 export class Carrousel extends Component {
- 
-    render() {
+
+  render() {
+
+    return (
+      <div>
+        <Slider className="slider-wrapper">
+          <div
+            className="slider-content"
+            style={{
+              background: `url('${this.props.image}') no-repeat center center`,
+            }}>
             
-        return (
-          <div>
-            <Slider className="slider-wrapper">
-            <div
-                
-                className="slider-content"
-                style={{
-                  background: `url('${this.props.image}') no-repeat center center`,
-                }}>
-              
-                <div className="inner">
-                  <h1>{this.props.title}</h1>
-                </div>
-              </div>
-            </Slider>
+            <div className="inner">
+              <h1>{this.props.title}</h1>
+            </div>
           </div>
-        )
-    }
+        </Slider>
+      </div>
+    )
+  }
 }
 
 export default Carrousel

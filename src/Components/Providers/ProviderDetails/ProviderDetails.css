@@ -4,15 +4,19 @@
     width: 100%;
 }
 .providerDetailsPage {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 100px;
 }
-#providersDetailsDeleteBtn {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+
 .uploadimageProvider {
-    font-size: 20px;
+    font-size: 1.3em;
     color: green;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px
+}
+
+#providersDetailsDeleteBtn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px;
 }

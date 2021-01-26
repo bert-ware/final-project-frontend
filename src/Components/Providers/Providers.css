@@ -1,4 +1,30 @@
-#providersPage{
-    margin-top: 100px;
+.providerContainer {
+    padding-top: 80px;
+    font-size: 1.1em;
 }
 
+.btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#providerBox{
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+@media (min-width : 860px) and (max-width : 1024px) {
+    #providerBox {
+        width: 80%;
+    }
+}
+
+@media (min-width : 1025px) {
+    #providerBox {
+        width: 70%;
+    }
+}
