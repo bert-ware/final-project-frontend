@@ -27,7 +27,7 @@ export class Recipes extends Component {
     let recipes
     if (!this.state.recipes.length) {
       recipes =
-        <div>
+        <div className="feedback">
           <p>No recipes yet, go to <Link to={"/products/"}>Products page </Link>and do your magic!</p>
         </div>
     } else {

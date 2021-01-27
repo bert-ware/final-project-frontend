@@ -17,6 +17,11 @@
     width: 90%;
 }
 
+.feedback {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
 @media (min-width : 860px) and (max-width : 1024px) {
     #providerBox {
         width: 80%;

@@ -16,6 +16,9 @@
 #mainIgredient {
     margin-top: 20px;
 }
+.feedback {
+    margin-top: 200px;
+}
 
 @media (min-width : 860px) and (max-width : 1024px) {
     #recipesPage {

@@ -31,7 +31,7 @@ class Providers extends Component {
     let providers
     if (!this.state.providers.length) {
       providers =
-        <div>
+        <div className="feedback">
           <p>No providers yet, lets add some!</p>
         </div>
     } else {

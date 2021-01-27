@@ -44,7 +44,7 @@ class IngredientBox extends Component {
                   <br />
                   <b>Format:</b> {this.props.item.format} {this.props.item.typeFormat} <br />
                   <b>Price: </b>{this.props.item.price}€ <br />
-                  {/* <b>Provider: </b> {this.props.item.Provider.name} */}
+                  <b>Provider: </b> {this.props.item.Provider.name}
                 </p>
               </div>
             </div>

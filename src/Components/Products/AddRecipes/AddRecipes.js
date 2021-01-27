@@ -56,8 +56,8 @@ export class AddRecipes extends Component {
         //Search filter
         let displayIngredients 
         if (!this.state.products.length) {
-          displayIngredients = <div>
-            <p id="productFeedBack">No products yet, lets add some!</p>
+          displayIngredients = <div id="productFeedBack">
+            <p >No products yet, lets add some!</p>
             <Link to="/providers">Go to your provider list and start adding ingredients</Link>
           </div>
           } else {
